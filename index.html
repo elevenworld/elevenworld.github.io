@@ -16,8 +16,10 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-flat-top.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"elevenworld.gitee.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","Available values":"leancloud | disqusjs | changyan | livere | gitalk | utterances","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"elevenworld.gitee.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","Available values":"disqus | disqusjs | changyan | livere | gitalk | utterances | leancloud | valine","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="万物果得">
@@ -76,6 +78,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -83,12 +86,38 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-学习"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>学习</a></li><li class="menu-item menu-item-实修"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>实修</a></li><li class="menu-item menu-item-时间"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>时间</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </header>
         
@@ -126,6 +155,16 @@
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
   </nav>
 </div>
 
@@ -140,6 +179,422 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://elevenworld.gitee.io/2023/08/12/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/guode.jpg">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万物果得">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 万物果得">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/08/12/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/" class="post-title-link" itemprop="url">MAC系统安装gitee步骤</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-08-12 17:07:19" itemprop="dateCreated datePublished" datetime="2023-08-12T17:07:19+08:00">2023-08-12</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>652</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="一、Git下载安装"><a href="#一、Git下载安装" class="headerlink" title="&#x3D;&#x3D;一、Git下载安装&#x3D;&#x3D;"></a>&#x3D;&#x3D;一、Git下载安装&#x3D;&#x3D;</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://git-scm.com/download/mac">git官网</a>下载git安装包</li>
+</ol>
+<p>​		点击Binary installer下的 installer选择安装包下载</p>
+<p>​		在MAC 客户端 输入<code> git version</code> 查看git是否安装成功</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/08/12/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://elevenworld.gitee.io/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/guode.jpg">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万物果得">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 万物果得">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="post-title-link" itemprop="url">Git基本语法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-08-12 17:05:53 / 修改时间：17:08:48" itemprop="dateCreated datePublished" datetime="2023-08-12T17:05:53+08:00">2023-08-12</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>493</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">git init  <span class="comment">#创建仓库</span></span><br><span class="line">ls  <span class="comment">#查看仓库文件</span></span><br><span class="line">ls -a  <span class="comment">#查看仓库所有文件 包括隐藏文件</span></span><br><span class="line">git status  <span class="comment">#查看仓库状态</span></span><br><span class="line">git add .  <span class="comment">#添加所有文件到暂存区</span></span><br><span class="line">git add 文件名  <span class="comment">#添加名称为“文件名”的文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;写一句描述该文件夹的信息&quot;</span>  <span class="comment">#提交暂存区的文件</span></span><br><span class="line">git push origin <span class="keyword">master</span>  <span class="title">#上传本地信息 到 远程仓库</span></span><br><span class="line"><span class="title">git</span> pull origin <span class="keyword">master</span>  <span class="title">#拉取远程仓库信息 合并到本地</span></span><br><span class="line"><span class="title">    pull</span>=fetch+merge</span><br><span class="line">    git fetch origin <span class="keyword">master</span>  <span class="title">#抓取远程仓库信息</span></span><br><span class="line"><span class="title">    git</span> merge origin/<span class="keyword">master</span>  <span class="title">#将抓取的远程仓库信息合并到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">sudo</span> su  <span class="comment"># 管理员身份执行命令</span></span><br><span class="line"></span><br><span class="line">vim <span class="number">0123</span>.txt  <span class="comment">#修改文件0123.txt   按 i 进入修改模式，修改完成后 shift+z+z 退出编辑状态并保存</span></span><br><span class="line">git reflog   <span class="comment">#查看文件的版本信息</span></span><br><span class="line">git log   <span class="comment">#查看详细的版本信息</span></span><br><span class="line">cat <span class="number">0123</span>.rtf   <span class="comment">#查看文件详细内容</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">远程仓库克隆链接   #克隆远程仓库信息到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">touch</span> .gitignore  <span class="comment">#输入git命令 touch .gitignore 回车之后会发现文件中已经成功创建了.gitignore文件(忽略文件命令)  </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://elevenworld.gitee.io/2023/08/12/python%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/guode.jpg">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万物果得">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 万物果得">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/08/12/python%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/" class="post-title-link" itemprop="url">python数值类型</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-08-12 16:39:04 / 修改时间：17:06:07" itemprop="dateCreated datePublished" datetime="2023-08-12T16:39:04+08:00">2023-08-12</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>970</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="整数类型int"><a href="#整数类型int" class="headerlink" title="整数类型int"></a>整数类型int</h2><p>英文为integer，简写为int，可以表示正数、负数和零。</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">整数可以表示为二进制、八进制、十进制、十六进制</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;十进制&quot;</span>, <span class="number">119</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;二进制&quot;</span>, <span class="number">0b01010111001</span>)   #二进制以<span class="number">0b</span>开头</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;八进制&quot;</span>, <span class="number">0o327</span>)           #八进制以<span class="number">0o</span>开头</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;十六进制&quot;</span>, <span class="number">0x2ADE</span>)        #十六进制以<span class="number">0x</span>开头</span><br><span class="line"></span><br><span class="line">十进制 <span class="number">119</span></span><br><span class="line">二进制 <span class="number">697</span></span><br><span class="line">八进制 <span class="number">215</span></span><br><span class="line">十六进制 <span class="number">10974</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>进制</th>
+<th>基本数</th>
+<th>逢几进一</th>
+<th>表示形式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>十进制</td>
+<td>0,1,2,3,4,5,6,7,8,9</td>
+<td>10</td>
+<td>118</td>
+</tr>
+<tr>
+<td>二进制</td>
+<td>0,1</td>
+<td>2</td>
+<td>0b1110110</td>
+</tr>
+<tr>
+<td>八进制</td>
+<td>0,1,2,3,4,5,6,7</td>
+<td>8</td>
+<td>0o166</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F</td>
+<td>16</td>
+<td>0x76</td>
+</tr>
+</tbody></table>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/08/12/python%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://elevenworld.gitee.io/2023/08/12/%E5%AE%A0%E7%89%A9%E5%BC%8F%E7%9A%84%E7%88%B1%E4%B8%8D%E4%BC%9A%E9%95%BF%E4%B9%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/guode.jpg">
+      <meta itemprop="name" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="万物果得">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 万物果得">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/08/12/%E5%AE%A0%E7%89%A9%E5%BC%8F%E7%9A%84%E7%88%B1%E4%B8%8D%E4%BC%9A%E9%95%BF%E4%B9%85/" class="post-title-link" itemprop="url">宠物式的爱不会长久</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-08-12 16:39:04 / 修改时间：17:05:40" itemprop="dateCreated datePublished" datetime="2023-08-12T16:39:04+08:00">2023-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A9%E5%AD%90%E6%95%99%E8%82%B2/" itemprop="url" rel="index"><span itemprop="name">孩子教育</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>511</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>从国家实行计划生育以来，大部分的独生子女父母都是宠物式的养育方式，恐怕孩子受一点点伤害，更别说把孩子培养成一个爱劳动、愿意付出的人。付出的心都没有。不教育孩子怎么去成长，培养健全自己的人格，让孩子从小懂得感恩。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/08/12/%E5%AE%A0%E7%89%A9%E5%BC%8F%E7%9A%84%E7%88%B1%E4%B8%8D%E4%BC%9A%E9%95%BF%E4%B9%85/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -185,23 +640,33 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-08-12 13:34:11" itemprop="dateModified" datetime="2023-08-12T13:34:11+08:00">2023-08-12</time>
+      <time title="修改时间：2023-08-12 17:05:22" itemprop="dateModified" datetime="2023-08-12T17:05:22+08:00">2023-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BA%BA%E6%80%A7/" itemprop="url" rel="index"><span itemprop="name">人性</span></a>
+        </span>
     </span>
 
   
-    <span id="/2023/08/11/%E4%BA%BA%E6%80%A7%E6%9C%AC%E7%84%B6%E6%B5%81/" class="post-meta-item leancloud_visitors" data-flag-title="人性本然流露" title="阅读次数">
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
+        <i class="far fa-file-word"></i>
       </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>294</span>
     </span>
-    <span class="post-meta-item" title="阅读次数">
+    <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
+        <i class="far fa-clock"></i>
       </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="firestore-visitors-count"></span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -240,490 +705,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://elevenworld.gitee.io/2023/08/11/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/guode.jpg">
-      <meta itemprop="name" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物果得">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 万物果得">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/11/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-08-11 16:56:49 / 修改时间：17:44:23" itemprop="dateCreated datePublished" datetime="2023-08-11T16:56:49+08:00">2023-08-11</time>
-    </span>
-
-  
-    <span id="/2023/08/11/hello-world/" class="post-meta-item leancloud_visitors" data-flag-title="Hello World" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-    <span class="post-meta-item" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="firestore-visitors-count"></span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://elevenworld.gitee.io/2023/08/11/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/guode.jpg">
-      <meta itemprop="name" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物果得">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 万物果得">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/11/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/" class="post-title-link" itemprop="url">MAC系统安装gitee步骤</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-08-11 00:00:00 / 修改时间：17:45:34" itemprop="dateCreated datePublished" datetime="2023-08-11T00:00:00+08:00">2023-08-11</time>
-    </span>
-
-  
-    <span id="/2023/08/11/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/" class="post-meta-item leancloud_visitors" data-flag-title="MAC系统安装gitee步骤" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-    <span class="post-meta-item" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="firestore-visitors-count"></span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>[toc]</p>
-<h2 id="一、Git下载安装"><a href="#一、Git下载安装" class="headerlink" title="&#x3D;&#x3D;一、Git下载安装&#x3D;&#x3D;"></a>&#x3D;&#x3D;一、Git下载安装&#x3D;&#x3D;</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://git-scm.com/download/mac">git官网</a>下载git安装包</li>
-</ol>
-<p>​		点击Binary installer下的 installer选择安装包下载</p>
-<p>​		在MAC 客户端 输入<code> git version</code> 查看git是否安装成功</p>
-<ol start="2">
-<li>在<a target="_blank" rel="noopener" href="https://gitee.com/">gitee官网</a>注册账户并登陆</li>
-</ol>
-<h2 id="二、配置公钥"><a href="#二、配置公钥" class="headerlink" title="&#x3D;&#x3D;二、配置公钥&#x3D;&#x3D;"></a>&#x3D;&#x3D;二、配置公钥&#x3D;&#x3D;</h2><p>如果不配置公钥，每次上传文件到远程仓库都需要用户名和密码验证。</p>
-<p>点击查看<a target="_blank" rel="noopener" href="https://help.gitee.com/base/account/SSH%E5%85%AC%E9%92%A5%E8%AE%BE%E7%BD%AE">SSH公钥配置</a></p>
-<ol>
-<li>复制一下命令，去git终端执行生成 SSH Key：</li>
-</ol>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> <span class="symbol">ed25519</span> -C <span class="string">&quot;181822826@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>注：”Gitee SSH Key”可以任意命名</p>
-<p>输出，如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private ed25519 key pair.</span><br><span class="line">Enter file in which to save the key (/home/git/.ssh/id_ed25519):</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /home/git/.ssh/id_ed25519</span><br><span class="line">Your public key has been saved in /home/git/.ssh/id_ed25519.pub</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:ohDd0OK5WG2dx4gST/j35HjvlJlGHvihyY+Msl6IC8I Gitee SSH Key</span><br><span class="line">The key&#x27;s randomart image is:</span><br><span class="line">+--[ED25519 256]--+</span><br><span class="line">|    .o           |</span><br><span class="line">|   .+oo          |</span><br><span class="line">|  ...O.o +       |</span><br><span class="line">|   .= * = +.     |</span><br><span class="line">|  .o +..S*. +    |</span><br><span class="line">|. ...o o..+* *   |</span><br><span class="line">|.E. o . ..+.O    |</span><br><span class="line">| . . ... o =.    |</span><br><span class="line">|    ..oo. o.o    |</span><br><span class="line">+----[SHA256]-----+</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>&#x3D;&#x3D;中间通过三次<strong>回车键</strong>确定&#x3D;&#x3D;</li>
-</ul>
-<ol start="2">
-<li>查看生成的 SSH 公钥和私钥：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/xiejincheng/.ssh</span><br></pre></td></tr></table></figure>
-
-<p>进入上面地址文件夹，找到文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id_ed25519  id_ed25519.pub</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>私钥文件 <code>id_ed25519</code></li>
-<li>公钥文件 <code>id_ed25519.pub</code></li>
-</ul>
-<ol start="3">
-<li>&#x3D;&#x3D;用记事本打开<em><strong>公钥文件</strong></em>&#x3D;&#x3D; <code>id_ed25519.pub</code>，复制公钥</li>
-</ol>
-<p>​	将公钥粘贴到 gitee 后台公钥文本框内，标题命名，如：Python Study</p>
-<p>&#x3D;&#x3D;确认公钥是否成功添加&#x3D;&#x3D;，</p>
-<p>​	在终端输入</p>
-<p>​	<code> ssh -T git@gitee.com</code></p>
-<p>​	然后输入：yes</p>
-<p>​	显示以下内容，则成功</p>
-<p>​	<code>Hi USERNAME! You&#39;ve successfully authenticated, but GITEE.COM does not provide shell 			access.</code></p>
-<h2 id="三、新建仓库"><a href="#三、新建仓库" class="headerlink" title="&#x3D;&#x3D;三、新建仓库&#x3D;&#x3D;"></a>&#x3D;&#x3D;三、新建仓库&#x3D;&#x3D;</h2><ol>
-<li><p>仓库名称：Python Study</p>
-</li>
-<li><p>点击创建</p>
-</li>
-<li><p>输入配置（只需要配置一次，后面不需要再配置）</p>
-<p>&#x3D;&#x3D;分别在终端输入执行以下两句代码&#x3D;&#x3D;</p>
-<p>Git 全局设置:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.name</span> <span class="string">&quot;ELEVENWORLD&quot;</span></span><br><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.email</span> <span class="string">&quot;181822826@qq.com&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="四、下载远程仓库到电脑"><a href="#四、下载远程仓库到电脑" class="headerlink" title="&#x3D;&#x3D;四、下载远程仓库到电脑&#x3D;&#x3D;"></a>&#x3D;&#x3D;四、下载远程仓库到电脑&#x3D;&#x3D;</h2><p>​	Https 和 ssh 都可以，这里我们选择 ssh ,复制地址</p>
-<p>​	&#x3D;&#x3D;在终端执行下载命令&#x3D;&#x3D;</p>
-<p>​	<code> git clone git@gitee.com:elevenworld/wef.git</code></p>
-<p>​	在电脑文件夹 &#x2F;Users&#x2F;xiejincheng 可看到下载的远程仓库文件夹Python Study</p>
-<h2 id="五、文件上传至远程仓库"><a href="#五、文件上传至远程仓库" class="headerlink" title="&#x3D;&#x3D;五、文件上传至远程仓库&#x3D;&#x3D;"></a>&#x3D;&#x3D;五、文件上传至远程仓库&#x3D;&#x3D;</h2><p>​	在Python Study放入需要上传的文件</p>
-<p>​	 当前终端地址为桌面，在当前终端输入</p>
-<p>​	<code>cd Python Study</code></p>
-<p>​	&#x3D;&#x3D;将终端地址切换至Python Study文件夹&#x3D;&#x3D;</p>
-<p>​	&#x3D;&#x3D;分别输入以下三个命令&#x3D;&#x3D;</p>
-<ul>
-<li><code> git add .</code>    把所有内容放进暂存区</li>
-<li><code> git commit -m &quot;写一句描述该文件夹的信息&quot;</code></li>
-<li><code>git push origin master</code></li>
-</ul>
-<h2 id="六、从仓库下载到电脑"><a href="#六、从仓库下载到电脑" class="headerlink" title="&#x3D;&#x3D;六、从仓库下载到电脑&#x3D;&#x3D;"></a>&#x3D;&#x3D;六、从仓库下载到电脑&#x3D;&#x3D;</h2><p>进入远程仓库，复制https地址</p>
-<p><a target="_blank" rel="noopener" href="https://gitee.com/elevenworld/phython-study.git">https://gitee.com/elevenworld/phython-study.git</a></p>
-<p>将该地址输入终端 即可执行下载远程仓库内文件</p>
-<p>在终端输入以下信息：</p>
-<p><code> git clone https://gitee.com/elevenworld/phython-study.git</code></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://elevenworld.gitee.io/2023/08/11/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/guode.jpg">
-      <meta itemprop="name" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物果得">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 万物果得">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/11/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="post-title-link" itemprop="url">Git基本语法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-08-11 00:00:00 / 修改时间：17:45:58" itemprop="dateCreated datePublished" datetime="2023-08-11T00:00:00+08:00">2023-08-11</time>
-    </span>
-
-  
-    <span id="/2023/08/11/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="Git基本语法" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-    <span class="post-meta-item" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="firestore-visitors-count"></span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">git init  <span class="comment">#创建仓库</span></span><br><span class="line">ls  <span class="comment">#查看仓库文件</span></span><br><span class="line">ls -a  <span class="comment">#查看仓库所有文件 包括隐藏文件</span></span><br><span class="line">git status  <span class="comment">#查看仓库状态</span></span><br><span class="line">git add .  <span class="comment">#添加所有文件到暂存区</span></span><br><span class="line">git add 文件名  <span class="comment">#添加名称为“文件名”的文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;写一句描述该文件夹的信息&quot;</span>  <span class="comment">#提交暂存区的文件</span></span><br><span class="line">git push origin <span class="keyword">master</span>  <span class="title">#上传本地信息 到 远程仓库</span></span><br><span class="line"><span class="title">git</span> pull origin <span class="keyword">master</span>  <span class="title">#拉取远程仓库信息 合并到本地</span></span><br><span class="line"><span class="title">    pull</span>=fetch+merge</span><br><span class="line">    git fetch origin <span class="keyword">master</span>  <span class="title">#抓取远程仓库信息</span></span><br><span class="line"><span class="title">    git</span> merge origin/<span class="keyword">master</span>  <span class="title">#将抓取的远程仓库信息合并到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">sudo</span> su  <span class="comment"># 管理员身份执行命令</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">vim <span class="number">0123</span>.txt  <span class="comment">#修改文件0123.txt   按 i 进入修改模式，修改完成后 shift+z+z 退出编辑状态并保存</span></span><br><span class="line">git reflog   <span class="comment">#查看文件的版本信息</span></span><br><span class="line">git log   <span class="comment">#查看详细的版本信息</span></span><br><span class="line">cat <span class="number">0123</span>.rtf   <span class="comment">#查看文件详细内容</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">远程仓库克隆链接   #克隆远程仓库信息到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">touch</span> .gitignore  <span class="comment">#输入git命令 touch .gitignore 回车之后会发现文件中已经成功创建了.gitignore文件(忽略文件命令)  </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Git-reset-三种模式"><a href="#Git-reset-三种模式" class="headerlink" title="Git reset 三种模式"></a>Git reset 三种模式</h2><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/git-reset-%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F.jpg" alt="git-reset-三种模式" style="zoom: 33%;" />
-
-
-
-<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--soft</span>  <span class="comment">#回到之前版本的同时保留工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--hard</span>  <span class="comment">#回到之前版本的同时删除工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--mixed</span>  <span class="comment">#回到之前版本的同时保留工作区所有内容，删除暂存区的所有内容</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="git-rm-删除文件"><a href="#git-rm-删除文件" class="headerlink" title="git rm 删除文件"></a>git rm 删除文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">rm</span> 123.md   <span class="comment">#删除工作区和暂存区的文件123.md</span></span><br><span class="line">git <span class="built_in">rm</span> --cached 123.md   <span class="comment">#删除暂存区的文件123.md,不删除本地文件</span></span><br><span class="line">git commit -m <span class="string">&quot;123.md&quot;</span>  <span class="comment">#删除文件后，执行提交命令。否则该删除文件还存在于暂存区</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://elevenworld.gitee.io/2023/08/08/%E8%A5%84%E9%98%B3%E5%94%90%E5%9F%8E%E6%A1%88%E4%BE%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/guode.jpg">
-      <meta itemprop="name" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="万物果得">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 万物果得">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/08/%E8%A5%84%E9%98%B3%E5%94%90%E5%9F%8E%E6%A1%88%E4%BE%8B/" class="post-title-link" itemprop="url">2018襄阳“大唐倚梦”行进式演绎光影秀及控制系统</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-08-08 14:39:27" itemprop="dateCreated datePublished" datetime="2023-08-08T14:39:27+08:00">2023-08-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-08-11 22:21:43" itemprop="dateModified" datetime="2023-08-11T22:21:43+08:00">2023-08-11</time>
-    </span>
-
-  
-    <span id="/2023/08/08/%E8%A5%84%E9%98%B3%E5%94%90%E5%9F%8E%E6%A1%88%E4%BE%8B/" class="post-meta-item leancloud_visitors" data-flag-title="2018襄阳“大唐倚梦”行进式演绎光影秀及控制系统" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-    <span class="post-meta-item" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="firestore-visitors-count"></span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>[toc]</p>
-<h2 id="一、项目概述"><a href="#一、项目概述" class="headerlink" title="一、项目概述"></a>一、项目概述</h2><p>《大唐倚梦》依托襄阳唐城影视基地近40万平米的华丽建筑为全景舞台，将全天数十场精彩“演艺”和五大片区相互融合，浑然一体。**&#x3D;&#x3D;浙江创意声光电科技有限公司&#x3D;&#x3D;<strong>运用独立自主研发的</strong>声、光、电智控融合技术<strong>和</strong>软件平台<strong>、</strong>硬件产品<strong>搭建出</strong>&#x3D;&#x3D;襄阳“大唐倚梦”全景式夜游景观光影控制系统平台&#x3D;&#x3D;<strong>，打造出</strong>亚洲最大墙体裸眼3D投影**，营造出独具创新的原创沉浸式体验秀，呈现出一幅大唐盛世的宏伟画卷，彰显出盛世唐城景区的品牌影响力！</p>
-<h2 id="二、项目优势"><a href="#二、项目优势" class="headerlink" title="二、项目优势"></a>二、项目优势</h2><h3 id="1-技术亮点"><a href="#1-技术亮点" class="headerlink" title="1. 技术亮点"></a>1. 技术亮点</h3><p>该项目**&#x3D;&#x3D;最大的技术亮点&#x3D;&#x3D;<strong>是整个全景式夜游景观光影控制系统</strong>&#x3D;&#x3D;采用分级控制的架构和策略&#x3D;&#x3D;<strong>，以“十景一线”为夜游路线，将灯光秀与景观照明建立在统一的管理平台上，对照明设备基础数据进行收集、统计、分析、计算及管理，组成一个</strong>&#x3D;&#x3D;“多系统合一”的联动管理平台&#x3D;&#x3D;<strong>，子系统之间可以互相联动，音频、视频、灯光同步操控，面对不同的业务系统具有开放的标准接口，实现</strong>&#x3D;&#x3D;声、光、电的无缝连接和配合&#x3D;&#x3D;**，从而构筑成一个完整的智慧照明控制网络。</p>
-<h3 id="2-经济效益"><a href="#2-经济效益" class="headerlink" title="2. 经济效益"></a>2. 经济效益</h3><p>在<strong>2018-2023年间</strong>，**&#x3D;&#x3D;创意科技团队&#x3D;&#x3D;**用质量过硬的软件平台、硬件产品和专业的技术服务，经受住了襄阳唐城在六年时间里一次次的光影“演艺”锤炼，为打造恢弘气派、灯火辉煌的盛世唐城贡献了一份光和热。</p>
-<ul>
-<li><p>《盛世康城之大唐倚梦》于**&#x3D;&#x3D;2018年7月&#x3D;&#x3D;<strong>正式推出后，迅速引爆市场。2018年十一期间夜夜爆满，共接待游客</strong>23.7万人次<strong>，七天夜游</strong>累计亮灯超过35小时**。10月4日当晚，《盛世唐城之大唐倚梦》游客接待达最大承载量，成为襄阳首个因已达最大承载量而暂停售票的景区。</p>
-</li>
-<li><p><strong>&#x3D;&#x3D;2019年&#x3D;&#x3D;<strong>，唐城景区仅夜游客流量就</strong>超过110万人次</strong>。夜游项目的成功，不仅使唐城声名大噪，更助力襄阳旅游从半日游向全天候转化，使其从<strong>过境地</strong>成长为<strong>目的地</strong>。据统计，在唐城夜游季，襄阳市酒店入住率平均<strong>提高33%<strong>。2019年唐城营业收入</strong>突破1.75亿元</strong>，客流量<strong>突破215万人次</strong>。</p>
-</li>
-<li><p><strong>&#x3D;&#x3D;2020年6月6日&#x3D;&#x3D;<strong>，《盛世唐城之大唐倚梦》重装开演，据统计，开市当晚，唐城景区客流量</strong>达到5000人次</strong>；唐城市集累计收入<strong>近20万元</strong>，带动景区门票收入<strong>16万元</strong>。唐城景区**&#x3D;&#x3D;2022全年&#x3D;&#x3D;<strong>预约量</strong>超190万人次<strong>，实际核销入园</strong>近140万人次**，入园稳居湖北省前列，超2019年同期60万人次。</p>
-</li>
-<li><p><strong>&#x3D;&#x3D;2022年&#x3D;&#x3D;<strong>盛世唐城全平台流量突破</strong>10.5亿^+^</strong>，其中抖音搜索量达到<strong>674.4W^+^</strong>。春节期间，盛世唐朝景区共接待游客<strong>20余万人次</strong>，荣登央视总台7次，新媒体流量突破2572万。</p>
-</li>
-<li><p><strong>&#x3D;&#x3D;2023年&#x3D;&#x3D;<strong>盛世唐朝景区游客量</strong>突破100万大关</strong>，春节期间景区接待游客<strong>突破40万人次</strong>，<strong>创历史新高！</strong>游客量比2019年<strong>大涨172%<strong>，营业收入比2019年</strong>大涨175</strong>%，创唐城开业7年来新高！荣登国家级媒体29次！全网相关话题浏览量破1亿次，中央广电总台国际在线Facebook更是首次在唐城全球直播，真可谓是：国内国外，“襄”当精彩！</p>
-</li>
-</ul>
-<h3 id="3-社会影响"><a href="#3-社会影响" class="headerlink" title="3.社会影响"></a>3.社会影响</h3><p>&#x3D;&#x3D;<strong>爆款文旅夜游产品！文旅融合典范！</strong>&#x3D;&#x3D;2018年至今，经过六年的精心打磨和高质量发展，以**&#x3D;&#x3D;创意科技智能控制技术&#x3D;&#x3D;<strong>为基础的盛世唐城景区成绩斐然，获得外界一致好评并多次荣登国家省、市级等主流媒体的广泛关注和跟踪报道，获评</strong>&#x3D;&#x3D;“首批国家级夜间文化和旅游消费集聚区”&#x3D;&#x3D;<strong>、</strong>&#x3D;&#x3D;最受欢迎夜游品牌&#x3D;&#x3D;<strong>、国内</strong>“最具人气文旅目的地”<strong>、</strong>“2019人气文旅演艺项目”<strong>、</strong>“2019产品创新标杆景区”<strong>、</strong>“湖北省十大文化产业品牌”<strong>等多项荣誉，且入选中国旅游演艺联盟评出的六大文旅小镇</strong>&#x3D;&#x3D;爆款夜游产品&#x3D;&#x3D;**，位列湖北省十大最热门景区。</p>
-<blockquote>
-<p>数据来源于：</p>
-<p>01.襄阳盛世唐城 微信文章：</p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/VhtjLfBet-QCt9VLKqhQoA">襄阳唐城2018年文旅数据</a></p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/1lgNQeApnAF2s54x5ezpow">襄阳唐城2019年文旅数据</a></p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IPux4x7G_i3YW4Wm2QD_Fg">襄阳唐城2020年文旅数据</a></p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/_ZiQt6k67a9dHvLokOfUxw">襄阳唐城2021年文旅数据</a></p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/aDB-bx2BtvaBr5LJDLbDFw">襄阳唐城2022年文旅数据</a></p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/adgdrCCtU7mfAoGXs3Nihg">襄阳唐城2023年上半年文旅数据</a></p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/HVoxtQcFOqim2YfUQCUfpQ">襄阳唐城2023年春节期间文旅数据</a></p>
-<p>02.中国旅游报</p>
-<p><a target="_blank" rel="noopener" href="https://www.mct.gov.cn/whzx/qgwhxxlb/hb_7730/202011/t20201124_902886.htm">襄阳盛世唐城:让古城“活”起来</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.ctnews.com.cn/paper/att/202011/24/ce7eb35e-9280-4a26-a9d9-dbb1dd25ab00.pdf">中国旅游报报刊</a></p>
-</blockquote>
-<hr>
-<h2 id="三、微信软文"><a href="#三、微信软文" class="headerlink" title="三、微信软文"></a>三、微信软文</h2><h3 id="爆款文旅夜游产品！用光影数智控制技术”演艺”襄阳唐城全景式夜游景观饕餮盛宴"><a href="#爆款文旅夜游产品！用光影数智控制技术”演艺”襄阳唐城全景式夜游景观饕餮盛宴" class="headerlink" title="爆款文旅夜游产品！用光影数智控制技术”演艺”襄阳唐城全景式夜游景观饕餮盛宴"></a>爆款文旅夜游产品！用光影数智控制技术”演艺”襄阳唐城全景式夜游景观饕餮盛宴</h3><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E8%A5%84%E9%98%B3%E5%94%90%E5%9F%8E.jpg" alt="襄阳唐城"></p>
-<p>《大唐倚梦》依托襄阳唐城影视基地近40万平米的华丽建筑为全景舞台，将全天数十场精彩“演艺”和五大片区相互融合，浑然一体。以“寻千年之恋，观盛世唐城；展华夏雄风，承复兴之梦”为主线，打破常规“演艺”思维，颠覆传统表演形式，**&#x3D;&#x3D;浙江创意声光电科技有限公司&#x3D;&#x3D;<strong>运用独立自主研发的</strong>声、光、电智控融合技术<strong>和</strong>软件平台、硬件产品<strong>搭建出</strong>&#x3D;&#x3D;襄阳“大唐倚梦”全景式夜游景观光影控制系统平台&#x3D;&#x3D;<strong>，打造出</strong>亚洲最大墙体裸眼3D投影**，营造出独具创新的原创沉浸式体验秀，呈现出一幅大唐盛世的宏伟画卷，彰显出盛世唐城景区的品牌影响力！</p>
-<p>2018年至今,经过六年的精心打磨和高质量发展,以**&#x3D;&#x3D;创意科技智能控制技术&#x3D;&#x3D;<strong>为基础的盛世唐城景区成绩斐然,获得外界一致好评并多次荣登国家省、市级等主流媒体的广泛关注和跟踪报道,获评</strong>&#x3D;&#x3D;“首批国家级夜间文化和旅游消费集聚区”&#x3D;&#x3D;<strong>、</strong>&#x3D;&#x3D;最受欢迎夜游品牌&#x3D;&#x3D;<strong>,且入选中国旅游演艺联盟评出的六大文旅小镇</strong>&#x3D;&#x3D;爆款夜游产品&#x3D;&#x3D;**,位列湖北省十大最热门景区。</p>
-<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E8%A5%84%E9%98%B3%E5%94%90%E5%9F%8E2.jpg" alt="襄阳唐城2"></p>
-<p>襄阳唐城影视基地(中国唐城)分为城楼、宫殿、街市、宅邸、寺院**&#x3D;&#x3D;五大片区&#x3D;&#x3D;<strong>，建有凯旋楼、明德门、千步廊、朱雀门、牡丹坛、宣政殿、青龙寺、胡玉楼等</strong>多个大型单体建筑<strong>。</strong>&#x3D;&#x3D;创意科技团队&#x3D;&#x3D;<strong>经过</strong>四百多天的反复调试打磨<strong>，从舞台、灯光再到设备、系统，每一个细节都力求完美，环环相扣，即做到</strong>&#x3D;&#x3D;五大片区协调统一&#x3D;&#x3D;<strong>，又兼顾</strong>&#x3D;&#x3D;声、光、电与舞台表演的同步&#x3D;&#x3D;<strong>，以</strong>景观照明<strong>和</strong>舞台表演**两种方式，将白日里恢弘气派的盛世唐城变成流光溢彩、灯火辉煌的夜长安。 </p>
-<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E8%A5%84%E9%98%B3%E5%94%90%E5%9F%8E3.jpg" alt="襄阳唐城3"></p>
-<p>该项目**&#x3D;&#x3D;最大的技术亮点&#x3D;&#x3D;<strong>是整个全景式夜游景观光影控制系统</strong>&#x3D;&#x3D;采用分级控制的架构和策略&#x3D;&#x3D;<strong>，以“十景一线”为夜游路线，将灯光秀与景观照明建立在统一的管理平台上，对照明设备基础数据进行收集、统计、分析、计算及管理，组成一个</strong>&#x3D;&#x3D;“多系统合一”的联动管理平台&#x3D;&#x3D;<strong>，子系统之间可以互相联动，音频、视频、灯光同步操控，面对不同的业务系统具有开放的标准接口，实现</strong>&#x3D;&#x3D;声、光、电的无缝连接和配合&#x3D;&#x3D;**，从而构筑成一个完整的智慧照明控制网络。</p>
-<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E4%B8%80%E9%94%AE%E6%8E%A7%E5%88%B6%E6%9E%B6%E6%9E%84.jpg" alt="一键控制架构"></p>
-<p><strong>&#x3D;&#x3D;襄阳“大唐倚梦”全景式夜游景观光影控制系统&#x3D;&#x3D;<strong>实现了</strong>远程App控制</strong>、<strong>分区控制</strong>和<strong>定时控制</strong>，采用P<strong>AVT®光影秀多媒体数字控制台</strong>，**&#x3D;&#x3D;一键控制&#x3D;&#x3D;<strong>3D投影、音频、视频、灯光、激光、水秀等</strong>&#x3D;&#x3D;所有声、光、电“演艺”设备&#x3D;&#x3D;**，解决了以往多系统控制的复杂操作，使声光电与节目完美同步，整体呈现出丰富细腻的效果变化。</p>
-<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E8%A5%84%E9%98%B3%E5%94%90%E5%9F%8E4.jpg" alt="襄阳唐城4"></p>
-<p>流光溢彩的灯光是《大唐倚梦》必不可少的元素，**&#x3D;&#x3D;创意科技&#x3D;&#x3D;<strong>对项目中多处存量灯光设备进行</strong>改造更新<strong>和灯光节目的</strong>重新编排<strong>，从色温关系、色相、冷暖以及虚实对比上，进行了一系列的艺术处理，完全做到</strong>“见光不见灯”**。例如青龙塔的《佛光普照颂》是在原有基础上进行的存量设备重新改造，以青龙塔为主体，灯光为辅助手段呈现塔身光影“演艺”的变化，真正实现灯光与塔身的高度融合。</p>
-<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E8%A5%84%E9%98%B3%E5%94%90%E5%9F%8E5.jpg" alt="襄阳唐城5"></p>
-<p>“台上一分钟，台下十年功”，在**&#x3D;&#x3D;襄阳“大唐倚梦”全景式夜游景观光影控制系统&#x3D;&#x3D;<strong>项目中，大到智能控制系统建设，小到硬件设备的安装调试，无不透露出</strong>&#x3D;&#x3D;创意科技软件平台、硬件产品和控制技术&#x3D;&#x3D;<strong>的匠心独特。在2018-2023年间，</strong>&#x3D;&#x3D;创意科技团队&#x3D;&#x3D;<strong>用质量过硬的软件平台、硬件产品和专业的技术服务，经受住了襄阳唐城在六年时间里一次次的光影“演艺”锤炼，为打造恢弘气派、灯火辉煌的盛世唐城贡献了一份光和热。未来，</strong>&#x3D;&#x3D;创意科技&#x3D;&#x3D;<strong>还将不断探索</strong>&#x3D;&#x3D;文旅景观夜游项目&#x3D;&#x3D;**的产品创新和技术服务，助力市场经济高质量发展，为人类幸福、客户价值、行业发展做技术贡献。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
 
 </div>
   </main>
@@ -739,8 +720,24 @@
     </span>
     <span class="author" itemprop="copyrightHolder"></span>
   </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">3k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">11 分钟</span>
+  </span>
+</div>
+
+<!--
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
+  </div>-->
 
     </div>
   </footer>
@@ -762,26 +759,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
   
 
 
 
 
-
-
-  
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.1.0/firebase-app-compat.js" integrity="sha256-oHsmS3zqBxvp/Qdg9vucmyY8AeVINi9wApvaRCX4Hhc=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.1.0/firebase-firestore-compat.js" integrity="sha256-GHgKMbAW0epA1D+BqqSYKy7jvQ/xJLUcemM7MGRKXjY=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="firestore" type="application/json">{"enable":true,"collection":"articles","apiKey":null,"projectId":null}</script>
-  <script src="/js/third-party/statistics/firestore.js"></script>
-
-  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"4YQi8uRGhkgqQYBkCnyN75Le-gzGzoHsz","app_key":"pnoFiSJabRe84Ps6DEBhdsVC","server_url":null,"security":true}</script>
-  <script src="/js/third-party/statistics/lean-analytics.js"></script>
-
-
-<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"user-name/repo-name","issue_term":"pathname","theme":"github-light"}</script>
-<script src="/js/third-party/comments/utterances.js"></script>
+<script src="/js/third-party/comments/livere.js"></script>
 
 </body>
 </html>
