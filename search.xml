@@ -362,6 +362,21 @@
       </tags>
   </entry>
   <entry>
+    <title>修行就是认知与突破</title>
+    <url>/2023/08/13/%E4%BF%AE%E8%A1%8C%E5%B0%B1%E6%98%AF%E8%AE%A4%E7%9F%A5%E4%B8%8E%E7%AA%81%E7%A0%B4/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>心中阳光贫中见，心中慈悲宽待人；<br>一念之间转圣凡，坦荡接受境和缘；<br>妄作非议觅他事，心闲菩提真佛子。</p>
+<span id="more"></span>
+
+<p>修行就是认知与突破。在迷茫中认知方向，在经历中去突破，<strong>思想与行为同时做到叫觉行</strong>。</p>
+<p>让自己的心能找到归属感，归属感就是自己内心的<strong>清净自性做主</strong>……</p>
+<p>现在很多人的思想已经千变万化了，不是为了吃穿，就是为了攀比名利，谁比谁更鲜亮，所以被物质和名利拉的找不到方向，昏头昏脑也要拼死去攀比，到死都活不明白，内心不知道自己需要啥，虚梦一场！</p>
+]]></content>
+      <categories>
+        <category>清净自性</category>
+      </categories>
+  </entry>
+  <entry>
     <title>人性本然流露</title>
     <url>/2023/08/11/%E4%BA%BA%E6%80%A7%E6%9C%AC%E7%84%B6%E6%B5%81/</url>
     <content><![CDATA[<p><code>妙喜莲慈</code></p>
@@ -378,21 +393,6 @@
 ]]></content>
       <categories>
         <category>人性</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>修行就是认知与突破</title>
-    <url>/2023/08/13/%E4%BF%AE%E8%A1%8C%E5%B0%B1%E6%98%AF%E8%AE%A4%E7%9F%A5%E4%B8%8E%E7%AA%81%E7%A0%B4/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>心中阳光贫中见，心中慈悲宽待人；<br>一念之间转圣凡，坦荡接受境和缘；<br>妄作非议觅他事，心闲菩提真佛子。</p>
-<span id="more"></span>
-
-<p>修行就是认知与突破。在迷茫中认知方向，在经历中去突破，<strong>思想与行为同时做到叫觉行</strong>。</p>
-<p>让自己的心能找到归属感，归属感就是自己内心的<strong>清净自性做主</strong>……</p>
-<p>现在很多人的思想已经千变万化了，不是为了吃穿，就是为了攀比名利，谁比谁更鲜亮，所以被物质和名利拉的找不到方向，昏头昏脑也要拼死去攀比，到死都活不明白，内心不知道自己需要啥，虚梦一场！</p>
-]]></content>
-      <categories>
-        <category>清净自性</category>
       </categories>
   </entry>
   <entry>
@@ -413,6 +413,8 @@
     <title>变量和字符串</title>
     <url>/2023/08/17/%E5%8F%98%E9%87%8F%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<h1 id="变量命名规则"><a href="#变量命名规则" class="headerlink" title="变量命名规则"></a>变量命名规则</h1><h2 id="1-字母-数字-下划线组合"><a href="#1-字母-数字-下划线组合" class="headerlink" title="1.字母 数字 下划线组合"></a>1.字母 数字 下划线组合</h2><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">num1</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">num_2</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">num</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">num_</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">_1</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 
 <h2 id="2-不能数字开头"><a href="#2-不能数字开头" class="headerlink" title="2.不能数字开头"></a>2.不能数字开头</h2><p>99_asdf &#x3D; 0</p>
 <h2 id="3-不能使用系统内置函数、关键字作为自己的变量名"><a href="#3-不能使用系统内置函数、关键字作为自己的变量名" class="headerlink" title="3.不能使用系统内置函数、关键字作为自己的变量名"></a>3.不能使用系统内置函数、关键字作为自己的变量名</h2><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">object_num</span> = <span class="number">1000</span></span><br><span class="line"><span class="attr">camera_name</span> = <span class="string">&quot;my_camera&quot;</span></span><br><span class="line"><span class="attr">is_curve</span> = Ture</span><br><span class="line"></span><br><span class="line"><span class="attr">studentname</span> = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"><span class="attr">stuname</span> = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
