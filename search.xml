@@ -410,6 +410,86 @@
       </categories>
   </entry>
   <entry>
+    <title>变量和字符串</title>
+    <url>/2023/08/17/%E5%8F%98%E9%87%8F%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    <content><![CDATA[<h1 id="变量命名规则"><a href="#变量命名规则" class="headerlink" title="变量命名规则"></a>变量命名规则</h1><h2 id="1-字母-数字-下划线组合"><a href="#1-字母-数字-下划线组合" class="headerlink" title="1.字母 数字 下划线组合"></a>1.字母 数字 下划线组合</h2><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">num1</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">num_2</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">num</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">num_</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">_1</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-不能数字开头"><a href="#2-不能数字开头" class="headerlink" title="2.不能数字开头"></a>2.不能数字开头</h2><p>99_asdf &#x3D; 0</p>
+<h2 id="3-不能使用系统内置函数、关键字作为自己的变量名"><a href="#3-不能使用系统内置函数、关键字作为自己的变量名" class="headerlink" title="3.不能使用系统内置函数、关键字作为自己的变量名"></a>3.不能使用系统内置函数、关键字作为自己的变量名</h2><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">object_num</span> = <span class="number">1000</span></span><br><span class="line"><span class="attr">camera_name</span> = <span class="string">&quot;my_camera&quot;</span></span><br><span class="line"><span class="attr">is_curve</span> = Ture</span><br><span class="line"></span><br><span class="line"><span class="attr">studentname</span> = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"><span class="attr">stuname</span> = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="大驼峰"><a href="#大驼峰" class="headerlink" title="大驼峰"></a>大驼峰</h2><p>stuName &#x3D; ‘Tom’</p>
+<h2 id="下划线分割"><a href="#下划线分割" class="headerlink" title="下划线分割"></a>下划线分割</h2><p>stu_name &#x3D; ‘Tom’</p>
+<h2 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h2><p>Stu_name &#x3D; ‘Tom’<br>Stu_Name &#x3D; ‘Tom’</p>
+<h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><p>PATH &#x3D; ‘C:&#x2F;addons&#x2F;‘</p>
+<h2 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h2><p>path &#x3D; ‘C:&#x2F;addons&#x2F;myaddons’</p>
+<h1 id="案例解析"><a href="#案例解析" class="headerlink" title="案例解析"></a>案例解析</h1><blockquote>
+<p>使用 input() 函数让用户录入姓名，然后将名字保存到变量（name）中，最后使用 print() 函数打印出来。</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"> &gt;&gt;&gt; name = input(<span class="string">&quot;请输入您的名字：&quot;</span>)</span><br><span class="line">请输入您的名字：小甲鱼</span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span>(<span class="string">&quot;你好&quot;</span>, name, <span class="attribute">sep</span>=<span class="string">&quot;，&quot;</span>, <span class="attribute">end</span>=<span class="string">&quot;！&quot;</span>)</span><br><span class="line">你好，小甲鱼！</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>请问下面代码为什么会出错，应该如何解决？</li>
+</ol>
+</blockquote>
+<figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line">print(<span class="string">&quot;C:\Users\goodb\Desktop&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="symbol">SyntaxError:</span> (<span class="keyword">unicode</span> <span class="keyword">error</span>) <span class="comment">&#x27;unicodeescape&#x27; codec can&#x27;t decode bytes in position 2-3: truncated \UXXXXXXXX escape</span></span><br></pre></td></tr></table></figure>
+
+<p>答：这是由于在字符串中，反斜杠<code>（\）</code>会与其随后的字符共同构成<strong>转义</strong>字符。<br> 为了避免这种不测情况的发生，我们可以在字符串的引号前面加上<code>r</code>，表示该字符串是一个原始字符串（不接受转义字符）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">r&quot;C:\Users\goodb\Desktop&quot;</span>)</span><br><span class="line"></span><br><span class="line">C:\Users\goodb\Desktop</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p><strong>打印一个九九乘法表</strong></p>
+</blockquote>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">for</span> i in range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">    <span class="attribute">for</span> j in range(<span class="number">1</span>, i+<span class="number">1</span>):</span><br><span class="line">        <span class="attribute">print</span>(i, <span class="string">&quot;x&quot;</span>, j, <span class="string">&quot;=&quot;</span>, i * j, end=&#x27; &#x27;)</span><br><span class="line">    <span class="attribute">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="attribute">1</span> x <span class="number">1</span> = <span class="number">1</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">2</span> x <span class="number">1</span> = <span class="number">2</span> <span class="number">2</span> x <span class="number">2</span> = <span class="number">4</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">3</span> x <span class="number">1</span> = <span class="number">3</span> <span class="number">3</span> x <span class="number">2</span> = <span class="number">6</span> <span class="number">3</span> x <span class="number">3</span> = <span class="number">9</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">4</span> x <span class="number">1</span> = <span class="number">4</span> <span class="number">4</span> x <span class="number">2</span> = <span class="number">8</span> <span class="number">4</span> x <span class="number">3</span> = <span class="number">12</span> <span class="number">4</span> x <span class="number">4</span> = <span class="number">16</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">5</span> x <span class="number">1</span> = <span class="number">5</span> <span class="number">5</span> x <span class="number">2</span> = <span class="number">10</span> <span class="number">5</span> x <span class="number">3</span> = <span class="number">15</span> <span class="number">5</span> x <span class="number">4</span> = <span class="number">20</span> <span class="number">5</span> x <span class="number">5</span> = <span class="number">25</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">6</span> x <span class="number">1</span> = <span class="number">6</span> <span class="number">6</span> x <span class="number">2</span> = <span class="number">12</span> <span class="number">6</span> x <span class="number">3</span> = <span class="number">18</span> <span class="number">6</span> x <span class="number">4</span> = <span class="number">24</span> <span class="number">6</span> x <span class="number">5</span> = <span class="number">30</span> <span class="number">6</span> x <span class="number">6</span> = <span class="number">36</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">7</span> x <span class="number">1</span> = <span class="number">7</span> <span class="number">7</span> x <span class="number">2</span> = <span class="number">14</span> <span class="number">7</span> x <span class="number">3</span> = <span class="number">21</span> <span class="number">7</span> x <span class="number">4</span> = <span class="number">28</span> <span class="number">7</span> x <span class="number">5</span> = <span class="number">35</span> <span class="number">7</span> x <span class="number">6</span> = <span class="number">42</span> <span class="number">7</span> x <span class="number">7</span> = <span class="number">49</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">8</span> x <span class="number">1</span> = <span class="number">8</span> <span class="number">8</span> x <span class="number">2</span> = <span class="number">16</span> <span class="number">8</span> x <span class="number">3</span> = <span class="number">24</span> <span class="number">8</span> x <span class="number">4</span> = <span class="number">32</span> <span class="number">8</span> x <span class="number">5</span> = <span class="number">40</span> <span class="number">8</span> x <span class="number">6</span> = <span class="number">48</span> <span class="number">8</span> x <span class="number">7</span> = <span class="number">56</span> <span class="number">8</span> x <span class="number">8</span> = <span class="number">64</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">9</span> x <span class="number">1</span> = <span class="number">9</span> <span class="number">9</span> x <span class="number">2</span> = <span class="number">18</span> <span class="number">9</span> x <span class="number">3</span> = <span class="number">27</span> <span class="number">9</span> x <span class="number">4</span> = <span class="number">36</span> <span class="number">9</span> x <span class="number">5</span> = <span class="number">45</span> <span class="number">9</span> x <span class="number">6</span> = <span class="number">54</span> <span class="number">9</span> x <span class="number">7</span> = <span class="number">63</span> <span class="number">9</span> x <span class="number">8</span> = <span class="number">72</span> <span class="number">9</span> x <span class="number">9</span> = <span class="number">81</span> </span><br></pre></td></tr></table></figure>
+
+<h1 id="print-函数"><a href="#print-函数" class="headerlink" title="print() 函数"></a>print() 函数</h1><p>print() 函数用于打印输出一个对象。</p>
+<h3 id="函数原型"><a href="#函数原型" class="headerlink" title="函数原型"></a>函数原型</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(*objects, <span class="attribute">sep</span>=<span class="string">&#x27; &#x27;</span>, <span class="attribute">end</span>=<span class="string">&#x27;\n&#x27;</span>, <span class="attribute">file</span>=sys.stdout, <span class="attribute">flush</span>=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参数解析：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>参数</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>objects</td>
+<td>指定待输出的对象，多个对象之间使用英文逗号（,）进行分隔</td>
+</tr>
+<tr>
+<td>sep</td>
+<td>指定输出多个对象之间的分隔符，默认是空格（’ ‘）</td>
+</tr>
+<tr>
+<td>end</td>
+<td>指定最后的结束符，默认是换行符（’\n’）</td>
+</tr>
+<tr>
+<td>file</td>
+<td>指定要写入的文件对象，默认是标准输出流（sys.stdout）</td>
+</tr>
+<tr>
+<td>flush</td>
+<td>指定是否强制刷新输出流，默认是不刷新（False）</td>
+</tr>
+</tbody></table>
+<p>注：如果指定 sep, end, file 和 flush 参数，需要使用关键字参数（即通过指定参数名来赋值）。</p>
+<h3 id="基本用法："><a href="#基本用法：" class="headerlink" title="基本用法："></a>基本用法：</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;浙江大学建校&quot;</span>,<span class="string">&quot;100周年&quot;</span>)</span></span></span><br><span class="line">浙江大学建校 <span class="number">100</span>周年</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;浙江大学建校园&quot;</span>,<span class="string">&quot;100周年&quot;</span>,sep=<span class="string">&quot;=&quot;</span>,end=<span class="string">&quot;100周年&quot;</span>)</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;浙江大学建校园&quot;</span>,<span class="string">&quot;100周年&quot;</span>,<span class="attribute">sep</span>=<span class="string">&quot;=&quot;</span>,end=&quot;吗？&quot;)</span><br><span class="line">浙江大学建校园=100周年吗？</span><br></pre></td></tr></table></figure>
+
+<h1 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h1><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%8F%98%E9%87%8F%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B220230816.jpg" alt="变量和字符串20230816"></p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>妙喜莲慈自述</title>
     <url>/2023/08/06/%E5%A6%99%E5%96%9C%E8%8E%B2%E6%85%88%E8%87%AA%E8%BF%B0/</url>
     <content><![CDATA[<p><code>妙喜莲慈</code></p>
