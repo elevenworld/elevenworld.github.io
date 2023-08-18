@@ -154,145 +154,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MAC系统安装gitee步骤</title>
-    <url>/2023/08/12/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/</url>
-    <content><![CDATA[<h2 id="一、Git下载安装"><a href="#一、Git下载安装" class="headerlink" title="&#x3D;&#x3D;一、Git下载安装&#x3D;&#x3D;"></a>&#x3D;&#x3D;一、Git下载安装&#x3D;&#x3D;</h2><ol>
-<li><a href="https://git-scm.com/download/mac">git官网</a>下载git安装包</li>
-</ol>
-<p>​		点击Binary installer下的 installer选择安装包下载</p>
-<p>​		在MAC 客户端 输入<code> git version</code> 查看git是否安装成功</p>
-<span id="more"></span>
-
-<ol start="2">
-<li>在<a href="https://gitee.com/">gitee官网</a>注册账户并登陆</li>
-</ol>
-<h2 id="二、配置公钥"><a href="#二、配置公钥" class="headerlink" title="&#x3D;&#x3D;二、配置公钥&#x3D;&#x3D;"></a>&#x3D;&#x3D;二、配置公钥&#x3D;&#x3D;</h2><p>如果不配置公钥，每次上传文件到远程仓库都需要用户名和密码验证。</p>
-<p>点击查看<a href="https://help.gitee.com/base/account/SSH%E5%85%AC%E9%92%A5%E8%AE%BE%E7%BD%AE">SSH公钥配置</a></p>
-<ol>
-<li>复制一下命令，去git终端执行生成 SSH Key：</li>
-</ol>
-<figure class="highlight excel"><table><tr><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> <span class="symbol">ed25519</span> -C <span class="string">&quot;181822826@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>注：”Gitee SSH Key”可以任意命名</p>
-<p>输出，如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Generating public/private ed25519 key pair.</span><br><span class="line">Enter file in which to save the key (/home/git/.ssh/id_ed25519):</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /home/git/.ssh/id_ed25519</span><br><span class="line">Your public key has been saved in /home/git/.ssh/id_ed25519.pub</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:ohDd0OK5WG2dx4gST/j35HjvlJlGHvihyY+Msl6IC8I Gitee SSH Key</span><br><span class="line">The key&#x27;s randomart image is:</span><br><span class="line">+--[ED25519 256]--+</span><br><span class="line">|    .o           |</span><br><span class="line">|   .+oo          |</span><br><span class="line">|  ...O.o +       |</span><br><span class="line">|   .= * = +.     |</span><br><span class="line">|  .o +..S*. +    |</span><br><span class="line">|. ...o o..+* *   |</span><br><span class="line">|.E. o . ..+.O    |</span><br><span class="line">| . . ... o =.    |</span><br><span class="line">|    ..oo. o.o    |</span><br><span class="line">+----[SHA256]-----+</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>&#x3D;&#x3D;中间通过三次<strong>回车键</strong>确定&#x3D;&#x3D;</li>
-</ul>
-<ol start="2">
-<li>查看生成的 SSH 公钥和私钥：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/Users/xiejincheng/.ssh</span><br></pre></td></tr></table></figure>
-
-<p>进入上面地址文件夹，找到文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">id_ed25519  id_ed25519.pub</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>私钥文件 <code>id_ed25519</code></li>
-<li>公钥文件 <code>id_ed25519.pub</code></li>
-</ul>
-<ol start="3">
-<li>&#x3D;&#x3D;用记事本打开<em><strong>公钥文件</strong></em>&#x3D;&#x3D; <code>id_ed25519.pub</code>，复制公钥</li>
-</ol>
-<p>​	将公钥粘贴到 gitee 后台公钥文本框内，标题命名，如：Python Study</p>
-<p>&#x3D;&#x3D;确认公钥是否成功添加&#x3D;&#x3D;，</p>
-<p>​	在终端输入</p>
-<p>​	<code> ssh -T git@gitee.com</code></p>
-<p>​	然后输入：yes</p>
-<p>​	显示以下内容，则成功</p>
-<p>​	<code>Hi USERNAME! You&#39;ve successfully authenticated, but GITEE.COM does not provide shell 			access.</code></p>
-<h2 id="三、新建仓库"><a href="#三、新建仓库" class="headerlink" title="&#x3D;&#x3D;三、新建仓库&#x3D;&#x3D;"></a>&#x3D;&#x3D;三、新建仓库&#x3D;&#x3D;</h2><ol>
-<li><p>仓库名称：Python Study</p>
-</li>
-<li><p>点击创建</p>
-</li>
-<li><p>输入配置（只需要配置一次，后面不需要再配置）</p>
-<p>&#x3D;&#x3D;分别在终端输入执行以下两句代码&#x3D;&#x3D;</p>
-<p>Git 全局设置:</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.name</span> <span class="string">&quot;ELEVENWORLD&quot;</span></span><br><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.email</span> <span class="string">&quot;181822826@qq.com&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="四、下载远程仓库到电脑"><a href="#四、下载远程仓库到电脑" class="headerlink" title="&#x3D;&#x3D;四、下载远程仓库到电脑&#x3D;&#x3D;"></a>&#x3D;&#x3D;四、下载远程仓库到电脑&#x3D;&#x3D;</h2><p>​	Https 和 ssh 都可以，这里我们选择 ssh ,复制地址</p>
-<p>​	&#x3D;&#x3D;在终端执行下载命令&#x3D;&#x3D;</p>
-<p>​	<code> git clone git@gitee.com:elevenworld/wef.git</code></p>
-<p>​	在电脑文件夹 &#x2F;Users&#x2F;xiejincheng 可看到下载的远程仓库文件夹Python Study</p>
-<h2 id="五、文件上传至远程仓库"><a href="#五、文件上传至远程仓库" class="headerlink" title="&#x3D;&#x3D;五、文件上传至远程仓库&#x3D;&#x3D;"></a>&#x3D;&#x3D;五、文件上传至远程仓库&#x3D;&#x3D;</h2><p>​	在Python Study放入需要上传的文件</p>
-<p>​	 当前终端地址为桌面，在当前终端输入</p>
-<p>​	<code>cd Python Study</code></p>
-<p>​	&#x3D;&#x3D;将终端地址切换至Python Study文件夹&#x3D;&#x3D;</p>
-<p>​	&#x3D;&#x3D;分别输入以下三个命令&#x3D;&#x3D;</p>
-<ul>
-<li><code> git add .</code>    把所有内容放进暂存区</li>
-<li><code> git commit -m &quot;写一句描述该文件夹的信息&quot;</code></li>
-<li><code>git push origin master</code></li>
-</ul>
-<h2 id="六、从仓库下载到电脑"><a href="#六、从仓库下载到电脑" class="headerlink" title="&#x3D;&#x3D;六、从仓库下载到电脑&#x3D;&#x3D;"></a>&#x3D;&#x3D;六、从仓库下载到电脑&#x3D;&#x3D;</h2><p>进入远程仓库，复制https地址</p>
-<p><a href="https://gitee.com/elevenworld/phython-study.git">https://gitee.com/elevenworld/phython-study.git</a></p>
-<p>将该地址输入终端 即可执行下载远程仓库内文件</p>
-<p>在终端输入以下信息：</p>
-<p><code> git clone https://gitee.com/elevenworld/phython-study.git</code></p>
-]]></content>
-      <tags>
-        <tag>gitee</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>人性本然流露</title>
-    <url>/2023/08/11/%E4%BA%BA%E6%80%A7%E6%9C%AC%E7%84%B6%E6%B5%81/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>我们居住的世界本来就不完美，人不完美，性格也不完美，有缺陷有优点才能叫做完整的世界。</p>
-<p>我们无法改变世界，只能用思维去不断的认知和转化，接受不完美的一面，我们的内心就是安详的。</p>
-<p>如果您一定要求完美，那您就是世界最苦的人……人无完人，我接受一切异类和与我背道而行的一些人和事。</p>
-<span id="more"></span>
-
-<p>每个人当下的机缘和认知不同，境界也不同，不能用同一个自认为是正确的认知和心境去框架与此时此刻不同遇境的人或者他物，角度不同就会对同一件事有不同的认知。</p>
-<p>我们在有主见的同时又能够尊重他人的角度和认知，才能真正融会贯通，才不会被他人的对错所纠缠自己的内心，才能在平等心上真正做到无分别心。</p>
-<p>路不一样达到的终点都是一样的。</p>
-<p>愿自己常思己过，无怨他人。</p>
-<p>愿我与觉者们早登彼岸，万法融通。</p>
-]]></content>
-      <categories>
-        <category>人性</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>修行就是认知与突破</title>
-    <url>/2023/08/13/%E4%BF%AE%E8%A1%8C%E5%B0%B1%E6%98%AF%E8%AE%A4%E7%9F%A5%E4%B8%8E%E7%AA%81%E7%A0%B4/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>心中阳光贫中见，心中慈悲宽待人；<br>一念之间转圣凡，坦荡接受境和缘；<br>妄作非议觅他事，心闲菩提真佛子。</p>
-<span id="more"></span>
-
-<p>修行就是认知与突破。在迷茫中认知方向，在经历中去突破，<strong>思想与行为同时做到叫觉行</strong>。</p>
-<p>让自己的心能找到归属感，归属感就是自己内心的<strong>清净自性做主</strong>……</p>
-<p>现在很多人的思想已经千变万化了，不是为了吃穿，就是为了攀比名利，谁比谁更鲜亮，所以被物质和名利拉的找不到方向，昏头昏脑也要拼死去攀比，到死都活不明白，内心不知道自己需要啥，虚梦一场！</p>
-]]></content>
-      <categories>
-        <category>清净自性</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Git基本语法</title>
-    <url>/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git init  <span class="comment">#创建仓库</span></span><br><span class="line">ls  <span class="comment">#查看仓库文件</span></span><br><span class="line">ls -a  <span class="comment">#查看仓库所有文件 包括隐藏文件</span></span><br><span class="line">git status  <span class="comment">#查看仓库状态</span></span><br><span class="line">git add .  <span class="comment">#添加所有文件到暂存区</span></span><br><span class="line">git add 文件名  <span class="comment">#添加名称为“文件名”的文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;写一句描述该文件夹的信息&quot;</span>  <span class="comment">#提交暂存区的文件</span></span><br><span class="line">git push origin <span class="keyword">master</span>  <span class="title">#上传本地信息 到 远程仓库</span></span><br><span class="line"><span class="title">git</span> pull origin <span class="keyword">master</span>  <span class="title">#拉取远程仓库信息 合并到本地</span></span><br><span class="line"><span class="title">    pull</span>=fetch+merge</span><br><span class="line">    git fetch origin <span class="keyword">master</span>  <span class="title">#抓取远程仓库信息</span></span><br><span class="line"><span class="title">    git</span> merge origin/<span class="keyword">master</span>  <span class="title">#将抓取的远程仓库信息合并到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">sudo</span> su  <span class="comment"># 管理员身份执行命令</span></span><br><span class="line"></span><br><span class="line">vim <span class="number">0123</span>.txt  <span class="comment">#修改文件0123.txt   按 i 进入修改模式，修改完成后 shift+z+z 退出编辑状态并保存</span></span><br><span class="line">git reflog   <span class="comment">#查看文件的版本信息</span></span><br><span class="line">git log   <span class="comment">#查看详细的版本信息</span></span><br><span class="line">cat <span class="number">0123</span>.rtf   <span class="comment">#查看文件详细内容</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">远程仓库克隆链接   #克隆远程仓库信息到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">touch</span> .gitignore  <span class="comment">#输入git命令 touch .gitignore 回车之后会发现文件中已经成功创建了.gitignore文件(忽略文件命令)  </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="Git-reset-三种模式"><a href="#Git-reset-三种模式" class="headerlink" title="Git reset 三种模式"></a>Git reset 三种模式</h2><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/git-reset-%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F.jpg" alt="git-reset-三种模式" style="zoom: 33%;" />
-
-
-
-<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--soft</span>  <span class="comment">#回到之前版本的同时保留工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--hard</span>  <span class="comment">#回到之前版本的同时删除工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--mixed</span>  <span class="comment">#回到之前版本的同时保留工作区所有内容，删除暂存区的所有内容</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="git-rm-删除文件"><a href="#git-rm-删除文件" class="headerlink" title="git rm 删除文件"></a>git rm 删除文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> 123.md   <span class="comment">#删除工作区和暂存区的文件123.md</span></span><br><span class="line">git <span class="built_in">rm</span> --cached 123.md   <span class="comment">#删除暂存区的文件123.md,不删除本地文件</span></span><br><span class="line">git commit -m <span class="string">&quot;123.md&quot;</span>  <span class="comment">#删除文件后，执行提交命令。否则该删除文件还存在于暂存区</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>python数值类型</title>
     <url>/2023/08/12/python%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/</url>
     <content><![CDATA[<h2 id="整数类型int"><a href="#整数类型int" class="headerlink" title="整数类型int"></a>整数类型int</h2><p>英文为integer，简写为int，可以表示正数、负数和零。</p>
@@ -394,6 +255,159 @@
       <tags>
         <tag>python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>人性本然流露</title>
+    <url>/2023/08/11/%E4%BA%BA%E6%80%A7%E6%9C%AC%E7%84%B6%E6%B5%81/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>我们居住的世界本来就不完美，人不完美，性格也不完美，有缺陷有优点才能叫做完整的世界。</p>
+<p>我们无法改变世界，只能用思维去不断的认知和转化，接受不完美的一面，我们的内心就是安详的。</p>
+<p>如果您一定要求完美，那您就是世界最苦的人……人无完人，我接受一切异类和与我背道而行的一些人和事。</p>
+<span id="more"></span>
+
+<p>每个人当下的机缘和认知不同，境界也不同，不能用同一个自认为是正确的认知和心境去框架与此时此刻不同遇境的人或者他物，角度不同就会对同一件事有不同的认知。</p>
+<p>我们在有主见的同时又能够尊重他人的角度和认知，才能真正融会贯通，才不会被他人的对错所纠缠自己的内心，才能在平等心上真正做到无分别心。</p>
+<p>路不一样达到的终点都是一样的。</p>
+<p>愿自己常思己过，无怨他人。</p>
+<p>愿我与觉者们早登彼岸，万法融通。</p>
+]]></content>
+      <categories>
+        <category>人性</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>MAC系统安装gitee步骤</title>
+    <url>/2023/08/12/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/</url>
+    <content><![CDATA[<h2 id="一、Git下载安装"><a href="#一、Git下载安装" class="headerlink" title="&#x3D;&#x3D;一、Git下载安装&#x3D;&#x3D;"></a>&#x3D;&#x3D;一、Git下载安装&#x3D;&#x3D;</h2><ol>
+<li><a href="https://git-scm.com/download/mac">git官网</a>下载git安装包</li>
+</ol>
+<p>​		点击Binary installer下的 installer选择安装包下载</p>
+<p>​		在MAC 客户端 输入<code> git version</code> 查看git是否安装成功</p>
+<span id="more"></span>
+
+<ol start="2">
+<li>在<a href="https://gitee.com/">gitee官网</a>注册账户并登陆</li>
+</ol>
+<h2 id="二、配置公钥"><a href="#二、配置公钥" class="headerlink" title="&#x3D;&#x3D;二、配置公钥&#x3D;&#x3D;"></a>&#x3D;&#x3D;二、配置公钥&#x3D;&#x3D;</h2><p>如果不配置公钥，每次上传文件到远程仓库都需要用户名和密码验证。</p>
+<p>点击查看<a href="https://help.gitee.com/base/account/SSH%E5%85%AC%E9%92%A5%E8%AE%BE%E7%BD%AE">SSH公钥配置</a></p>
+<ol>
+<li>复制一下命令，去git终端执行生成 SSH Key：</li>
+</ol>
+<figure class="highlight excel"><table><tr><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> <span class="symbol">ed25519</span> -C <span class="string">&quot;181822826@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>注：”Gitee SSH Key”可以任意命名</p>
+<p>输出，如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Generating public/private ed25519 key pair.</span><br><span class="line">Enter file in which to save the key (/home/git/.ssh/id_ed25519):</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /home/git/.ssh/id_ed25519</span><br><span class="line">Your public key has been saved in /home/git/.ssh/id_ed25519.pub</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:ohDd0OK5WG2dx4gST/j35HjvlJlGHvihyY+Msl6IC8I Gitee SSH Key</span><br><span class="line">The key&#x27;s randomart image is:</span><br><span class="line">+--[ED25519 256]--+</span><br><span class="line">|    .o           |</span><br><span class="line">|   .+oo          |</span><br><span class="line">|  ...O.o +       |</span><br><span class="line">|   .= * = +.     |</span><br><span class="line">|  .o +..S*. +    |</span><br><span class="line">|. ...o o..+* *   |</span><br><span class="line">|.E. o . ..+.O    |</span><br><span class="line">| . . ... o =.    |</span><br><span class="line">|    ..oo. o.o    |</span><br><span class="line">+----[SHA256]-----+</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>&#x3D;&#x3D;中间通过三次<strong>回车键</strong>确定&#x3D;&#x3D;</li>
+</ul>
+<ol start="2">
+<li>查看生成的 SSH 公钥和私钥：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/Users/xiejincheng/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>进入上面地址文件夹，找到文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">id_ed25519  id_ed25519.pub</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>私钥文件 <code>id_ed25519</code></li>
+<li>公钥文件 <code>id_ed25519.pub</code></li>
+</ul>
+<ol start="3">
+<li>&#x3D;&#x3D;用记事本打开<em><strong>公钥文件</strong></em>&#x3D;&#x3D; <code>id_ed25519.pub</code>，复制公钥</li>
+</ol>
+<p>​	将公钥粘贴到 gitee 后台公钥文本框内，标题命名，如：Python Study</p>
+<p>&#x3D;&#x3D;确认公钥是否成功添加&#x3D;&#x3D;，</p>
+<p>​	在终端输入</p>
+<p>​	<code> ssh -T git@gitee.com</code></p>
+<p>​	然后输入：yes</p>
+<p>​	显示以下内容，则成功</p>
+<p>​	<code>Hi USERNAME! You&#39;ve successfully authenticated, but GITEE.COM does not provide shell 			access.</code></p>
+<h2 id="三、新建仓库"><a href="#三、新建仓库" class="headerlink" title="&#x3D;&#x3D;三、新建仓库&#x3D;&#x3D;"></a>&#x3D;&#x3D;三、新建仓库&#x3D;&#x3D;</h2><ol>
+<li><p>仓库名称：Python Study</p>
+</li>
+<li><p>点击创建</p>
+</li>
+<li><p>输入配置（只需要配置一次，后面不需要再配置）</p>
+<p>&#x3D;&#x3D;分别在终端输入执行以下两句代码&#x3D;&#x3D;</p>
+<p>Git 全局设置:</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.name</span> <span class="string">&quot;ELEVENWORLD&quot;</span></span><br><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.email</span> <span class="string">&quot;181822826@qq.com&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="四、下载远程仓库到电脑"><a href="#四、下载远程仓库到电脑" class="headerlink" title="&#x3D;&#x3D;四、下载远程仓库到电脑&#x3D;&#x3D;"></a>&#x3D;&#x3D;四、下载远程仓库到电脑&#x3D;&#x3D;</h2><p>​	Https 和 ssh 都可以，这里我们选择 ssh ,复制地址</p>
+<p>​	&#x3D;&#x3D;在终端执行下载命令&#x3D;&#x3D;</p>
+<p>​	<code> git clone git@gitee.com:elevenworld/wef.git</code></p>
+<p>​	在电脑文件夹 &#x2F;Users&#x2F;xiejincheng 可看到下载的远程仓库文件夹Python Study</p>
+<h2 id="五、文件上传至远程仓库"><a href="#五、文件上传至远程仓库" class="headerlink" title="&#x3D;&#x3D;五、文件上传至远程仓库&#x3D;&#x3D;"></a>&#x3D;&#x3D;五、文件上传至远程仓库&#x3D;&#x3D;</h2><p>​	在Python Study放入需要上传的文件</p>
+<p>​	 当前终端地址为桌面，在当前终端输入</p>
+<p>​	<code>cd Python Study</code></p>
+<p>​	&#x3D;&#x3D;将终端地址切换至Python Study文件夹&#x3D;&#x3D;</p>
+<p>​	&#x3D;&#x3D;分别输入以下三个命令&#x3D;&#x3D;</p>
+<ul>
+<li><code> git add .</code>    把所有内容放进暂存区</li>
+<li><code> git commit -m &quot;写一句描述该文件夹的信息&quot;</code></li>
+<li><code>git push origin master</code></li>
+</ul>
+<h2 id="六、从仓库下载到电脑"><a href="#六、从仓库下载到电脑" class="headerlink" title="&#x3D;&#x3D;六、从仓库下载到电脑&#x3D;&#x3D;"></a>&#x3D;&#x3D;六、从仓库下载到电脑&#x3D;&#x3D;</h2><p>进入远程仓库，复制https地址</p>
+<p><a href="https://gitee.com/elevenworld/phython-study.git">https://gitee.com/elevenworld/phython-study.git</a></p>
+<p>将该地址输入终端 即可执行下载远程仓库内文件</p>
+<p>在终端输入以下信息：</p>
+<p><code> git clone https://gitee.com/elevenworld/phython-study.git</code></p>
+]]></content>
+      <tags>
+        <tag>gitee</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git基本语法</title>
+    <url>/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git init  <span class="comment">#创建仓库</span></span><br><span class="line">ls  <span class="comment">#查看仓库文件</span></span><br><span class="line">ls -a  <span class="comment">#查看仓库所有文件 包括隐藏文件</span></span><br><span class="line">git status  <span class="comment">#查看仓库状态</span></span><br><span class="line">git add .  <span class="comment">#添加所有文件到暂存区</span></span><br><span class="line">git add 文件名  <span class="comment">#添加名称为“文件名”的文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;写一句描述该文件夹的信息&quot;</span>  <span class="comment">#提交暂存区的文件</span></span><br><span class="line">git push origin <span class="keyword">master</span>  <span class="title">#上传本地信息 到 远程仓库</span></span><br><span class="line"><span class="title">git</span> pull origin <span class="keyword">master</span>  <span class="title">#拉取远程仓库信息 合并到本地</span></span><br><span class="line"><span class="title">    pull</span>=fetch+merge</span><br><span class="line">    git fetch origin <span class="keyword">master</span>  <span class="title">#抓取远程仓库信息</span></span><br><span class="line"><span class="title">    git</span> merge origin/<span class="keyword">master</span>  <span class="title">#将抓取的远程仓库信息合并到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">sudo</span> su  <span class="comment"># 管理员身份执行命令</span></span><br><span class="line"></span><br><span class="line">vim <span class="number">0123</span>.txt  <span class="comment">#修改文件0123.txt   按 i 进入修改模式，修改完成后 shift+z+z 退出编辑状态并保存</span></span><br><span class="line">git reflog   <span class="comment">#查看文件的版本信息</span></span><br><span class="line">git log   <span class="comment">#查看详细的版本信息</span></span><br><span class="line">cat <span class="number">0123</span>.rtf   <span class="comment">#查看文件详细内容</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">远程仓库克隆链接   #克隆远程仓库信息到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">touch</span> .gitignore  <span class="comment">#输入git命令 touch .gitignore 回车之后会发现文件中已经成功创建了.gitignore文件(忽略文件命令)  </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Git-reset-三种模式"><a href="#Git-reset-三种模式" class="headerlink" title="Git reset 三种模式"></a>Git reset 三种模式</h2><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/git-reset-%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F.jpg" alt="git-reset-三种模式" style="zoom: 33%;" />
+
+
+
+<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--soft</span>  <span class="comment">#回到之前版本的同时保留工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--hard</span>  <span class="comment">#回到之前版本的同时删除工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--mixed</span>  <span class="comment">#回到之前版本的同时保留工作区所有内容，删除暂存区的所有内容</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="git-rm-删除文件"><a href="#git-rm-删除文件" class="headerlink" title="git rm 删除文件"></a>git rm 删除文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> 123.md   <span class="comment">#删除工作区和暂存区的文件123.md</span></span><br><span class="line">git <span class="built_in">rm</span> --cached 123.md   <span class="comment">#删除暂存区的文件123.md,不删除本地文件</span></span><br><span class="line">git commit -m <span class="string">&quot;123.md&quot;</span>  <span class="comment">#删除文件后，执行提交命令。否则该删除文件还存在于暂存区</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修行就是认知与突破</title>
+    <url>/2023/08/13/%E4%BF%AE%E8%A1%8C%E5%B0%B1%E6%98%AF%E8%AE%A4%E7%9F%A5%E4%B8%8E%E7%AA%81%E7%A0%B4/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>心中阳光贫中见，心中慈悲宽待人；<br>一念之间转圣凡，坦荡接受境和缘；<br>妄作非议觅他事，心闲菩提真佛子。</p>
+<span id="more"></span>
+
+<p>修行就是认知与突破。在迷茫中认知方向，在经历中去突破，<strong>思想与行为同时做到叫觉行</strong>。</p>
+<p>让自己的心能找到归属感，归属感就是自己内心的<strong>清净自性做主</strong>……</p>
+<p>现在很多人的思想已经千变万化了，不是为了吃穿，就是为了攀比名利，谁比谁更鲜亮，所以被物质和名利拉的找不到方向，昏头昏脑也要拼死去攀比，到死都活不明白，内心不知道自己需要啥，虚梦一场！</p>
+]]></content>
+      <categories>
+        <category>清净自性</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>修行是为了重获新生</title>
+    <url>/2023/08/14/%E4%BF%AE%E8%A1%8C%E6%98%AF%E4%B8%BA%E4%BA%86%E9%87%8D%E8%8E%B7%E6%96%B0%E7%94%9F/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>真正的佛法是让人觉悟的，是认识迷茫的生命。<strong>修行是为了重获新生，让生命得到自由。</strong></p>
+<p>我们生命是从迷茫中获得，少不了思想纠结带来的苦痛的过程，因为人不了解自己所以苦。如果没有佛法和正解佛义，就会迷在自我认知里面，思想时刻都会被纠结的苦不堪言，不愿面对自己被困的思想和事物。这类人被自我障碍和框架，还不相信佛说的因果。</p>
+<span id="more"></span>
+
+<p>修行人不要想一步登天，知道了就认为成就了，少不了经历中磨练和不断的觉醒，才能到达自己的心做主。觉醒过程中少不了解自己心里面对事物的迷茫，不断经历，不断解困自心，然后加以释放的过程，才能体悟解迷后的修行安宁与自在，最后全获释放，身心喜悦 ，安乐，自在与自由。<strong>这就是真正的生命</strong>，<strong>本如来藏就在此处</strong>，人人具足，就看你的方向和认知，还有愿力和愿行。</p>
+]]></content>
+      <categories>
+        <category>清净自性</category>
+      </categories>
   </entry>
   <entry>
     <title>变量和字符串</title>
@@ -519,20 +533,6 @@
 ]]></content>
       <categories>
         <category>孩子教育</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>修行是为了重获新生</title>
-    <url>/2023/08/14/%E4%BF%AE%E8%A1%8C%E6%98%AF%E4%B8%BA%E4%BA%86%E9%87%8D%E8%8E%B7%E6%96%B0%E7%94%9F/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>真正的佛法是让人觉悟的，是认识迷茫的生命。<strong>修行是为了重获新生，让生命得到自由。</strong></p>
-<p>我们生命是从迷茫中获得，少不了思想纠结带来的苦痛的过程，因为人不了解自己所以苦。如果没有佛法和正解佛义，就会迷在自我认知里面，思想时刻都会被纠结的苦不堪言，不愿面对自己被困的思想和事物。这类人被自我障碍和框架，还不相信佛说的因果。</p>
-<span id="more"></span>
-
-<p>修行人不要想一步登天，知道了就认为成就了，少不了经历中磨练和不断的觉醒，才能到达自己的心做主。觉醒过程中少不了解自己心里面对事物的迷茫，不断经历，不断解困自心，然后加以释放的过程，才能体悟解迷后的修行安宁与自在，最后全获释放，身心喜悦 ，安乐，自在与自由。<strong>这就是真正的生命</strong>，<strong>本如来藏就在此处</strong>，人人具足，就看你的方向和认知，还有愿力和愿行。</p>
-]]></content>
-      <categories>
-        <category>清净自性</category>
       </categories>
   </entry>
 </search>
