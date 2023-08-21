@@ -154,6 +154,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Git基本语法</title>
+    <url>/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git init  <span class="comment">#创建仓库</span></span><br><span class="line">ls  <span class="comment">#查看仓库文件</span></span><br><span class="line">ls -a  <span class="comment">#查看仓库所有文件 包括隐藏文件</span></span><br><span class="line">git status  <span class="comment">#查看仓库状态</span></span><br><span class="line">git add .  <span class="comment">#添加所有文件到暂存区</span></span><br><span class="line">git add 文件名  <span class="comment">#添加名称为“文件名”的文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;写一句描述该文件夹的信息&quot;</span>  <span class="comment">#提交暂存区的文件</span></span><br><span class="line">git push origin <span class="keyword">master</span>  <span class="title">#上传本地信息 到 远程仓库</span></span><br><span class="line"><span class="title">git</span> pull origin <span class="keyword">master</span>  <span class="title">#拉取远程仓库信息 合并到本地</span></span><br><span class="line"><span class="title">    pull</span>=fetch+merge</span><br><span class="line">    git fetch origin <span class="keyword">master</span>  <span class="title">#抓取远程仓库信息</span></span><br><span class="line"><span class="title">    git</span> merge origin/<span class="keyword">master</span>  <span class="title">#将抓取的远程仓库信息合并到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">sudo</span> su  <span class="comment"># 管理员身份执行命令</span></span><br><span class="line"></span><br><span class="line">vim <span class="number">0123</span>.txt  <span class="comment">#修改文件0123.txt   按 i 进入修改模式，修改完成后 shift+z+z 退出编辑状态并保存</span></span><br><span class="line">git reflog   <span class="comment">#查看文件的版本信息</span></span><br><span class="line">git log   <span class="comment">#查看详细的版本信息</span></span><br><span class="line">cat <span class="number">0123</span>.rtf   <span class="comment">#查看文件详细内容</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">远程仓库克隆链接   #克隆远程仓库信息到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">touch</span> .gitignore  <span class="comment">#输入git命令 touch .gitignore 回车之后会发现文件中已经成功创建了.gitignore文件(忽略文件命令)  </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Git-reset-三种模式"><a href="#Git-reset-三种模式" class="headerlink" title="Git reset 三种模式"></a>Git reset 三种模式</h2><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/git-reset-%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F.jpg" alt="git-reset-三种模式" style="zoom: 33%;" />
+
+
+
+<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--soft</span>  <span class="comment">#回到之前版本的同时保留工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--hard</span>  <span class="comment">#回到之前版本的同时删除工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--mixed</span>  <span class="comment">#回到之前版本的同时保留工作区所有内容，删除暂存区的所有内容</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="git-rm-删除文件"><a href="#git-rm-删除文件" class="headerlink" title="git rm 删除文件"></a>git rm 删除文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> 123.md   <span class="comment">#删除工作区和暂存区的文件123.md</span></span><br><span class="line">git <span class="built_in">rm</span> --cached 123.md   <span class="comment">#删除暂存区的文件123.md,不删除本地文件</span></span><br><span class="line">git commit -m <span class="string">&quot;123.md&quot;</span>  <span class="comment">#删除文件后，执行提交命令。否则该删除文件还存在于暂存区</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MAC系统安装gitee步骤</title>
     <url>/2023/08/12/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/</url>
     <content><![CDATA[<h2 id="一、Git下载安装"><a href="#一、Git下载安装" class="headerlink" title="一、Git下载安装"></a>一、Git下载安装</h2><ol>
@@ -340,28 +362,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git基本语法</title>
-    <url>/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git init  <span class="comment">#创建仓库</span></span><br><span class="line">ls  <span class="comment">#查看仓库文件</span></span><br><span class="line">ls -a  <span class="comment">#查看仓库所有文件 包括隐藏文件</span></span><br><span class="line">git status  <span class="comment">#查看仓库状态</span></span><br><span class="line">git add .  <span class="comment">#添加所有文件到暂存区</span></span><br><span class="line">git add 文件名  <span class="comment">#添加名称为“文件名”的文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;写一句描述该文件夹的信息&quot;</span>  <span class="comment">#提交暂存区的文件</span></span><br><span class="line">git push origin <span class="keyword">master</span>  <span class="title">#上传本地信息 到 远程仓库</span></span><br><span class="line"><span class="title">git</span> pull origin <span class="keyword">master</span>  <span class="title">#拉取远程仓库信息 合并到本地</span></span><br><span class="line"><span class="title">    pull</span>=fetch+merge</span><br><span class="line">    git fetch origin <span class="keyword">master</span>  <span class="title">#抓取远程仓库信息</span></span><br><span class="line"><span class="title">    git</span> merge origin/<span class="keyword">master</span>  <span class="title">#将抓取的远程仓库信息合并到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">sudo</span> su  <span class="comment"># 管理员身份执行命令</span></span><br><span class="line"></span><br><span class="line">vim <span class="number">0123</span>.txt  <span class="comment">#修改文件0123.txt   按 i 进入修改模式，修改完成后 shift+z+z 退出编辑状态并保存</span></span><br><span class="line">git reflog   <span class="comment">#查看文件的版本信息</span></span><br><span class="line">git log   <span class="comment">#查看详细的版本信息</span></span><br><span class="line">cat <span class="number">0123</span>.rtf   <span class="comment">#查看文件详细内容</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">远程仓库克隆链接   #克隆远程仓库信息到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">touch</span> .gitignore  <span class="comment">#输入git命令 touch .gitignore 回车之后会发现文件中已经成功创建了.gitignore文件(忽略文件命令)  </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="Git-reset-三种模式"><a href="#Git-reset-三种模式" class="headerlink" title="Git reset 三种模式"></a>Git reset 三种模式</h2><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/git-reset-%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F.jpg" alt="git-reset-三种模式" style="zoom: 33%;" />
-
-
-
-<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--soft</span>  <span class="comment">#回到之前版本的同时保留工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--hard</span>  <span class="comment">#回到之前版本的同时删除工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--mixed</span>  <span class="comment">#回到之前版本的同时保留工作区所有内容，删除暂存区的所有内容</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="git-rm-删除文件"><a href="#git-rm-删除文件" class="headerlink" title="git rm 删除文件"></a>git rm 删除文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> 123.md   <span class="comment">#删除工作区和暂存区的文件123.md</span></span><br><span class="line">git <span class="built_in">rm</span> --cached 123.md   <span class="comment">#删除暂存区的文件123.md,不删除本地文件</span></span><br><span class="line">git commit -m <span class="string">&quot;123.md&quot;</span>  <span class="comment">#删除文件后，执行提交命令。否则该删除文件还存在于暂存区</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>人性本然流露</title>
     <url>/2023/08/11/%E4%BA%BA%E6%80%A7%E6%9C%AC%E7%84%B6%E6%B5%81/</url>
     <content><![CDATA[<p><code>妙喜莲慈</code></p>
@@ -492,6 +492,36 @@
       </tags>
   </entry>
   <entry>
+    <title>回家</title>
+    <url>/2022/11/10/%E5%9B%9E%E5%AE%B6/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>本人住山也有四五年之久了，一些善友们经常见面就问我需要什么？缺什么？我说什么也不需要，有口简单的食物填饱肚子就可以了，我长了四十一年终于知道自己想要什么了？</p>
+<span id="more"></span>
+
+<p>在过去的日子里想要钱财和物质，当我得到它们的时候并不快乐，只是暂时的一点满足感而已。当我失去物质和金钱的时候，我会烦恼。后来，我闻到佛法，走了修行路，才知道自己真正想要什么，那就是回家。我说的家不是那个高楼大厦，华丽的墙皮。我说的回家是回归自性，回归本性，让自己为自己生命做一次真正的主人，不被金钱和物质所牵跑的灵魂，不被七情六欲所牵跑的灵魂。我永远要做真实的自己，外在得到的一切即如一场梦，在得到和失去中摇摆不定。因为我没有办法做个守财的奴隶，也没办法掌控我所得到的东西不会失去，所以我只能对自己的生命负责，这才是我人生最有价值的无价之宝。当我明白这个道理后，写出来供有缘人反醒。</p>
+<p>很多人会说像这样活着没有意义，那您的烦烦恼恼的生活难道就很有味道吗？您没有进入这种生活的话，没有真正体会过，就没有资格谈论。欢迎所有人回家。</p>
+<p>其实人一生得到的并不多，也就是吃饱穿暖有个遮风避雨的地方，别劳心费力的，到死的时候才明白带不走任何东西，那就亏大了。因为被物质做了您的主人，同时也让烦恼做了您的主人，自己这主人反而变成了游客，这就是佛法最高尚也是最简单的地方。</p>
+<p>南无阿弥陀佛</p>
+<p>南无大慈大悲救苦救难观世音菩萨            </p>
+]]></content>
+      <categories>
+        <category>清净自性</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>因果</title>
+    <url>/2023/07/08/%E5%9B%A0%E6%9E%9C/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>每个人都有因果，信不信佛都有，只是有的人马上因果就显了，有的人积累在一起爆发因果，大部分人都是积累在某一个时候爆发。你以为不修佛就不用承担因果了？只是修行的人知道因果，不修行的人不相信因果，可是<strong>因果是和我们的生命是相连的</strong>。</p>
+<span id="more"></span>
+
+<p>老百姓叫善有善报，恶有恶报，时候到没到而已。<strong>因果从来没有饶过任何一个人</strong>。愚痴的人拼命造恶因求菩萨得到好的果。智慧的人不敢造恶，因为未来不知道啥时候果报现前的时候让人措手不及，最不想失去的东西到时候就失去了。这么多明星精神出问题还不能让人睡醒，以为有钱啥都可以解决，这么多人有钱有名有利解决精神上的问题了吗？</p>
+]]></content>
+      <categories>
+        <category>因果</category>
+      </categories>
+  </entry>
+  <entry>
     <title>妙喜莲慈自述</title>
     <url>/2023/08/06/%E5%A6%99%E5%96%9C%E8%8E%B2%E6%85%88%E8%87%AA%E8%BF%B0/</url>
     <content><![CDATA[<p><code>妙喜莲慈</code></p>
@@ -515,19 +545,6 @@
 ]]></content>
       <categories>
         <category>自述</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>因果</title>
-    <url>/2023/07/08/%E5%9B%A0%E6%9E%9C/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>每个人都有因果，信不信佛都有，只是有的人马上因果就显了，有的人积累在一起爆发因果，大部分人都是积累在某一个时候爆发。你以为不修佛就不用承担因果了？只是修行的人知道因果，不修行的人不相信因果，可是<strong>因果是和我们的生命是相连的</strong>。</p>
-<span id="more"></span>
-
-<p>老百姓叫善有善报，恶有恶报，时候到没到而已。<strong>因果从来没有饶过任何一个人</strong>。愚痴的人拼命造恶因求菩萨得到好的果。智慧的人不敢造恶，因为未来不知道啥时候果报现前的时候让人措手不及，最不想失去的东西到时候就失去了。这么多明星精神出问题还不能让人睡醒，以为有钱啥都可以解决，这么多人有钱有名有利解决精神上的问题了吗？</p>
-]]></content>
-      <categories>
-        <category>因果</category>
       </categories>
   </entry>
   <entry>
