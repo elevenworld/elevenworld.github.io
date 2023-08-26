@@ -1,6 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python数值类型</title>
+    <url>/2023/08/12/python%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="整数类型int"><a href="#整数类型int" class="headerlink" title="整数类型int"></a>整数类型int</h2><p>英文为integer，简写为int，可以表示正数、负数和零。</p>
+<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">整数可以表示为二进制、八进制、十进制、十六进制</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;十进制&quot;</span>, <span class="number">119</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;二进制&quot;</span>, <span class="number">0b01010111001</span>)   #二进制以<span class="number">0b</span>开头</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;八进制&quot;</span>, <span class="number">0o327</span>)           #八进制以<span class="number">0o</span>开头</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;十六进制&quot;</span>, <span class="number">0x2ADE</span>)        #十六进制以<span class="number">0x</span>开头</span><br><span class="line"></span><br><span class="line">十进制 <span class="number">119</span></span><br><span class="line">二进制 <span class="number">697</span></span><br><span class="line">八进制 <span class="number">215</span></span><br><span class="line">十六进制 <span class="number">10974</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>进制</th>
+<th>基本数</th>
+<th>逢几进一</th>
+<th>表示形式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>十进制</td>
+<td>0,1,2,3,4,5,6,7,8,9</td>
+<td>10</td>
+<td>118</td>
+</tr>
+<tr>
+<td>二进制</td>
+<td>0,1</td>
+<td>2</td>
+<td>0b1110110</td>
+</tr>
+<tr>
+<td>八进制</td>
+<td>0,1,2,3,4,5,6,7</td>
+<td>8</td>
+<td>0o166</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F</td>
+<td>16</td>
+<td>0x76</td>
+</tr>
+</tbody></table>
+<span id="more"></span>
+
+
+
+<h2 id="浮点类型float"><a href="#浮点类型float" class="headerlink" title="浮点类型float"></a>浮点类型float</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">b = 10</span><br><span class="line">print (&quot;这是一个浮点数-&gt;&quot;,b)</span><br><span class="line"></span><br><span class="line">print (type(a))   #type 用来查看数值类型</span><br><span class="line">print (type(b))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="浮点数精度"><a href="#浮点数精度" class="headerlink" title="浮点数精度"></a>浮点数精度</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">n1 = 1.1</span><br><span class="line">n2 = 2.2</span><br><span class="line">n3 = 2.1</span><br><span class="line"></span><br><span class="line">print(n1 + n2)</span><br><span class="line">3.3000000000000003       # 极个别浮点数会出现不精确的问题</span><br><span class="line"></span><br><span class="line">print(n1 + n3)</span><br><span class="line">3.2</span><br><span class="line"></span><br><span class="line">from decimal import Decimal       #通过导入模块decimal，解决不精确的问题</span><br><span class="line">print(Decimal(&quot;1.1&quot;) + Decimal(&quot;2.2&quot;))</span><br><span class="line">3.3</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="布尔类型bool"><a href="#布尔类型bool" class="headerlink" title="布尔类型bool"></a>布尔类型bool</h2><h3 id="用来表示真或假的值"><a href="#用来表示真或假的值" class="headerlink" title="用来表示真或假的值"></a>用来表示真或假的值</h3><ul>
+<li>True表示真</li>
+<li>False表示假</li>
+</ul>
+<h3 id="布尔值可以转化为整数"><a href="#布尔值可以转化为整数" class="headerlink" title="布尔值可以转化为整数"></a>布尔值可以转化为整数</h3><ul>
+<li>Ture 表示整数 1</li>
+<li>False 表示整数0</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">f1 = True</span><br><span class="line">f2 = False</span><br><span class="line">print(f1, type(f1))</span><br><span class="line">print(f2, type(f2))</span><br><span class="line"></span><br><span class="line">True &lt;<span class="keyword">class</span> &#x27;<span class="symbol">bool</span>&#x27;&gt;</span><br><span class="line"><span class="symbol">False</span> &lt;<span class="symbol">class</span> &#x27;<span class="symbol">bool</span>&#x27;&gt;</span><br><span class="line"></span><br><span class="line">#布尔值可以转成整数计算</span><br><span class="line"></span><br><span class="line"><span class="symbol">print</span>(<span class="symbol">f1</span> + <span class="symbol">1</span>)      # <span class="symbol">1</span>+<span class="symbol">1</span>的结果为<span class="symbol">2</span>，说明<span class="symbol">True</span>表示<span class="symbol">1</span></span><br><span class="line"><span class="symbol">print</span>(<span class="symbol">f2</span> + <span class="symbol">1</span>)      # <span class="symbol">0</span>+<span class="symbol">1</span>的结果为<span class="symbol">1</span>，说明<span class="symbol">False</span>表示<span class="symbol">0</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">2</span></span><br><span class="line"><span class="symbol">1</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>将不同数据类型的数据拼接在一起</p>
+<figure class="highlight elm"><table><tr><td class="code"><pre><span class="line"><span class="title">d</span> = <span class="number">1</span> + <span class="number">1</span></span><br><span class="line"><span class="title">print</span> (d, <span class="keyword">type</span>(d))</span><br><span class="line"></span><br><span class="line"><span class="title">e</span> = <span class="number">1.0</span> + <span class="number">1.0</span></span><br><span class="line"><span class="title">print</span> (e,<span class="keyword">type</span>(e))</span><br><span class="line"></span><br><span class="line"><span class="title">f</span> = <span class="number">1</span> + <span class="number">1.0</span>  #隐式转换 <span class="comment">--- 默认转换</span></span><br><span class="line"><span class="title">print</span> (f,<span class="keyword">type</span>(f))</span><br><span class="line"></span><br><span class="line"><span class="title">num</span> = <span class="number">1</span></span><br><span class="line"><span class="title">g</span> = float (num)</span><br><span class="line"><span class="title">print</span> (g,<span class="keyword">type</span>(g))</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>作用</th>
+<th>注意事项</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>str()</td>
+<td>将其它数据类型转成字符串</td>
+<td>也可用引号转换</td>
+<td>str(123)<br />“123”</td>
+</tr>
+<tr>
+<td>Int()</td>
+<td>将其它数据类型转成整数</td>
+<td>1.文字类和小数类字符串，无法转化为整数<br />2.浮点数转化成整数，抹零取整</td>
+<td>int(“123”)<br />int(9.8)</td>
+</tr>
+<tr>
+<td>float()</td>
+<td>将其它数据类型转成浮点数</td>
+<td>1.文字类无法转成整数<br />2.整数转成浮点数，末尾为0</td>
+<td>float(”9.9“)<br />float(9)</td>
+</tr>
+</tbody></table>
+<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.jpg" alt="类型转换"></p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">age = <span class="number">20</span></span><br><span class="line"></span><br><span class="line">print(type(name))</span><br><span class="line">print(type(age))</span><br><span class="line">&lt;<span class="keyword">class</span> &#x27;<span class="symbol">str</span>&#x27;&gt;</span><br><span class="line">&lt;<span class="symbol">class</span> &#x27;<span class="symbol">int</span>&#x27;&gt;   #<span class="symbol">name</span> 和 <span class="symbol">age</span>数据类型不相同</span><br><span class="line"></span><br><span class="line"><span class="symbol">print</span>（我叫+”<span class="symbol">name</span>&quot;+“今年，”+<span class="symbol">age</span>+“岁”）</span><br><span class="line"><span class="symbol">SyntaxError: <span class="symbol">invalid</span></span> <span class="symbol">character</span> <span class="symbol">in</span> <span class="symbol">identifier</span></span><br><span class="line">#程序报错，说明 字符串和整数无法连接。</span><br><span class="line">解决方案：类型转换</span><br><span class="line"></span><br><span class="line"><span class="symbol">print</span>(&quot;我叫&quot; + &quot;<span class="symbol">name</span>&quot; + &quot;,今年&quot; + <span class="symbol">str</span>(<span class="symbol">age</span>) + &quot;岁&quot;)</span><br><span class="line">#将<span class="symbol">int</span>类型通过<span class="symbol">str</span>()函数转成了<span class="symbol">str</span>类型</span><br><span class="line"></span><br><span class="line">我叫<span class="symbol">name,</span>今年<span class="symbol">20</span>岁</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">------------str()将其它类型转成str类型------------</span><br><span class="line"></span><br><span class="line">a = 10</span><br><span class="line">b = 198.8</span><br><span class="line">c = False</span><br><span class="line">print(type(a), type(b), type(c))</span><br><span class="line">&lt;class &#x27;int&#x27;&gt; &lt;class &#x27;float&#x27;&gt; &lt;class &#x27;bool&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(str(a), str(b), str(c))</span><br><span class="line">print(type(str(a)), type(str(b)), type(str(c)))</span><br><span class="line">10 198.8 False</span><br><span class="line">&lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------int()将其它类型转成int类型------------</span><br><span class="line"></span><br><span class="line">s1 = &quot;128&quot;</span><br><span class="line">f1 = 98.7</span><br><span class="line">s2 = &quot;76.77&quot;</span><br><span class="line">ff = True</span><br><span class="line">s3 = &quot;hello&quot;</span><br><span class="line"></span><br><span class="line">print(type(s1), type(f1), type(s2), type(ff), type(s3))</span><br><span class="line"></span><br><span class="line">print(int(s1), type(int(s1)))  #将str转成int类型，字符串为数字串</span><br><span class="line">128 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(int(f1), type(int(f1)))  #将float转成int类型，截取整数部分，舍掉小数部分</span><br><span class="line">98 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(int(s2), type(int(s2)))  #将str转成int类型，报错，因为字符串为小数串</span><br><span class="line">ValueError: invalid literal for int() with base 10: &#x27;76.77&#x27;</span><br><span class="line"></span><br><span class="line">print(int(ff), type(int(ff)))</span><br><span class="line">1 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(int(s3), type(int(s3)))   #将str转成int类型，字符串必须为数字串(整数)，非数字串不可转换</span><br><span class="line">ValueError: invalid literal for int() with base 10: &#x27;hello&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------float()将其它类型转成float类型------------</span><br><span class="line"></span><br><span class="line">s1 = &quot;128.98&quot;</span><br><span class="line">s2 = &quot;76&quot;</span><br><span class="line">ff = True</span><br><span class="line">i = 98</span><br><span class="line">s3 = &quot;hello&quot;</span><br><span class="line"></span><br><span class="line">print(type(s1), type(s2), type(ff), type(s3), type(i))</span><br><span class="line">&lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt; &lt;class &#x27;bool&#x27;&gt; &lt;class &#x27;str&#x27;&gt; &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(float(s1), type(float(s1)))</span><br><span class="line">print(float(s2), type(float(s2)))</span><br><span class="line">print(float(ff), type(float(ff)))</span><br><span class="line">print(float(i), type(float(i)))</span><br><span class="line">128.98 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line">76.0 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line">1.0 &lt;class &#x27;float&#x27;&gt; </span><br><span class="line">98.0 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(float(s3), type(float(s3)))  #字符串中的数字如果是非数字串，则不允许转换</span><br><span class="line">ValueError: could not convert string to float: &#x27;hello&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MAC系统安装gitee步骤</title>
+    <url>/2023/08/12/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/</url>
+    <content><![CDATA[<h2 id="一、Git下载安装"><a href="#一、Git下载安装" class="headerlink" title="一、Git下载安装"></a>一、Git下载安装</h2><ol>
+<li><a href="https://git-scm.com/download/mac">git官网</a>下载git安装包</li>
+</ol>
+<p>​		点击Binary installer下的 installer选择安装包下载</p>
+<p>​		在MAC 客户端 输入<code> git version</code> 查看git是否安装成功</p>
+<span id="more"></span>
+
+<ol start="2">
+<li>在<a href="https://gitee.com/">gitee官网</a>注册账户并登陆</li>
+</ol>
+<h2 id="二、配置公钥"><a href="#二、配置公钥" class="headerlink" title="二、配置公钥"></a>二、配置公钥</h2><p>如果不配置公钥，每次上传文件到远程仓库都需要用户名和密码验证。</p>
+<p>点击查看<a href="https://help.gitee.com/base/account/SSH%E5%85%AC%E9%92%A5%E8%AE%BE%E7%BD%AE">SSH公钥配置</a></p>
+<ol>
+<li>复制一下命令，去git终端执行生成 SSH Key：</li>
+</ol>
+<figure class="highlight excel"><table><tr><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> <span class="symbol">ed25519</span> -C <span class="string">&quot;181822826@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>注：”Gitee SSH Key”可以任意命名</p>
+<p>输出，如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Generating public/private ed25519 key pair.</span><br><span class="line">Enter file in which to save the key (/home/git/.ssh/id_ed25519):</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /home/git/.ssh/id_ed25519</span><br><span class="line">Your public key has been saved in /home/git/.ssh/id_ed25519.pub</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:ohDd0OK5WG2dx4gST/j35HjvlJlGHvihyY+Msl6IC8I Gitee SSH Key</span><br><span class="line">The key&#x27;s randomart image is:</span><br><span class="line">+--[ED25519 256]--+</span><br><span class="line">|    .o           |</span><br><span class="line">|   .+oo          |</span><br><span class="line">|  ...O.o +       |</span><br><span class="line">|   .= * = +.     |</span><br><span class="line">|  .o +..S*. +    |</span><br><span class="line">|. ...o o..+* *   |</span><br><span class="line">|.E. o . ..+.O    |</span><br><span class="line">| . . ... o =.    |</span><br><span class="line">|    ..oo. o.o    |</span><br><span class="line">+----[SHA256]-----+</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>中间通过三次<strong>回车键</strong>确定</li>
+</ul>
+<ol start="2">
+<li>查看生成的 SSH 公钥和私钥：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/Users/xiejincheng/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>进入上面地址文件夹，找到文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">id_ed25519  id_ed25519.pub</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>私钥文件 <code>id_ed25519</code></li>
+<li>公钥文件 <code>id_ed25519.pub</code></li>
+</ul>
+<ol start="3">
+<li>用记事本打开<em><strong>公钥文件</strong></em> <code>id_ed25519.pub</code>，复制公钥</li>
+</ol>
+<p>​	将公钥粘贴到 gitee 后台公钥文本框内，标题命名，如：Python Study</p>
+<p>确认公钥是否成功添加，</p>
+<p>​	在终端输入</p>
+<p>​	<code> ssh -T git@gitee.com</code></p>
+<p>​	然后输入：yes</p>
+<p>​	显示以下内容，则成功</p>
+<p>​	<code>Hi USERNAME! You&#39;ve successfully authenticated, but GITEE.COM does not provide shell 			access.</code></p>
+<h2 id="三、新建仓库"><a href="#三、新建仓库" class="headerlink" title="三、新建仓库"></a>三、新建仓库</h2><ol>
+<li><p>仓库名称：Python Study</p>
+</li>
+<li><p>点击创建</p>
+</li>
+<li><p>输入配置（只需要配置一次，后面不需要再配置）</p>
+<p>分别在终端输入执行以下两句代码</p>
+<p>Git 全局设置:</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.name</span> <span class="string">&quot;ELEVENWORLD&quot;</span></span><br><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.email</span> <span class="string">&quot;181822826@qq.com&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="四、下载远程仓库到电脑"><a href="#四、下载远程仓库到电脑" class="headerlink" title="四、下载远程仓库到电脑"></a>四、下载远程仓库到电脑</h2><p>​	Https 和 ssh 都可以，这里我们选择 ssh ,复制地址</p>
+<p>​	在终端执行下载命令</p>
+<p>​	<code> git clone git@gitee.com:elevenworld/wef.git</code></p>
+<p>​	在电脑文件夹 &#x2F;Users&#x2F;xiejincheng 可看到下载的远程仓库文件夹Python Study</p>
+<h2 id="五、文件上传至远程仓库"><a href="#五、文件上传至远程仓库" class="headerlink" title="五、文件上传至远程仓库"></a>五、文件上传至远程仓库</h2><p>​	在Python Study放入需要上传的文件</p>
+<p>​	 当前终端地址为桌面，在当前终端输入</p>
+<p>​	<code>cd Python Study</code></p>
+<p>​	将终端地址切换至Python Study文件夹</p>
+<p>​	分别输入以下三个命令</p>
+<ul>
+<li><code> git add .</code>    把所有内容放进暂存区</li>
+<li><code> git commit -m &quot;写一句描述该文件夹的信息&quot;</code></li>
+<li><code>git push origin master</code></li>
+</ul>
+<h2 id="六、从仓库下载到电脑"><a href="#六、从仓库下载到电脑" class="headerlink" title="六、从仓库下载到电脑"></a>六、从仓库下载到电脑</h2><p>进入远程仓库，复制https地址</p>
+<p><a href="https://gitee.com/elevenworld/phython-study.git">https://gitee.com/elevenworld/phython-study.git</a></p>
+<p>将该地址输入终端 即可执行下载远程仓库内文件</p>
+<p>在终端输入以下信息：</p>
+<p><code> git clone https://gitee.com/elevenworld/phython-study.git</code></p>
+]]></content>
+      <tags>
+        <tag>gitee</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git基本语法</title>
+    <url>/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git init  <span class="comment">#创建仓库</span></span><br><span class="line">ls  <span class="comment">#查看仓库文件</span></span><br><span class="line">ls -a  <span class="comment">#查看仓库所有文件 包括隐藏文件</span></span><br><span class="line">git status  <span class="comment">#查看仓库状态</span></span><br><span class="line">git add .  <span class="comment">#添加所有文件到暂存区</span></span><br><span class="line">git add 文件名  <span class="comment">#添加名称为“文件名”的文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;写一句描述该文件夹的信息&quot;</span>  <span class="comment">#提交暂存区的文件</span></span><br><span class="line">git push origin <span class="keyword">master</span>  <span class="title">#上传本地信息 到 远程仓库</span></span><br><span class="line"><span class="title">git</span> pull origin <span class="keyword">master</span>  <span class="title">#拉取远程仓库信息 合并到本地</span></span><br><span class="line"><span class="title">    pull</span>=fetch+merge</span><br><span class="line">    git fetch origin <span class="keyword">master</span>  <span class="title">#抓取远程仓库信息</span></span><br><span class="line"><span class="title">    git</span> merge origin/<span class="keyword">master</span>  <span class="title">#将抓取的远程仓库信息合并到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">sudo</span> su  <span class="comment"># 管理员身份执行命令</span></span><br><span class="line"></span><br><span class="line">vim <span class="number">0123</span>.txt  <span class="comment">#修改文件0123.txt   按 i 进入修改模式，修改完成后 shift+z+z 退出编辑状态并保存</span></span><br><span class="line">git reflog   <span class="comment">#查看文件的版本信息</span></span><br><span class="line">git log   <span class="comment">#查看详细的版本信息</span></span><br><span class="line">cat <span class="number">0123</span>.rtf   <span class="comment">#查看文件详细内容</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">远程仓库克隆链接   #克隆远程仓库信息到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">touch</span> .gitignore  <span class="comment">#输入git命令 touch .gitignore 回车之后会发现文件中已经成功创建了.gitignore文件(忽略文件命令)  </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Git-reset-三种模式"><a href="#Git-reset-三种模式" class="headerlink" title="Git reset 三种模式"></a>Git reset 三种模式</h2><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/git-reset-%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F.jpg" alt="git-reset-三种模式" style="zoom: 33%;" />
+
+
+
+<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--soft</span>  <span class="comment">#回到之前版本的同时保留工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--hard</span>  <span class="comment">#回到之前版本的同时删除工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--mixed</span>  <span class="comment">#回到之前版本的同时保留工作区所有内容，删除暂存区的所有内容</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="git-rm-删除文件"><a href="#git-rm-删除文件" class="headerlink" title="git rm 删除文件"></a>git rm 删除文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> 123.md   <span class="comment">#删除工作区和暂存区的文件123.md</span></span><br><span class="line">git <span class="built_in">rm</span> --cached 123.md   <span class="comment">#删除暂存区的文件123.md,不删除本地文件</span></span><br><span class="line">git commit -m <span class="string">&quot;123.md&quot;</span>  <span class="comment">#删除文件后，执行提交命令。否则该删除文件还存在于暂存区</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux命令</title>
     <url>/2023/08/15/Linux%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="常用Linux命令"><a href="#常用Linux命令" class="headerlink" title="常用Linux命令"></a>常用Linux命令</h1><table>
@@ -154,109 +362,6 @@
       </tags>
   </entry>
   <entry>
-    <title>python数值类型</title>
-    <url>/2023/08/12/python%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h2 id="整数类型int"><a href="#整数类型int" class="headerlink" title="整数类型int"></a>整数类型int</h2><p>英文为integer，简写为int，可以表示正数、负数和零。</p>
-<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">整数可以表示为二进制、八进制、十进制、十六进制</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;十进制&quot;</span>, <span class="number">119</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;二进制&quot;</span>, <span class="number">0b01010111001</span>)   #二进制以<span class="number">0b</span>开头</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;八进制&quot;</span>, <span class="number">0o327</span>)           #八进制以<span class="number">0o</span>开头</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;十六进制&quot;</span>, <span class="number">0x2ADE</span>)        #十六进制以<span class="number">0x</span>开头</span><br><span class="line"></span><br><span class="line">十进制 <span class="number">119</span></span><br><span class="line">二进制 <span class="number">697</span></span><br><span class="line">八进制 <span class="number">215</span></span><br><span class="line">十六进制 <span class="number">10974</span></span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>进制</th>
-<th>基本数</th>
-<th>逢几进一</th>
-<th>表示形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>十进制</td>
-<td>0,1,2,3,4,5,6,7,8,9</td>
-<td>10</td>
-<td>118</td>
-</tr>
-<tr>
-<td>二进制</td>
-<td>0,1</td>
-<td>2</td>
-<td>0b1110110</td>
-</tr>
-<tr>
-<td>八进制</td>
-<td>0,1,2,3,4,5,6,7</td>
-<td>8</td>
-<td>0o166</td>
-</tr>
-<tr>
-<td>十六进制</td>
-<td>0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F</td>
-<td>16</td>
-<td>0x76</td>
-</tr>
-</tbody></table>
-<span id="more"></span>
-
-
-
-<h2 id="浮点类型float"><a href="#浮点类型float" class="headerlink" title="浮点类型float"></a>浮点类型float</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">b = 10</span><br><span class="line">print (&quot;这是一个浮点数-&gt;&quot;,b)</span><br><span class="line"></span><br><span class="line">print (type(a))   #type 用来查看数值类型</span><br><span class="line">print (type(b))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="浮点数精度"><a href="#浮点数精度" class="headerlink" title="浮点数精度"></a>浮点数精度</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">n1 = 1.1</span><br><span class="line">n2 = 2.2</span><br><span class="line">n3 = 2.1</span><br><span class="line"></span><br><span class="line">print(n1 + n2)</span><br><span class="line">3.3000000000000003       # 极个别浮点数会出现不精确的问题</span><br><span class="line"></span><br><span class="line">print(n1 + n3)</span><br><span class="line">3.2</span><br><span class="line"></span><br><span class="line">from decimal import Decimal       #通过导入模块decimal，解决不精确的问题</span><br><span class="line">print(Decimal(&quot;1.1&quot;) + Decimal(&quot;2.2&quot;))</span><br><span class="line">3.3</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="布尔类型bool"><a href="#布尔类型bool" class="headerlink" title="布尔类型bool"></a>布尔类型bool</h2><h3 id="用来表示真或假的值"><a href="#用来表示真或假的值" class="headerlink" title="用来表示真或假的值"></a>用来表示真或假的值</h3><ul>
-<li>True表示真</li>
-<li>False表示假</li>
-</ul>
-<h3 id="布尔值可以转化为整数"><a href="#布尔值可以转化为整数" class="headerlink" title="布尔值可以转化为整数"></a>布尔值可以转化为整数</h3><ul>
-<li>Ture 表示整数 1</li>
-<li>False 表示整数0</li>
-</ul>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">f1 = True</span><br><span class="line">f2 = False</span><br><span class="line">print(f1, type(f1))</span><br><span class="line">print(f2, type(f2))</span><br><span class="line"></span><br><span class="line">True &lt;<span class="keyword">class</span> &#x27;<span class="symbol">bool</span>&#x27;&gt;</span><br><span class="line"><span class="symbol">False</span> &lt;<span class="symbol">class</span> &#x27;<span class="symbol">bool</span>&#x27;&gt;</span><br><span class="line"></span><br><span class="line">#布尔值可以转成整数计算</span><br><span class="line"></span><br><span class="line"><span class="symbol">print</span>(<span class="symbol">f1</span> + <span class="symbol">1</span>)      # <span class="symbol">1</span>+<span class="symbol">1</span>的结果为<span class="symbol">2</span>，说明<span class="symbol">True</span>表示<span class="symbol">1</span></span><br><span class="line"><span class="symbol">print</span>(<span class="symbol">f2</span> + <span class="symbol">1</span>)      # <span class="symbol">0</span>+<span class="symbol">1</span>的结果为<span class="symbol">1</span>，说明<span class="symbol">False</span>表示<span class="symbol">0</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">2</span></span><br><span class="line"><span class="symbol">1</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>将不同数据类型的数据拼接在一起</p>
-<figure class="highlight elm"><table><tr><td class="code"><pre><span class="line"><span class="title">d</span> = <span class="number">1</span> + <span class="number">1</span></span><br><span class="line"><span class="title">print</span> (d, <span class="keyword">type</span>(d))</span><br><span class="line"></span><br><span class="line"><span class="title">e</span> = <span class="number">1.0</span> + <span class="number">1.0</span></span><br><span class="line"><span class="title">print</span> (e,<span class="keyword">type</span>(e))</span><br><span class="line"></span><br><span class="line"><span class="title">f</span> = <span class="number">1</span> + <span class="number">1.0</span>  #隐式转换 <span class="comment">--- 默认转换</span></span><br><span class="line"><span class="title">print</span> (f,<span class="keyword">type</span>(f))</span><br><span class="line"></span><br><span class="line"><span class="title">num</span> = <span class="number">1</span></span><br><span class="line"><span class="title">g</span> = float (num)</span><br><span class="line"><span class="title">print</span> (g,<span class="keyword">type</span>(g))</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>作用</th>
-<th>注意事项</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>str()</td>
-<td>将其它数据类型转成字符串</td>
-<td>也可用引号转换</td>
-<td>str(123)<br />“123”</td>
-</tr>
-<tr>
-<td>Int()</td>
-<td>将其它数据类型转成整数</td>
-<td>1.文字类和小数类字符串，无法转化为整数<br />2.浮点数转化成整数，抹零取整</td>
-<td>int(“123”)<br />int(9.8)</td>
-</tr>
-<tr>
-<td>float()</td>
-<td>将其它数据类型转成浮点数</td>
-<td>1.文字类无法转成整数<br />2.整数转成浮点数，末尾为0</td>
-<td>float(”9.9“)<br />float(9)</td>
-</tr>
-</tbody></table>
-<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.jpg" alt="类型转换"></p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">age = <span class="number">20</span></span><br><span class="line"></span><br><span class="line">print(type(name))</span><br><span class="line">print(type(age))</span><br><span class="line">&lt;<span class="keyword">class</span> &#x27;<span class="symbol">str</span>&#x27;&gt;</span><br><span class="line">&lt;<span class="symbol">class</span> &#x27;<span class="symbol">int</span>&#x27;&gt;   #<span class="symbol">name</span> 和 <span class="symbol">age</span>数据类型不相同</span><br><span class="line"></span><br><span class="line"><span class="symbol">print</span>（我叫+”<span class="symbol">name</span>&quot;+“今年，”+<span class="symbol">age</span>+“岁”）</span><br><span class="line"><span class="symbol">SyntaxError: <span class="symbol">invalid</span></span> <span class="symbol">character</span> <span class="symbol">in</span> <span class="symbol">identifier</span></span><br><span class="line">#程序报错，说明 字符串和整数无法连接。</span><br><span class="line">解决方案：类型转换</span><br><span class="line"></span><br><span class="line"><span class="symbol">print</span>(&quot;我叫&quot; + &quot;<span class="symbol">name</span>&quot; + &quot;,今年&quot; + <span class="symbol">str</span>(<span class="symbol">age</span>) + &quot;岁&quot;)</span><br><span class="line">#将<span class="symbol">int</span>类型通过<span class="symbol">str</span>()函数转成了<span class="symbol">str</span>类型</span><br><span class="line"></span><br><span class="line">我叫<span class="symbol">name,</span>今年<span class="symbol">20</span>岁</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">------------str()将其它类型转成str类型------------</span><br><span class="line"></span><br><span class="line">a = 10</span><br><span class="line">b = 198.8</span><br><span class="line">c = False</span><br><span class="line">print(type(a), type(b), type(c))</span><br><span class="line">&lt;class &#x27;int&#x27;&gt; &lt;class &#x27;float&#x27;&gt; &lt;class &#x27;bool&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(str(a), str(b), str(c))</span><br><span class="line">print(type(str(a)), type(str(b)), type(str(c)))</span><br><span class="line">10 198.8 False</span><br><span class="line">&lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------int()将其它类型转成int类型------------</span><br><span class="line"></span><br><span class="line">s1 = &quot;128&quot;</span><br><span class="line">f1 = 98.7</span><br><span class="line">s2 = &quot;76.77&quot;</span><br><span class="line">ff = True</span><br><span class="line">s3 = &quot;hello&quot;</span><br><span class="line"></span><br><span class="line">print(type(s1), type(f1), type(s2), type(ff), type(s3))</span><br><span class="line"></span><br><span class="line">print(int(s1), type(int(s1)))  #将str转成int类型，字符串为数字串</span><br><span class="line">128 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(int(f1), type(int(f1)))  #将float转成int类型，截取整数部分，舍掉小数部分</span><br><span class="line">98 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(int(s2), type(int(s2)))  #将str转成int类型，报错，因为字符串为小数串</span><br><span class="line">ValueError: invalid literal for int() with base 10: &#x27;76.77&#x27;</span><br><span class="line"></span><br><span class="line">print(int(ff), type(int(ff)))</span><br><span class="line">1 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(int(s3), type(int(s3)))   #将str转成int类型，字符串必须为数字串(整数)，非数字串不可转换</span><br><span class="line">ValueError: invalid literal for int() with base 10: &#x27;hello&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------float()将其它类型转成float类型------------</span><br><span class="line"></span><br><span class="line">s1 = &quot;128.98&quot;</span><br><span class="line">s2 = &quot;76&quot;</span><br><span class="line">ff = True</span><br><span class="line">i = 98</span><br><span class="line">s3 = &quot;hello&quot;</span><br><span class="line"></span><br><span class="line">print(type(s1), type(s2), type(ff), type(s3), type(i))</span><br><span class="line">&lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt; &lt;class &#x27;bool&#x27;&gt; &lt;class &#x27;str&#x27;&gt; &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(float(s1), type(float(s1)))</span><br><span class="line">print(float(s2), type(float(s2)))</span><br><span class="line">print(float(ff), type(float(ff)))</span><br><span class="line">print(float(i), type(float(i)))</span><br><span class="line">128.98 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line">76.0 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line">1.0 &lt;class &#x27;float&#x27;&gt; </span><br><span class="line">98.0 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(float(s3), type(float(s3)))  #字符串中的数字如果是非数字串，则不允许转换</span><br><span class="line">ValueError: could not convert string to float: &#x27;hello&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>人性本然流露</title>
     <url>/2023/08/11/%E4%BA%BA%E6%80%A7%E6%9C%AC%E7%84%B6%E6%B5%81/</url>
     <content><![CDATA[<p><code>妙喜莲慈</code></p>
@@ -274,111 +379,6 @@
       <categories>
         <category>人性</category>
       </categories>
-  </entry>
-  <entry>
-    <title>MAC系统安装gitee步骤</title>
-    <url>/2023/08/12/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/</url>
-    <content><![CDATA[<h2 id="一、Git下载安装"><a href="#一、Git下载安装" class="headerlink" title="一、Git下载安装"></a>一、Git下载安装</h2><ol>
-<li><a href="https://git-scm.com/download/mac">git官网</a>下载git安装包</li>
-</ol>
-<p>​		点击Binary installer下的 installer选择安装包下载</p>
-<p>​		在MAC 客户端 输入<code> git version</code> 查看git是否安装成功</p>
-<span id="more"></span>
-
-<ol start="2">
-<li>在<a href="https://gitee.com/">gitee官网</a>注册账户并登陆</li>
-</ol>
-<h2 id="二、配置公钥"><a href="#二、配置公钥" class="headerlink" title="二、配置公钥"></a>二、配置公钥</h2><p>如果不配置公钥，每次上传文件到远程仓库都需要用户名和密码验证。</p>
-<p>点击查看<a href="https://help.gitee.com/base/account/SSH%E5%85%AC%E9%92%A5%E8%AE%BE%E7%BD%AE">SSH公钥配置</a></p>
-<ol>
-<li>复制一下命令，去git终端执行生成 SSH Key：</li>
-</ol>
-<figure class="highlight excel"><table><tr><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> <span class="symbol">ed25519</span> -C <span class="string">&quot;181822826@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>注：”Gitee SSH Key”可以任意命名</p>
-<p>输出，如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Generating public/private ed25519 key pair.</span><br><span class="line">Enter file in which to save the key (/home/git/.ssh/id_ed25519):</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /home/git/.ssh/id_ed25519</span><br><span class="line">Your public key has been saved in /home/git/.ssh/id_ed25519.pub</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:ohDd0OK5WG2dx4gST/j35HjvlJlGHvihyY+Msl6IC8I Gitee SSH Key</span><br><span class="line">The key&#x27;s randomart image is:</span><br><span class="line">+--[ED25519 256]--+</span><br><span class="line">|    .o           |</span><br><span class="line">|   .+oo          |</span><br><span class="line">|  ...O.o +       |</span><br><span class="line">|   .= * = +.     |</span><br><span class="line">|  .o +..S*. +    |</span><br><span class="line">|. ...o o..+* *   |</span><br><span class="line">|.E. o . ..+.O    |</span><br><span class="line">| . . ... o =.    |</span><br><span class="line">|    ..oo. o.o    |</span><br><span class="line">+----[SHA256]-----+</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>中间通过三次<strong>回车键</strong>确定</li>
-</ul>
-<ol start="2">
-<li>查看生成的 SSH 公钥和私钥：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/Users/xiejincheng/.ssh</span><br></pre></td></tr></table></figure>
-
-<p>进入上面地址文件夹，找到文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">id_ed25519  id_ed25519.pub</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>私钥文件 <code>id_ed25519</code></li>
-<li>公钥文件 <code>id_ed25519.pub</code></li>
-</ul>
-<ol start="3">
-<li>用记事本打开<em><strong>公钥文件</strong></em> <code>id_ed25519.pub</code>，复制公钥</li>
-</ol>
-<p>​	将公钥粘贴到 gitee 后台公钥文本框内，标题命名，如：Python Study</p>
-<p>确认公钥是否成功添加，</p>
-<p>​	在终端输入</p>
-<p>​	<code> ssh -T git@gitee.com</code></p>
-<p>​	然后输入：yes</p>
-<p>​	显示以下内容，则成功</p>
-<p>​	<code>Hi USERNAME! You&#39;ve successfully authenticated, but GITEE.COM does not provide shell 			access.</code></p>
-<h2 id="三、新建仓库"><a href="#三、新建仓库" class="headerlink" title="三、新建仓库"></a>三、新建仓库</h2><ol>
-<li><p>仓库名称：Python Study</p>
-</li>
-<li><p>点击创建</p>
-</li>
-<li><p>输入配置（只需要配置一次，后面不需要再配置）</p>
-<p>分别在终端输入执行以下两句代码</p>
-<p>Git 全局设置:</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.name</span> <span class="string">&quot;ELEVENWORLD&quot;</span></span><br><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.email</span> <span class="string">&quot;181822826@qq.com&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="四、下载远程仓库到电脑"><a href="#四、下载远程仓库到电脑" class="headerlink" title="四、下载远程仓库到电脑"></a>四、下载远程仓库到电脑</h2><p>​	Https 和 ssh 都可以，这里我们选择 ssh ,复制地址</p>
-<p>​	在终端执行下载命令</p>
-<p>​	<code> git clone git@gitee.com:elevenworld/wef.git</code></p>
-<p>​	在电脑文件夹 &#x2F;Users&#x2F;xiejincheng 可看到下载的远程仓库文件夹Python Study</p>
-<h2 id="五、文件上传至远程仓库"><a href="#五、文件上传至远程仓库" class="headerlink" title="五、文件上传至远程仓库"></a>五、文件上传至远程仓库</h2><p>​	在Python Study放入需要上传的文件</p>
-<p>​	 当前终端地址为桌面，在当前终端输入</p>
-<p>​	<code>cd Python Study</code></p>
-<p>​	将终端地址切换至Python Study文件夹</p>
-<p>​	分别输入以下三个命令</p>
-<ul>
-<li><code> git add .</code>    把所有内容放进暂存区</li>
-<li><code> git commit -m &quot;写一句描述该文件夹的信息&quot;</code></li>
-<li><code>git push origin master</code></li>
-</ul>
-<h2 id="六、从仓库下载到电脑"><a href="#六、从仓库下载到电脑" class="headerlink" title="六、从仓库下载到电脑"></a>六、从仓库下载到电脑</h2><p>进入远程仓库，复制https地址</p>
-<p><a href="https://gitee.com/elevenworld/phython-study.git">https://gitee.com/elevenworld/phython-study.git</a></p>
-<p>将该地址输入终端 即可执行下载远程仓库内文件</p>
-<p>在终端输入以下信息：</p>
-<p><code> git clone https://gitee.com/elevenworld/phython-study.git</code></p>
-]]></content>
-      <tags>
-        <tag>gitee</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git基本语法</title>
-    <url>/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git init  <span class="comment">#创建仓库</span></span><br><span class="line">ls  <span class="comment">#查看仓库文件</span></span><br><span class="line">ls -a  <span class="comment">#查看仓库所有文件 包括隐藏文件</span></span><br><span class="line">git status  <span class="comment">#查看仓库状态</span></span><br><span class="line">git add .  <span class="comment">#添加所有文件到暂存区</span></span><br><span class="line">git add 文件名  <span class="comment">#添加名称为“文件名”的文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;写一句描述该文件夹的信息&quot;</span>  <span class="comment">#提交暂存区的文件</span></span><br><span class="line">git push origin <span class="keyword">master</span>  <span class="title">#上传本地信息 到 远程仓库</span></span><br><span class="line"><span class="title">git</span> pull origin <span class="keyword">master</span>  <span class="title">#拉取远程仓库信息 合并到本地</span></span><br><span class="line"><span class="title">    pull</span>=fetch+merge</span><br><span class="line">    git fetch origin <span class="keyword">master</span>  <span class="title">#抓取远程仓库信息</span></span><br><span class="line"><span class="title">    git</span> merge origin/<span class="keyword">master</span>  <span class="title">#将抓取的远程仓库信息合并到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">sudo</span> su  <span class="comment"># 管理员身份执行命令</span></span><br><span class="line"></span><br><span class="line">vim <span class="number">0123</span>.txt  <span class="comment">#修改文件0123.txt   按 i 进入修改模式，修改完成后 shift+z+z 退出编辑状态并保存</span></span><br><span class="line">git reflog   <span class="comment">#查看文件的版本信息</span></span><br><span class="line">git log   <span class="comment">#查看详细的版本信息</span></span><br><span class="line">cat <span class="number">0123</span>.rtf   <span class="comment">#查看文件详细内容</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">远程仓库克隆链接   #克隆远程仓库信息到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">touch</span> .gitignore  <span class="comment">#输入git命令 touch .gitignore 回车之后会发现文件中已经成功创建了.gitignore文件(忽略文件命令)  </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="Git-reset-三种模式"><a href="#Git-reset-三种模式" class="headerlink" title="Git reset 三种模式"></a>Git reset 三种模式</h2><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/git-reset-%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F.jpg" alt="git-reset-三种模式" style="zoom: 33%;" />
-
-
-
-<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--soft</span>  <span class="comment">#回到之前版本的同时保留工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--hard</span>  <span class="comment">#回到之前版本的同时删除工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--mixed</span>  <span class="comment">#回到之前版本的同时保留工作区所有内容，删除暂存区的所有内容</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="git-rm-删除文件"><a href="#git-rm-删除文件" class="headerlink" title="git rm 删除文件"></a>git rm 删除文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> 123.md   <span class="comment">#删除工作区和暂存区的文件123.md</span></span><br><span class="line">git <span class="built_in">rm</span> --cached 123.md   <span class="comment">#删除暂存区的文件123.md,不删除本地文件</span></span><br><span class="line">git commit -m <span class="string">&quot;123.md&quot;</span>  <span class="comment">#删除文件后，执行提交命令。否则该删除文件还存在于暂存区</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>git</tag>
-      </tags>
   </entry>
   <entry>
     <title>修行就是认知与突破</title>
@@ -407,118 +407,6 @@
 ]]></content>
       <categories>
         <category>清净自性</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>变量和字符串</title>
-    <url>/2023/08/17/%E5%8F%98%E9%87%8F%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
-    <content><![CDATA[<h1 id="变量命名规则"><a href="#变量命名规则" class="headerlink" title="变量命名规则"></a>变量命名规则</h1><h2 id="1-字母-数字-下划线组合"><a href="#1-字母-数字-下划线组合" class="headerlink" title="1.字母 数字 下划线组合"></a>1.字母 数字 下划线组合</h2><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">num1</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">num_2</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">num</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">num_</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">_1</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="2-不能数字开头"><a href="#2-不能数字开头" class="headerlink" title="2.不能数字开头"></a>2.不能数字开头</h2><p>99_asdf &#x3D; 0</p>
-<h2 id="3-不能使用系统内置函数、关键字作为自己的变量名"><a href="#3-不能使用系统内置函数、关键字作为自己的变量名" class="headerlink" title="3.不能使用系统内置函数、关键字作为自己的变量名"></a>3.不能使用系统内置函数、关键字作为自己的变量名</h2><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">object_num</span> = <span class="number">1000</span></span><br><span class="line"><span class="attr">camera_name</span> = <span class="string">&quot;my_camera&quot;</span></span><br><span class="line"><span class="attr">is_curve</span> = Ture</span><br><span class="line"></span><br><span class="line"><span class="attr">studentname</span> = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"><span class="attr">stuname</span> = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="大驼峰"><a href="#大驼峰" class="headerlink" title="大驼峰"></a>大驼峰</h2><p>stuName &#x3D; ‘Tom’</p>
-<h2 id="下划线分割"><a href="#下划线分割" class="headerlink" title="下划线分割"></a>下划线分割</h2><p>stu_name &#x3D; ‘Tom’</p>
-<h2 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h2><p>Stu_name &#x3D; ‘Tom’<br>Stu_Name &#x3D; ‘Tom’</p>
-<h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><p>PATH &#x3D; ‘C:&#x2F;addons&#x2F;‘</p>
-<h2 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h2><p>path &#x3D; ‘C:&#x2F;addons&#x2F;myaddons’</p>
-<h1 id="案例解析"><a href="#案例解析" class="headerlink" title="案例解析"></a>案例解析</h1><blockquote>
-<p>使用 input() 函数让用户录入姓名，然后将名字保存到变量（name）中，最后使用 print() 函数打印出来。</p>
-</blockquote>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"> &gt;&gt;&gt; name = input(<span class="string">&quot;请输入您的名字：&quot;</span>)</span><br><span class="line">请输入您的名字：小甲鱼</span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span>(<span class="string">&quot;你好&quot;</span>, name, <span class="attribute">sep</span>=<span class="string">&quot;，&quot;</span>, <span class="attribute">end</span>=<span class="string">&quot;！&quot;</span>)</span><br><span class="line">你好，小甲鱼！</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<ol>
-<li>请问下面代码为什么会出错，应该如何解决？</li>
-</ol>
-</blockquote>
-<figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line">print(<span class="string">&quot;C:\Users\goodb\Desktop&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="symbol">SyntaxError:</span> (<span class="keyword">unicode</span> <span class="keyword">error</span>) <span class="comment">&#x27;unicodeescape&#x27; codec can&#x27;t decode bytes in position 2-3: truncated \UXXXXXXXX escape</span></span><br></pre></td></tr></table></figure>
-
-<p>答：这是由于在字符串中，反斜杠<code>（\）</code>会与其随后的字符共同构成<strong>转义</strong>字符。<br> 为了避免这种不测情况的发生，我们可以在字符串的引号前面加上<code>r</code>，表示该字符串是一个原始字符串（不接受转义字符）</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">r&quot;C:\Users\goodb\Desktop&quot;</span>)</span><br><span class="line"></span><br><span class="line">C:\Users\goodb\Desktop</span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<p><strong>打印一个九九乘法表</strong></p>
-</blockquote>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">for</span> i in range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">    <span class="attribute">for</span> j in range(<span class="number">1</span>, i+<span class="number">1</span>):</span><br><span class="line">        <span class="attribute">print</span>(i, <span class="string">&quot;x&quot;</span>, j, <span class="string">&quot;=&quot;</span>, i * j, end=&#x27; &#x27;)</span><br><span class="line">    <span class="attribute">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="attribute">1</span> x <span class="number">1</span> = <span class="number">1</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">2</span> x <span class="number">1</span> = <span class="number">2</span> <span class="number">2</span> x <span class="number">2</span> = <span class="number">4</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">3</span> x <span class="number">1</span> = <span class="number">3</span> <span class="number">3</span> x <span class="number">2</span> = <span class="number">6</span> <span class="number">3</span> x <span class="number">3</span> = <span class="number">9</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">4</span> x <span class="number">1</span> = <span class="number">4</span> <span class="number">4</span> x <span class="number">2</span> = <span class="number">8</span> <span class="number">4</span> x <span class="number">3</span> = <span class="number">12</span> <span class="number">4</span> x <span class="number">4</span> = <span class="number">16</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">5</span> x <span class="number">1</span> = <span class="number">5</span> <span class="number">5</span> x <span class="number">2</span> = <span class="number">10</span> <span class="number">5</span> x <span class="number">3</span> = <span class="number">15</span> <span class="number">5</span> x <span class="number">4</span> = <span class="number">20</span> <span class="number">5</span> x <span class="number">5</span> = <span class="number">25</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">6</span> x <span class="number">1</span> = <span class="number">6</span> <span class="number">6</span> x <span class="number">2</span> = <span class="number">12</span> <span class="number">6</span> x <span class="number">3</span> = <span class="number">18</span> <span class="number">6</span> x <span class="number">4</span> = <span class="number">24</span> <span class="number">6</span> x <span class="number">5</span> = <span class="number">30</span> <span class="number">6</span> x <span class="number">6</span> = <span class="number">36</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">7</span> x <span class="number">1</span> = <span class="number">7</span> <span class="number">7</span> x <span class="number">2</span> = <span class="number">14</span> <span class="number">7</span> x <span class="number">3</span> = <span class="number">21</span> <span class="number">7</span> x <span class="number">4</span> = <span class="number">28</span> <span class="number">7</span> x <span class="number">5</span> = <span class="number">35</span> <span class="number">7</span> x <span class="number">6</span> = <span class="number">42</span> <span class="number">7</span> x <span class="number">7</span> = <span class="number">49</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">8</span> x <span class="number">1</span> = <span class="number">8</span> <span class="number">8</span> x <span class="number">2</span> = <span class="number">16</span> <span class="number">8</span> x <span class="number">3</span> = <span class="number">24</span> <span class="number">8</span> x <span class="number">4</span> = <span class="number">32</span> <span class="number">8</span> x <span class="number">5</span> = <span class="number">40</span> <span class="number">8</span> x <span class="number">6</span> = <span class="number">48</span> <span class="number">8</span> x <span class="number">7</span> = <span class="number">56</span> <span class="number">8</span> x <span class="number">8</span> = <span class="number">64</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">9</span> x <span class="number">1</span> = <span class="number">9</span> <span class="number">9</span> x <span class="number">2</span> = <span class="number">18</span> <span class="number">9</span> x <span class="number">3</span> = <span class="number">27</span> <span class="number">9</span> x <span class="number">4</span> = <span class="number">36</span> <span class="number">9</span> x <span class="number">5</span> = <span class="number">45</span> <span class="number">9</span> x <span class="number">6</span> = <span class="number">54</span> <span class="number">9</span> x <span class="number">7</span> = <span class="number">63</span> <span class="number">9</span> x <span class="number">8</span> = <span class="number">72</span> <span class="number">9</span> x <span class="number">9</span> = <span class="number">81</span> </span><br></pre></td></tr></table></figure>
-
-<h1 id="print-函数"><a href="#print-函数" class="headerlink" title="print() 函数"></a>print() 函数</h1><p>print() 函数用于打印输出一个对象。</p>
-<h3 id="函数原型"><a href="#函数原型" class="headerlink" title="函数原型"></a>函数原型</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(*objects, <span class="attribute">sep</span>=<span class="string">&#x27; &#x27;</span>, <span class="attribute">end</span>=<span class="string">&#x27;\n&#x27;</span>, <span class="attribute">file</span>=sys.stdout, <span class="attribute">flush</span>=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参数解析：</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th><strong>参数</strong></th>
-<th><strong>含义</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>objects</td>
-<td>指定待输出的对象，多个对象之间使用英文逗号（,）进行分隔</td>
-</tr>
-<tr>
-<td>sep</td>
-<td>指定输出多个对象之间的分隔符，默认是空格（’ ‘）</td>
-</tr>
-<tr>
-<td>end</td>
-<td>指定最后的结束符，默认是换行符（’\n’）</td>
-</tr>
-<tr>
-<td>file</td>
-<td>指定要写入的文件对象，默认是标准输出流（sys.stdout）</td>
-</tr>
-<tr>
-<td>flush</td>
-<td>指定是否强制刷新输出流，默认是不刷新（False）</td>
-</tr>
-</tbody></table>
-<p>注：如果指定 sep, end, file 和 flush 参数，需要使用关键字参数（即通过指定参数名来赋值）。</p>
-<h3 id="基本用法："><a href="#基本用法：" class="headerlink" title="基本用法："></a>基本用法：</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;浙江大学建校&quot;</span>,<span class="string">&quot;100周年&quot;</span>)</span></span></span><br><span class="line">浙江大学建校 <span class="number">100</span>周年</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;浙江大学建校园&quot;</span>,<span class="string">&quot;100周年&quot;</span>,sep=<span class="string">&quot;=&quot;</span>,end=<span class="string">&quot;100周年&quot;</span>)</span></span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;浙江大学建校园&quot;</span>,<span class="string">&quot;100周年&quot;</span>,<span class="attribute">sep</span>=<span class="string">&quot;=&quot;</span>,end=&quot;吗？&quot;)</span><br><span class="line">浙江大学建校园=100周年吗？</span><br></pre></td></tr></table></figure>
-
-<h1 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h1><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%8F%98%E9%87%8F%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B220230816.jpg" alt="变量和字符串20230816"></p>
-]]></content>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>回家</title>
-    <url>/2022/11/10/%E5%9B%9E%E5%AE%B6/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>本人住山也有四五年之久了，一些善友们经常见面就问我需要什么？缺什么？我说什么也不需要，有口简单的食物填饱肚子就可以了，我长了四十一年终于知道自己想要什么了？</p>
-<span id="more"></span>
-
-<p>在过去的日子里想要钱财和物质，当我得到它们的时候并不快乐，只是暂时的一点满足感而已。当我失去物质和金钱的时候，我会烦恼。后来，我闻到佛法，走了修行路，才知道自己真正想要什么，那就是回家。我说的家不是那个高楼大厦，华丽的墙皮。我说的回家是回归自性，回归本性，让自己为自己生命做一次真正的主人，不被金钱和物质所牵跑的灵魂，不被七情六欲所牵跑的灵魂。我永远要做真实的自己，外在得到的一切即如一场梦，在得到和失去中摇摆不定。因为我没有办法做个守财的奴隶，也没办法掌控我所得到的东西不会失去，所以我只能对自己的生命负责，这才是我人生最有价值的无价之宝。当我明白这个道理后，写出来供有缘人反醒。</p>
-<p>很多人会说像这样活着没有意义，那您的烦烦恼恼的生活难道就很有味道吗？您没有进入这种生活的话，没有真正体会过，就没有资格谈论。欢迎所有人回家。</p>
-<p>其实人一生得到的并不多，也就是吃饱穿暖有个遮风避雨的地方，别劳心费力的，到死的时候才明白带不走任何东西，那就亏大了。因为被物质做了您的主人，同时也让烦恼做了您的主人，自己这主人反而变成了游客，这就是佛法最高尚也是最简单的地方。</p>
-<p>南无阿弥陀佛</p>
-<p>南无大慈大悲救苦救难观世音菩萨            </p>
-]]></content>
-      <categories>
-        <category>清净自性</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>因果</title>
-    <url>/2023/07/08/%E5%9B%A0%E6%9E%9C/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>每个人都有因果，信不信佛都有，只是有的人马上因果就显了，有的人积累在一起爆发因果，大部分人都是积累在某一个时候爆发。你以为不修佛就不用承担因果了？只是修行的人知道因果，不修行的人不相信因果，可是<strong>因果是和我们的生命是相连的</strong>。</p>
-<span id="more"></span>
-
-<p>老百姓叫善有善报，恶有恶报，时候到没到而已。<strong>因果从来没有饶过任何一个人</strong>。愚痴的人拼命造恶因求菩萨得到好的果。智慧的人不敢造恶，因为未来不知道啥时候果报现前的时候让人措手不及，最不想失去的东西到时候就失去了。这么多明星精神出问题还不能让人睡醒，以为有钱啥都可以解决，这么多人有钱有名有利解决精神上的问题了吗？</p>
-]]></content>
-      <categories>
-        <category>因果</category>
       </categories>
   </entry>
   <entry>
@@ -566,34 +454,21 @@
       </categories>
   </entry>
   <entry>
-    <title>猜数字游戏</title>
-    <url>/2023/08/19/%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F/</url>
-    <content><![CDATA[<blockquote>
-<p><strong>循环：</strong>while&#x2F;if…else</p>
-<p><strong>用户输入：</strong>input()</p>
-<p><strong>结束循环：</strong>break</p>
-</blockquote>
+    <title>回家</title>
+    <url>/2022/11/10/%E5%9B%9E%E5%AE%B6/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>本人住山也有四五年之久了，一些善友们经常见面就问我需要什么？缺什么？我说什么也不需要，有口简单的食物填饱肚子就可以了，我长了四十一年终于知道自己想要什么了？</p>
 <span id="more"></span>
 
-<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">counts</span> = <span class="number">3</span></span><br><span class="line"><span class="variable"><span class="keyword">while</span></span> <span class="variable">counts</span> &gt; <span class="number">0</span>:</span><br><span class="line">    <span class="variable">temp</span> = <span class="function"><span class="title">input</span>(<span class="string">&quot;猜一猜我心理想的哪一个数字？&quot;</span>)</span></span><br><span class="line">    <span class="variable">guess</span> = <span class="function"><span class="title">int</span>(<span class="variable">temp</span>)</span></span><br><span class="line"></span><br><span class="line">    <span class="variable"><span class="keyword">if</span></span> <span class="variable">guess</span> == <span class="number">8</span>:</span><br><span class="line">         <span class="function"><span class="title">print</span>(<span class="string">&quot;你是我心理的蛔虫啊！&quot;</span>)</span></span><br><span class="line">         <span class="function"><span class="title">print</span>(<span class="string">&quot;可惜了，没有奖励。&quot;</span>)</span></span><br><span class="line">         <span class="variable">break</span></span><br><span class="line">    <span class="variable"><span class="keyword">else</span></span>:</span><br><span class="line">        <span class="variable"><span class="keyword">if</span></span> <span class="variable">guess</span> &lt; <span class="number">8</span>:</span><br><span class="line">            <span class="function"><span class="title">print</span>(<span class="string">&quot;小啦！&quot;</span>)</span></span><br><span class="line">        <span class="variable"><span class="keyword">else</span></span>:</span><br><span class="line">            <span class="function"><span class="title">print</span>(<span class="string">&quot;大啦大啦！&quot;</span>)</span></span><br><span class="line">    <span class="variable">counts</span> =   <span class="variable">counts</span> - <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span>(<span class="string">&quot;游戏结束，不玩啦！&quot;</span>)</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<p>增加随机数种子random函数</p>
-<p>random.randint(1,10)</p>
-</blockquote>
-<figure class="highlight processing"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">random</span></span><br><span class="line"></span><br><span class="line">counts = <span class="number">3</span></span><br><span class="line">answer = <span class="built_in">random</span>.<span class="property">randint</span>(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> counts &gt; <span class="number">0</span>:</span><br><span class="line">    temp = <span class="title function_">input</span>(<span class="string">&quot;猜一猜我心理想的哪一个数字？&quot;</span>)</span><br><span class="line">    guess = <span class="built_in">int</span>(temp)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> guess == answer:</span><br><span class="line">         <span class="built_in">print</span>(<span class="string">&quot;你是我心理的蛔虫啊！ &quot;</span>)</span><br><span class="line">         <span class="built_in">print</span>(<span class="string">&quot;可惜了，没有奖励。&quot;</span>)</span><br><span class="line">         <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> guess &lt; answer:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;小啦！&quot;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;大啦大啦！&quot;</span>)</span><br><span class="line">    counts =   counts - <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;游戏结束，不玩啦！&quot;</span>)</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>思维导图 </p>
-</blockquote>
-<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%A4%8D%E7%9B%98%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F.jpg" alt="复盘数字游戏"></p>
-<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E6%94%B9%E8%BF%9B%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F.jpg" alt="改进数字游戏"></p>
+<p>在过去的日子里想要钱财和物质，当我得到它们的时候并不快乐，只是暂时的一点满足感而已。当我失去物质和金钱的时候，我会烦恼。后来，我闻到佛法，走了修行路，才知道自己真正想要什么，那就是回家。我说的家不是那个高楼大厦，华丽的墙皮。我说的回家是回归自性，回归本性，让自己为自己生命做一次真正的主人，不被金钱和物质所牵跑的灵魂，不被七情六欲所牵跑的灵魂。我永远要做真实的自己，外在得到的一切即如一场梦，在得到和失去中摇摆不定。因为我没有办法做个守财的奴隶，也没办法掌控我所得到的东西不会失去，所以我只能对自己的生命负责，这才是我人生最有价值的无价之宝。当我明白这个道理后，写出来供有缘人反醒。</p>
+<p>很多人会说像这样活着没有意义，那您的烦烦恼恼的生活难道就很有味道吗？您没有进入这种生活的话，没有真正体会过，就没有资格谈论。欢迎所有人回家。</p>
+<p>其实人一生得到的并不多，也就是吃饱穿暖有个遮风避雨的地方，别劳心费力的，到死的时候才明白带不走任何东西，那就亏大了。因为被物质做了您的主人，同时也让烦恼做了您的主人，自己这主人反而变成了游客，这就是佛法最高尚也是最简单的地方。</p>
+<p>南无阿弥陀佛</p>
+<p>南无大慈大悲救苦救难观世音菩萨            </p>
 ]]></content>
-      <tags>
-        <tag>python</tag>
-      </tags>
+      <categories>
+        <category>清净自性</category>
+      </categories>
   </entry>
   <entry>
     <title>真正的修行</title>
@@ -878,5 +753,130 @@
       <tags>
         <tag>python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>猜数字游戏</title>
+    <url>/2023/08/19/%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>循环：</strong>while&#x2F;if…else</p>
+<p><strong>用户输入：</strong>input()</p>
+<p><strong>结束循环：</strong>break</p>
+</blockquote>
+<span id="more"></span>
+
+<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">counts</span> = <span class="number">3</span></span><br><span class="line"><span class="variable"><span class="keyword">while</span></span> <span class="variable">counts</span> &gt; <span class="number">0</span>:</span><br><span class="line">    <span class="variable">temp</span> = <span class="function"><span class="title">input</span>(<span class="string">&quot;猜一猜我心理想的哪一个数字？&quot;</span>)</span></span><br><span class="line">    <span class="variable">guess</span> = <span class="function"><span class="title">int</span>(<span class="variable">temp</span>)</span></span><br><span class="line"></span><br><span class="line">    <span class="variable"><span class="keyword">if</span></span> <span class="variable">guess</span> == <span class="number">8</span>:</span><br><span class="line">         <span class="function"><span class="title">print</span>(<span class="string">&quot;你是我心理的蛔虫啊！&quot;</span>)</span></span><br><span class="line">         <span class="function"><span class="title">print</span>(<span class="string">&quot;可惜了，没有奖励。&quot;</span>)</span></span><br><span class="line">         <span class="variable">break</span></span><br><span class="line">    <span class="variable"><span class="keyword">else</span></span>:</span><br><span class="line">        <span class="variable"><span class="keyword">if</span></span> <span class="variable">guess</span> &lt; <span class="number">8</span>:</span><br><span class="line">            <span class="function"><span class="title">print</span>(<span class="string">&quot;小啦！&quot;</span>)</span></span><br><span class="line">        <span class="variable"><span class="keyword">else</span></span>:</span><br><span class="line">            <span class="function"><span class="title">print</span>(<span class="string">&quot;大啦大啦！&quot;</span>)</span></span><br><span class="line">    <span class="variable">counts</span> =   <span class="variable">counts</span> - <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span>(<span class="string">&quot;游戏结束，不玩啦！&quot;</span>)</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>增加随机数种子random函数</p>
+<p>random.randint(1,10)</p>
+</blockquote>
+<figure class="highlight processing"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">random</span></span><br><span class="line"></span><br><span class="line">counts = <span class="number">3</span></span><br><span class="line">answer = <span class="built_in">random</span>.<span class="property">randint</span>(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> counts &gt; <span class="number">0</span>:</span><br><span class="line">    temp = <span class="title function_">input</span>(<span class="string">&quot;猜一猜我心理想的哪一个数字？&quot;</span>)</span><br><span class="line">    guess = <span class="built_in">int</span>(temp)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> guess == answer:</span><br><span class="line">         <span class="built_in">print</span>(<span class="string">&quot;你是我心理的蛔虫啊！ &quot;</span>)</span><br><span class="line">         <span class="built_in">print</span>(<span class="string">&quot;可惜了，没有奖励。&quot;</span>)</span><br><span class="line">         <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> guess &lt; answer:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;小啦！&quot;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;大啦大啦！&quot;</span>)</span><br><span class="line">    counts =   counts - <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;游戏结束，不玩啦！&quot;</span>)</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>思维导图 </p>
+</blockquote>
+<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%A4%8D%E7%9B%98%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F.jpg" alt="复盘数字游戏"></p>
+<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E6%94%B9%E8%BF%9B%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F.jpg" alt="改进数字游戏"></p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>变量和字符串</title>
+    <url>/2023/08/17/%E5%8F%98%E9%87%8F%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    <content><![CDATA[<h1 id="变量命名规则"><a href="#变量命名规则" class="headerlink" title="变量命名规则"></a>变量命名规则</h1><h2 id="1-字母-数字-下划线组合"><a href="#1-字母-数字-下划线组合" class="headerlink" title="1.字母 数字 下划线组合"></a>1.字母 数字 下划线组合</h2><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">num1</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">num_2</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">num</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">num_</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">_1</span> = <span class="number">1</span>.<span class="number">0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="2-不能数字开头"><a href="#2-不能数字开头" class="headerlink" title="2.不能数字开头"></a>2.不能数字开头</h2><p>99_asdf &#x3D; 0</p>
+<h2 id="3-不能使用系统内置函数、关键字作为自己的变量名"><a href="#3-不能使用系统内置函数、关键字作为自己的变量名" class="headerlink" title="3.不能使用系统内置函数、关键字作为自己的变量名"></a>3.不能使用系统内置函数、关键字作为自己的变量名</h2><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">object_num</span> = <span class="number">1000</span></span><br><span class="line"><span class="attr">camera_name</span> = <span class="string">&quot;my_camera&quot;</span></span><br><span class="line"><span class="attr">is_curve</span> = Ture</span><br><span class="line"></span><br><span class="line"><span class="attr">studentname</span> = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"><span class="attr">stuname</span> = <span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="大驼峰"><a href="#大驼峰" class="headerlink" title="大驼峰"></a>大驼峰</h2><p>stuName &#x3D; ‘Tom’</p>
+<h2 id="下划线分割"><a href="#下划线分割" class="headerlink" title="下划线分割"></a>下划线分割</h2><p>stu_name &#x3D; ‘Tom’</p>
+<h2 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h2><p>Stu_name &#x3D; ‘Tom’<br>Stu_Name &#x3D; ‘Tom’</p>
+<h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><p>PATH &#x3D; ‘C:&#x2F;addons&#x2F;‘</p>
+<h2 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h2><p>path &#x3D; ‘C:&#x2F;addons&#x2F;myaddons’</p>
+<h1 id="案例解析"><a href="#案例解析" class="headerlink" title="案例解析"></a>案例解析</h1><blockquote>
+<p>使用 input() 函数让用户录入姓名，然后将名字保存到变量（name）中，最后使用 print() 函数打印出来。</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"> &gt;&gt;&gt; name = input(<span class="string">&quot;请输入您的名字：&quot;</span>)</span><br><span class="line">请输入您的名字：小甲鱼</span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span>(<span class="string">&quot;你好&quot;</span>, name, <span class="attribute">sep</span>=<span class="string">&quot;，&quot;</span>, <span class="attribute">end</span>=<span class="string">&quot;！&quot;</span>)</span><br><span class="line">你好，小甲鱼！</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>请问下面代码为什么会出错，应该如何解决？</li>
+</ol>
+</blockquote>
+<figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line">print(<span class="string">&quot;C:\Users\goodb\Desktop&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="symbol">SyntaxError:</span> (<span class="keyword">unicode</span> <span class="keyword">error</span>) <span class="comment">&#x27;unicodeescape&#x27; codec can&#x27;t decode bytes in position 2-3: truncated \UXXXXXXXX escape</span></span><br></pre></td></tr></table></figure>
+
+<p>答：这是由于在字符串中，反斜杠<code>（\）</code>会与其随后的字符共同构成<strong>转义</strong>字符。<br> 为了避免这种不测情况的发生，我们可以在字符串的引号前面加上<code>r</code>，表示该字符串是一个原始字符串（不接受转义字符）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">r&quot;C:\Users\goodb\Desktop&quot;</span>)</span><br><span class="line"></span><br><span class="line">C:\Users\goodb\Desktop</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p><strong>打印一个九九乘法表</strong></p>
+</blockquote>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">for</span> i in range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">    <span class="attribute">for</span> j in range(<span class="number">1</span>, i+<span class="number">1</span>):</span><br><span class="line">        <span class="attribute">print</span>(i, <span class="string">&quot;x&quot;</span>, j, <span class="string">&quot;=&quot;</span>, i * j, end=&#x27; &#x27;)</span><br><span class="line">    <span class="attribute">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="attribute">1</span> x <span class="number">1</span> = <span class="number">1</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">2</span> x <span class="number">1</span> = <span class="number">2</span> <span class="number">2</span> x <span class="number">2</span> = <span class="number">4</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">3</span> x <span class="number">1</span> = <span class="number">3</span> <span class="number">3</span> x <span class="number">2</span> = <span class="number">6</span> <span class="number">3</span> x <span class="number">3</span> = <span class="number">9</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">4</span> x <span class="number">1</span> = <span class="number">4</span> <span class="number">4</span> x <span class="number">2</span> = <span class="number">8</span> <span class="number">4</span> x <span class="number">3</span> = <span class="number">12</span> <span class="number">4</span> x <span class="number">4</span> = <span class="number">16</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">5</span> x <span class="number">1</span> = <span class="number">5</span> <span class="number">5</span> x <span class="number">2</span> = <span class="number">10</span> <span class="number">5</span> x <span class="number">3</span> = <span class="number">15</span> <span class="number">5</span> x <span class="number">4</span> = <span class="number">20</span> <span class="number">5</span> x <span class="number">5</span> = <span class="number">25</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">6</span> x <span class="number">1</span> = <span class="number">6</span> <span class="number">6</span> x <span class="number">2</span> = <span class="number">12</span> <span class="number">6</span> x <span class="number">3</span> = <span class="number">18</span> <span class="number">6</span> x <span class="number">4</span> = <span class="number">24</span> <span class="number">6</span> x <span class="number">5</span> = <span class="number">30</span> <span class="number">6</span> x <span class="number">6</span> = <span class="number">36</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">7</span> x <span class="number">1</span> = <span class="number">7</span> <span class="number">7</span> x <span class="number">2</span> = <span class="number">14</span> <span class="number">7</span> x <span class="number">3</span> = <span class="number">21</span> <span class="number">7</span> x <span class="number">4</span> = <span class="number">28</span> <span class="number">7</span> x <span class="number">5</span> = <span class="number">35</span> <span class="number">7</span> x <span class="number">6</span> = <span class="number">42</span> <span class="number">7</span> x <span class="number">7</span> = <span class="number">49</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">8</span> x <span class="number">1</span> = <span class="number">8</span> <span class="number">8</span> x <span class="number">2</span> = <span class="number">16</span> <span class="number">8</span> x <span class="number">3</span> = <span class="number">24</span> <span class="number">8</span> x <span class="number">4</span> = <span class="number">32</span> <span class="number">8</span> x <span class="number">5</span> = <span class="number">40</span> <span class="number">8</span> x <span class="number">6</span> = <span class="number">48</span> <span class="number">8</span> x <span class="number">7</span> = <span class="number">56</span> <span class="number">8</span> x <span class="number">8</span> = <span class="number">64</span> </span><br><span class="line"></span><br><span class="line"><span class="attribute">9</span> x <span class="number">1</span> = <span class="number">9</span> <span class="number">9</span> x <span class="number">2</span> = <span class="number">18</span> <span class="number">9</span> x <span class="number">3</span> = <span class="number">27</span> <span class="number">9</span> x <span class="number">4</span> = <span class="number">36</span> <span class="number">9</span> x <span class="number">5</span> = <span class="number">45</span> <span class="number">9</span> x <span class="number">6</span> = <span class="number">54</span> <span class="number">9</span> x <span class="number">7</span> = <span class="number">63</span> <span class="number">9</span> x <span class="number">8</span> = <span class="number">72</span> <span class="number">9</span> x <span class="number">9</span> = <span class="number">81</span> </span><br></pre></td></tr></table></figure>
+
+<h1 id="print-函数"><a href="#print-函数" class="headerlink" title="print() 函数"></a>print() 函数</h1><p>print() 函数用于打印输出一个对象。</p>
+<h3 id="函数原型"><a href="#函数原型" class="headerlink" title="函数原型"></a>函数原型</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(*objects, <span class="attribute">sep</span>=<span class="string">&#x27; &#x27;</span>, <span class="attribute">end</span>=<span class="string">&#x27;\n&#x27;</span>, <span class="attribute">file</span>=sys.stdout, <span class="attribute">flush</span>=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参数解析：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>参数</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>objects</td>
+<td>指定待输出的对象，多个对象之间使用英文逗号（,）进行分隔</td>
+</tr>
+<tr>
+<td>sep</td>
+<td>指定输出多个对象之间的分隔符，默认是空格（’ ‘）</td>
+</tr>
+<tr>
+<td>end</td>
+<td>指定最后的结束符，默认是换行符（’\n’）</td>
+</tr>
+<tr>
+<td>file</td>
+<td>指定要写入的文件对象，默认是标准输出流（sys.stdout）</td>
+</tr>
+<tr>
+<td>flush</td>
+<td>指定是否强制刷新输出流，默认是不刷新（False）</td>
+</tr>
+</tbody></table>
+<p>注：如果指定 sep, end, file 和 flush 参数，需要使用关键字参数（即通过指定参数名来赋值）。</p>
+<h3 id="基本用法："><a href="#基本用法：" class="headerlink" title="基本用法："></a>基本用法：</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;浙江大学建校&quot;</span>,<span class="string">&quot;100周年&quot;</span>)</span></span></span><br><span class="line">浙江大学建校 <span class="number">100</span>周年</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;浙江大学建校园&quot;</span>,<span class="string">&quot;100周年&quot;</span>,sep=<span class="string">&quot;=&quot;</span>,end=<span class="string">&quot;100周年&quot;</span>)</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;浙江大学建校园&quot;</span>,<span class="string">&quot;100周年&quot;</span>,<span class="attribute">sep</span>=<span class="string">&quot;=&quot;</span>,end=&quot;吗？&quot;)</span><br><span class="line">浙江大学建校园=100周年吗？</span><br></pre></td></tr></table></figure>
+
+<h1 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h1><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%8F%98%E9%87%8F%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B220230816.jpg" alt="变量和字符串20230816"></p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>因果</title>
+    <url>/2023/07/08/%E5%9B%A0%E6%9E%9C/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>每个人都有因果，信不信佛都有，只是有的人马上因果就显了，有的人积累在一起爆发因果，大部分人都是积累在某一个时候爆发。你以为不修佛就不用承担因果了？只是修行的人知道因果，不修行的人不相信因果，可是<strong>因果是和我们的生命是相连的</strong>。</p>
+<span id="more"></span>
+
+<p>老百姓叫善有善报，恶有恶报，时候到没到而已。<strong>因果从来没有饶过任何一个人</strong>。愚痴的人拼命造恶因求菩萨得到好的果。智慧的人不敢造恶，因为未来不知道啥时候果报现前的时候让人措手不及，最不想失去的东西到时候就失去了。这么多明星精神出问题还不能让人睡醒，以为有钱啥都可以解决，这么多人有钱有名有利解决精神上的问题了吗？</p>
+]]></content>
+      <categories>
+        <category>因果</category>
+      </categories>
   </entry>
 </search>
