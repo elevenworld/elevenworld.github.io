@@ -154,6 +154,109 @@
       </tags>
   </entry>
   <entry>
+    <title>python数值类型</title>
+    <url>/2023/08/12/python%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="整数类型int"><a href="#整数类型int" class="headerlink" title="整数类型int"></a>整数类型int</h2><p>英文为integer，简写为int，可以表示正数、负数和零。</p>
+<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">整数可以表示为二进制、八进制、十进制、十六进制</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;十进制&quot;</span>, <span class="number">119</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;二进制&quot;</span>, <span class="number">0b01010111001</span>)   #二进制以<span class="number">0b</span>开头</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;八进制&quot;</span>, <span class="number">0o327</span>)           #八进制以<span class="number">0o</span>开头</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;十六进制&quot;</span>, <span class="number">0x2ADE</span>)        #十六进制以<span class="number">0x</span>开头</span><br><span class="line"></span><br><span class="line">十进制 <span class="number">119</span></span><br><span class="line">二进制 <span class="number">697</span></span><br><span class="line">八进制 <span class="number">215</span></span><br><span class="line">十六进制 <span class="number">10974</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>进制</th>
+<th>基本数</th>
+<th>逢几进一</th>
+<th>表示形式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>十进制</td>
+<td>0,1,2,3,4,5,6,7,8,9</td>
+<td>10</td>
+<td>118</td>
+</tr>
+<tr>
+<td>二进制</td>
+<td>0,1</td>
+<td>2</td>
+<td>0b1110110</td>
+</tr>
+<tr>
+<td>八进制</td>
+<td>0,1,2,3,4,5,6,7</td>
+<td>8</td>
+<td>0o166</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F</td>
+<td>16</td>
+<td>0x76</td>
+</tr>
+</tbody></table>
+<span id="more"></span>
+
+
+
+<h2 id="浮点类型float"><a href="#浮点类型float" class="headerlink" title="浮点类型float"></a>浮点类型float</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">b = 10</span><br><span class="line">print (&quot;这是一个浮点数-&gt;&quot;,b)</span><br><span class="line"></span><br><span class="line">print (type(a))   #type 用来查看数值类型</span><br><span class="line">print (type(b))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="浮点数精度"><a href="#浮点数精度" class="headerlink" title="浮点数精度"></a>浮点数精度</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">n1 = 1.1</span><br><span class="line">n2 = 2.2</span><br><span class="line">n3 = 2.1</span><br><span class="line"></span><br><span class="line">print(n1 + n2)</span><br><span class="line">3.3000000000000003       # 极个别浮点数会出现不精确的问题</span><br><span class="line"></span><br><span class="line">print(n1 + n3)</span><br><span class="line">3.2</span><br><span class="line"></span><br><span class="line">from decimal import Decimal       #通过导入模块decimal，解决不精确的问题</span><br><span class="line">print(Decimal(&quot;1.1&quot;) + Decimal(&quot;2.2&quot;))</span><br><span class="line">3.3</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="布尔类型bool"><a href="#布尔类型bool" class="headerlink" title="布尔类型bool"></a>布尔类型bool</h2><h3 id="用来表示真或假的值"><a href="#用来表示真或假的值" class="headerlink" title="用来表示真或假的值"></a>用来表示真或假的值</h3><ul>
+<li>True表示真</li>
+<li>False表示假</li>
+</ul>
+<h3 id="布尔值可以转化为整数"><a href="#布尔值可以转化为整数" class="headerlink" title="布尔值可以转化为整数"></a>布尔值可以转化为整数</h3><ul>
+<li>Ture 表示整数 1</li>
+<li>False 表示整数0</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">f1 = True</span><br><span class="line">f2 = False</span><br><span class="line">print(f1, type(f1))</span><br><span class="line">print(f2, type(f2))</span><br><span class="line"></span><br><span class="line">True &lt;<span class="keyword">class</span> &#x27;<span class="symbol">bool</span>&#x27;&gt;</span><br><span class="line"><span class="symbol">False</span> &lt;<span class="symbol">class</span> &#x27;<span class="symbol">bool</span>&#x27;&gt;</span><br><span class="line"></span><br><span class="line">#布尔值可以转成整数计算</span><br><span class="line"></span><br><span class="line"><span class="symbol">print</span>(<span class="symbol">f1</span> + <span class="symbol">1</span>)      # <span class="symbol">1</span>+<span class="symbol">1</span>的结果为<span class="symbol">2</span>，说明<span class="symbol">True</span>表示<span class="symbol">1</span></span><br><span class="line"><span class="symbol">print</span>(<span class="symbol">f2</span> + <span class="symbol">1</span>)      # <span class="symbol">0</span>+<span class="symbol">1</span>的结果为<span class="symbol">1</span>，说明<span class="symbol">False</span>表示<span class="symbol">0</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">2</span></span><br><span class="line"><span class="symbol">1</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>将不同数据类型的数据拼接在一起</p>
+<figure class="highlight elm"><table><tr><td class="code"><pre><span class="line"><span class="title">d</span> = <span class="number">1</span> + <span class="number">1</span></span><br><span class="line"><span class="title">print</span> (d, <span class="keyword">type</span>(d))</span><br><span class="line"></span><br><span class="line"><span class="title">e</span> = <span class="number">1.0</span> + <span class="number">1.0</span></span><br><span class="line"><span class="title">print</span> (e,<span class="keyword">type</span>(e))</span><br><span class="line"></span><br><span class="line"><span class="title">f</span> = <span class="number">1</span> + <span class="number">1.0</span>  #隐式转换 <span class="comment">--- 默认转换</span></span><br><span class="line"><span class="title">print</span> (f,<span class="keyword">type</span>(f))</span><br><span class="line"></span><br><span class="line"><span class="title">num</span> = <span class="number">1</span></span><br><span class="line"><span class="title">g</span> = float (num)</span><br><span class="line"><span class="title">print</span> (g,<span class="keyword">type</span>(g))</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>作用</th>
+<th>注意事项</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>str()</td>
+<td>将其它数据类型转成字符串</td>
+<td>也可用引号转换</td>
+<td>str(123)<br />“123”</td>
+</tr>
+<tr>
+<td>Int()</td>
+<td>将其它数据类型转成整数</td>
+<td>1.文字类和小数类字符串，无法转化为整数<br />2.浮点数转化成整数，抹零取整</td>
+<td>int(“123”)<br />int(9.8)</td>
+</tr>
+<tr>
+<td>float()</td>
+<td>将其它数据类型转成浮点数</td>
+<td>1.文字类无法转成整数<br />2.整数转成浮点数，末尾为0</td>
+<td>float(”9.9“)<br />float(9)</td>
+</tr>
+</tbody></table>
+<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.jpg" alt="类型转换"></p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">age = <span class="number">20</span></span><br><span class="line"></span><br><span class="line">print(type(name))</span><br><span class="line">print(type(age))</span><br><span class="line">&lt;<span class="keyword">class</span> &#x27;<span class="symbol">str</span>&#x27;&gt;</span><br><span class="line">&lt;<span class="symbol">class</span> &#x27;<span class="symbol">int</span>&#x27;&gt;   #<span class="symbol">name</span> 和 <span class="symbol">age</span>数据类型不相同</span><br><span class="line"></span><br><span class="line"><span class="symbol">print</span>（我叫+”<span class="symbol">name</span>&quot;+“今年，”+<span class="symbol">age</span>+“岁”）</span><br><span class="line"><span class="symbol">SyntaxError: <span class="symbol">invalid</span></span> <span class="symbol">character</span> <span class="symbol">in</span> <span class="symbol">identifier</span></span><br><span class="line">#程序报错，说明 字符串和整数无法连接。</span><br><span class="line">解决方案：类型转换</span><br><span class="line"></span><br><span class="line"><span class="symbol">print</span>(&quot;我叫&quot; + &quot;<span class="symbol">name</span>&quot; + &quot;,今年&quot; + <span class="symbol">str</span>(<span class="symbol">age</span>) + &quot;岁&quot;)</span><br><span class="line">#将<span class="symbol">int</span>类型通过<span class="symbol">str</span>()函数转成了<span class="symbol">str</span>类型</span><br><span class="line"></span><br><span class="line">我叫<span class="symbol">name,</span>今年<span class="symbol">20</span>岁</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">------------str()将其它类型转成str类型------------</span><br><span class="line"></span><br><span class="line">a = 10</span><br><span class="line">b = 198.8</span><br><span class="line">c = False</span><br><span class="line">print(type(a), type(b), type(c))</span><br><span class="line">&lt;class &#x27;int&#x27;&gt; &lt;class &#x27;float&#x27;&gt; &lt;class &#x27;bool&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(str(a), str(b), str(c))</span><br><span class="line">print(type(str(a)), type(str(b)), type(str(c)))</span><br><span class="line">10 198.8 False</span><br><span class="line">&lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------int()将其它类型转成int类型------------</span><br><span class="line"></span><br><span class="line">s1 = &quot;128&quot;</span><br><span class="line">f1 = 98.7</span><br><span class="line">s2 = &quot;76.77&quot;</span><br><span class="line">ff = True</span><br><span class="line">s3 = &quot;hello&quot;</span><br><span class="line"></span><br><span class="line">print(type(s1), type(f1), type(s2), type(ff), type(s3))</span><br><span class="line"></span><br><span class="line">print(int(s1), type(int(s1)))  #将str转成int类型，字符串为数字串</span><br><span class="line">128 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(int(f1), type(int(f1)))  #将float转成int类型，截取整数部分，舍掉小数部分</span><br><span class="line">98 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(int(s2), type(int(s2)))  #将str转成int类型，报错，因为字符串为小数串</span><br><span class="line">ValueError: invalid literal for int() with base 10: &#x27;76.77&#x27;</span><br><span class="line"></span><br><span class="line">print(int(ff), type(int(ff)))</span><br><span class="line">1 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(int(s3), type(int(s3)))   #将str转成int类型，字符串必须为数字串(整数)，非数字串不可转换</span><br><span class="line">ValueError: invalid literal for int() with base 10: &#x27;hello&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------float()将其它类型转成float类型------------</span><br><span class="line"></span><br><span class="line">s1 = &quot;128.98&quot;</span><br><span class="line">s2 = &quot;76&quot;</span><br><span class="line">ff = True</span><br><span class="line">i = 98</span><br><span class="line">s3 = &quot;hello&quot;</span><br><span class="line"></span><br><span class="line">print(type(s1), type(s2), type(ff), type(s3), type(i))</span><br><span class="line">&lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt; &lt;class &#x27;bool&#x27;&gt; &lt;class &#x27;str&#x27;&gt; &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(float(s1), type(float(s1)))</span><br><span class="line">print(float(s2), type(float(s2)))</span><br><span class="line">print(float(ff), type(float(ff)))</span><br><span class="line">print(float(i), type(float(i)))</span><br><span class="line">128.98 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line">76.0 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line">1.0 &lt;class &#x27;float&#x27;&gt; </span><br><span class="line">98.0 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(float(s3), type(float(s3)))  #字符串中的数字如果是非数字串，则不允许转换</span><br><span class="line">ValueError: could not convert string to float: &#x27;hello&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MAC系统安装gitee步骤</title>
     <url>/2023/08/12/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/</url>
     <content><![CDATA[<h2 id="一、Git下载安装"><a href="#一、Git下载安装" class="headerlink" title="一、Git下载安装"></a>一、Git下载安装</h2><ol>
@@ -259,109 +362,6 @@
       </tags>
   </entry>
   <entry>
-    <title>python数值类型</title>
-    <url>/2023/08/12/python%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h2 id="整数类型int"><a href="#整数类型int" class="headerlink" title="整数类型int"></a>整数类型int</h2><p>英文为integer，简写为int，可以表示正数、负数和零。</p>
-<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">整数可以表示为二进制、八进制、十进制、十六进制</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;十进制&quot;</span>, <span class="number">119</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;二进制&quot;</span>, <span class="number">0b01010111001</span>)   #二进制以<span class="number">0b</span>开头</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;八进制&quot;</span>, <span class="number">0o327</span>)           #八进制以<span class="number">0o</span>开头</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;十六进制&quot;</span>, <span class="number">0x2ADE</span>)        #十六进制以<span class="number">0x</span>开头</span><br><span class="line"></span><br><span class="line">十进制 <span class="number">119</span></span><br><span class="line">二进制 <span class="number">697</span></span><br><span class="line">八进制 <span class="number">215</span></span><br><span class="line">十六进制 <span class="number">10974</span></span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>进制</th>
-<th>基本数</th>
-<th>逢几进一</th>
-<th>表示形式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>十进制</td>
-<td>0,1,2,3,4,5,6,7,8,9</td>
-<td>10</td>
-<td>118</td>
-</tr>
-<tr>
-<td>二进制</td>
-<td>0,1</td>
-<td>2</td>
-<td>0b1110110</td>
-</tr>
-<tr>
-<td>八进制</td>
-<td>0,1,2,3,4,5,6,7</td>
-<td>8</td>
-<td>0o166</td>
-</tr>
-<tr>
-<td>十六进制</td>
-<td>0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F</td>
-<td>16</td>
-<td>0x76</td>
-</tr>
-</tbody></table>
-<span id="more"></span>
-
-
-
-<h2 id="浮点类型float"><a href="#浮点类型float" class="headerlink" title="浮点类型float"></a>浮点类型float</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">b = 10</span><br><span class="line">print (&quot;这是一个浮点数-&gt;&quot;,b)</span><br><span class="line"></span><br><span class="line">print (type(a))   #type 用来查看数值类型</span><br><span class="line">print (type(b))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="浮点数精度"><a href="#浮点数精度" class="headerlink" title="浮点数精度"></a>浮点数精度</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">n1 = 1.1</span><br><span class="line">n2 = 2.2</span><br><span class="line">n3 = 2.1</span><br><span class="line"></span><br><span class="line">print(n1 + n2)</span><br><span class="line">3.3000000000000003       # 极个别浮点数会出现不精确的问题</span><br><span class="line"></span><br><span class="line">print(n1 + n3)</span><br><span class="line">3.2</span><br><span class="line"></span><br><span class="line">from decimal import Decimal       #通过导入模块decimal，解决不精确的问题</span><br><span class="line">print(Decimal(&quot;1.1&quot;) + Decimal(&quot;2.2&quot;))</span><br><span class="line">3.3</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="布尔类型bool"><a href="#布尔类型bool" class="headerlink" title="布尔类型bool"></a>布尔类型bool</h2><h3 id="用来表示真或假的值"><a href="#用来表示真或假的值" class="headerlink" title="用来表示真或假的值"></a>用来表示真或假的值</h3><ul>
-<li>True表示真</li>
-<li>False表示假</li>
-</ul>
-<h3 id="布尔值可以转化为整数"><a href="#布尔值可以转化为整数" class="headerlink" title="布尔值可以转化为整数"></a>布尔值可以转化为整数</h3><ul>
-<li>Ture 表示整数 1</li>
-<li>False 表示整数0</li>
-</ul>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">f1 = True</span><br><span class="line">f2 = False</span><br><span class="line">print(f1, type(f1))</span><br><span class="line">print(f2, type(f2))</span><br><span class="line"></span><br><span class="line">True &lt;<span class="keyword">class</span> &#x27;<span class="symbol">bool</span>&#x27;&gt;</span><br><span class="line"><span class="symbol">False</span> &lt;<span class="symbol">class</span> &#x27;<span class="symbol">bool</span>&#x27;&gt;</span><br><span class="line"></span><br><span class="line">#布尔值可以转成整数计算</span><br><span class="line"></span><br><span class="line"><span class="symbol">print</span>(<span class="symbol">f1</span> + <span class="symbol">1</span>)      # <span class="symbol">1</span>+<span class="symbol">1</span>的结果为<span class="symbol">2</span>，说明<span class="symbol">True</span>表示<span class="symbol">1</span></span><br><span class="line"><span class="symbol">print</span>(<span class="symbol">f2</span> + <span class="symbol">1</span>)      # <span class="symbol">0</span>+<span class="symbol">1</span>的结果为<span class="symbol">1</span>，说明<span class="symbol">False</span>表示<span class="symbol">0</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">2</span></span><br><span class="line"><span class="symbol">1</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>将不同数据类型的数据拼接在一起</p>
-<figure class="highlight elm"><table><tr><td class="code"><pre><span class="line"><span class="title">d</span> = <span class="number">1</span> + <span class="number">1</span></span><br><span class="line"><span class="title">print</span> (d, <span class="keyword">type</span>(d))</span><br><span class="line"></span><br><span class="line"><span class="title">e</span> = <span class="number">1.0</span> + <span class="number">1.0</span></span><br><span class="line"><span class="title">print</span> (e,<span class="keyword">type</span>(e))</span><br><span class="line"></span><br><span class="line"><span class="title">f</span> = <span class="number">1</span> + <span class="number">1.0</span>  #隐式转换 <span class="comment">--- 默认转换</span></span><br><span class="line"><span class="title">print</span> (f,<span class="keyword">type</span>(f))</span><br><span class="line"></span><br><span class="line"><span class="title">num</span> = <span class="number">1</span></span><br><span class="line"><span class="title">g</span> = float (num)</span><br><span class="line"><span class="title">print</span> (g,<span class="keyword">type</span>(g))</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>作用</th>
-<th>注意事项</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>str()</td>
-<td>将其它数据类型转成字符串</td>
-<td>也可用引号转换</td>
-<td>str(123)<br />“123”</td>
-</tr>
-<tr>
-<td>Int()</td>
-<td>将其它数据类型转成整数</td>
-<td>1.文字类和小数类字符串，无法转化为整数<br />2.浮点数转化成整数，抹零取整</td>
-<td>int(“123”)<br />int(9.8)</td>
-</tr>
-<tr>
-<td>float()</td>
-<td>将其它数据类型转成浮点数</td>
-<td>1.文字类无法转成整数<br />2.整数转成浮点数，末尾为0</td>
-<td>float(”9.9“)<br />float(9)</td>
-</tr>
-</tbody></table>
-<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.jpg" alt="类型转换"></p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">name = <span class="string">&quot;张三&quot;</span></span><br><span class="line">age = <span class="number">20</span></span><br><span class="line"></span><br><span class="line">print(type(name))</span><br><span class="line">print(type(age))</span><br><span class="line">&lt;<span class="keyword">class</span> &#x27;<span class="symbol">str</span>&#x27;&gt;</span><br><span class="line">&lt;<span class="symbol">class</span> &#x27;<span class="symbol">int</span>&#x27;&gt;   #<span class="symbol">name</span> 和 <span class="symbol">age</span>数据类型不相同</span><br><span class="line"></span><br><span class="line"><span class="symbol">print</span>（我叫+”<span class="symbol">name</span>&quot;+“今年，”+<span class="symbol">age</span>+“岁”）</span><br><span class="line"><span class="symbol">SyntaxError: <span class="symbol">invalid</span></span> <span class="symbol">character</span> <span class="symbol">in</span> <span class="symbol">identifier</span></span><br><span class="line">#程序报错，说明 字符串和整数无法连接。</span><br><span class="line">解决方案：类型转换</span><br><span class="line"></span><br><span class="line"><span class="symbol">print</span>(&quot;我叫&quot; + &quot;<span class="symbol">name</span>&quot; + &quot;,今年&quot; + <span class="symbol">str</span>(<span class="symbol">age</span>) + &quot;岁&quot;)</span><br><span class="line">#将<span class="symbol">int</span>类型通过<span class="symbol">str</span>()函数转成了<span class="symbol">str</span>类型</span><br><span class="line"></span><br><span class="line">我叫<span class="symbol">name,</span>今年<span class="symbol">20</span>岁</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">------------str()将其它类型转成str类型------------</span><br><span class="line"></span><br><span class="line">a = 10</span><br><span class="line">b = 198.8</span><br><span class="line">c = False</span><br><span class="line">print(type(a), type(b), type(c))</span><br><span class="line">&lt;class &#x27;int&#x27;&gt; &lt;class &#x27;float&#x27;&gt; &lt;class &#x27;bool&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(str(a), str(b), str(c))</span><br><span class="line">print(type(str(a)), type(str(b)), type(str(c)))</span><br><span class="line">10 198.8 False</span><br><span class="line">&lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------int()将其它类型转成int类型------------</span><br><span class="line"></span><br><span class="line">s1 = &quot;128&quot;</span><br><span class="line">f1 = 98.7</span><br><span class="line">s2 = &quot;76.77&quot;</span><br><span class="line">ff = True</span><br><span class="line">s3 = &quot;hello&quot;</span><br><span class="line"></span><br><span class="line">print(type(s1), type(f1), type(s2), type(ff), type(s3))</span><br><span class="line"></span><br><span class="line">print(int(s1), type(int(s1)))  #将str转成int类型，字符串为数字串</span><br><span class="line">128 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(int(f1), type(int(f1)))  #将float转成int类型，截取整数部分，舍掉小数部分</span><br><span class="line">98 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(int(s2), type(int(s2)))  #将str转成int类型，报错，因为字符串为小数串</span><br><span class="line">ValueError: invalid literal for int() with base 10: &#x27;76.77&#x27;</span><br><span class="line"></span><br><span class="line">print(int(ff), type(int(ff)))</span><br><span class="line">1 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(int(s3), type(int(s3)))   #将str转成int类型，字符串必须为数字串(整数)，非数字串不可转换</span><br><span class="line">ValueError: invalid literal for int() with base 10: &#x27;hello&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------float()将其它类型转成float类型------------</span><br><span class="line"></span><br><span class="line">s1 = &quot;128.98&quot;</span><br><span class="line">s2 = &quot;76&quot;</span><br><span class="line">ff = True</span><br><span class="line">i = 98</span><br><span class="line">s3 = &quot;hello&quot;</span><br><span class="line"></span><br><span class="line">print(type(s1), type(s2), type(ff), type(s3), type(i))</span><br><span class="line">&lt;class &#x27;str&#x27;&gt; &lt;class &#x27;str&#x27;&gt; &lt;class &#x27;bool&#x27;&gt; &lt;class &#x27;str&#x27;&gt; &lt;class &#x27;int&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(float(s1), type(float(s1)))</span><br><span class="line">print(float(s2), type(float(s2)))</span><br><span class="line">print(float(ff), type(float(ff)))</span><br><span class="line">print(float(i), type(float(i)))</span><br><span class="line">128.98 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line">76.0 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line">1.0 &lt;class &#x27;float&#x27;&gt; </span><br><span class="line">98.0 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line"></span><br><span class="line">print(float(s3), type(float(s3)))  #字符串中的数字如果是非数字串，则不允许转换</span><br><span class="line">ValueError: could not convert string to float: &#x27;hello&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一切相皆是虚妄</title>
     <url>/2022/12/13/%E4%B8%80%E5%88%87%E7%9B%B8%E7%9A%86%E6%98%AF%E8%99%9A%E5%A6%84/</url>
     <content><![CDATA[<p><code>妙喜莲慈</code></p>
@@ -426,6 +426,45 @@
 ]]></content>
       <categories>
         <category>修行根本</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>因果</title>
+    <url>/2023/07/08/%E5%9B%A0%E6%9E%9C/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>每个人都有因果，信不信佛都有，只是有的人马上因果就显了，有的人积累在一起爆发因果，大部分人都是积累在某一个时候爆发。你以为不修佛就不用承担因果了？只是修行的人知道因果，不修行的人不相信因果，可是<strong>因果是和我们的生命是相连的</strong>。</p>
+<span id="more"></span>
+
+<p>老百姓叫善有善报，恶有恶报，时候到没到而已。<strong>因果从来没有饶过任何一个人</strong>。愚痴的人拼命造恶因求菩萨得到好的果。智慧的人不敢造恶，因为未来不知道啥时候果报现前的时候让人措手不及，最不想失去的东西到时候就失去了。这么多明星精神出问题还不能让人睡醒，以为有钱啥都可以解决，这么多人有钱有名有利解决精神上的问题了吗？</p>
+]]></content>
+      <categories>
+        <category>因果</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>妙喜莲慈自述</title>
+    <url>/2023/08/06/%E5%A6%99%E5%96%9C%E8%8E%B2%E6%85%88%E8%87%AA%E8%BF%B0/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<blockquote>
+<p>独道清贫安乐行，自在无法便是法。</p>
+<p>莫问世间何物，莫探世间何事。</p>
+<p>一剂本丸吞腹乐逍遥，终南野山僧。</p>
+</blockquote>
+<span id="more"></span>
+
+<p>我曾经有九死一生的经历，被强行卖过几次，几次都是对生命不报希望才得以逃脱，在这期间也做过歌女，摆过地摊，开过茶庄。开茶庄是被买卖几次，十年之后的经历了，都不敢想象我能开茶庄，然后才知道有修行佛法的路，闻到了佛法。我以为佛法是嫌弃这种人的，心有点虚，慢慢通过修正自己的心态和对佛经的解读才能正视自己的过去。有十几年时间，我是一直有抑郁症的，一直在想办法，就是没有办法，各种办法都想尽了，最后看到经书，身心才彻底得以安宁，才能瞬间变成一个正常人。我都不敢想象我能有今天，没闻到佛法之前身心已经精疲力尽了，自己只是拼命的伪装活着。感恩佛法，我从被生下来就体弱多病，再到后来的各种经历，现在终于脱离出来了。</p>
+<p>我很感恩曾经把我伤的遍体凌伤的这些人，这种经历只有两种结果：一种是死里逃生，能够在法上成就一番，因为对复杂的人性不抱希望，就无所求之心，死的透彻才能活的才自在；第二个就是这种经历彻底击垮一个人的身心，不复存在，没有机会翻身。</p>
+<p>对人性有一丝的希望就有一丝的障碍，有一念的所求就有一丝的牵绊，搞定自己必须在人性里面下功夫，善的恶的都要搞透，才能持平等心。参破相只是一方面，自我迷自我解，把我搞定了一切皆在此处，万法不过如此。<strong>一切唯心造，无造不作迷，造有造空皆迷途，无作无为真如来。</strong>一部金刚经就可以归一解万藏之圣行，自解自破，边解边行。</p>
+<p>心身被捆绑牢狱了我多少年？如果没有佛法，我将不复存在，透彻完一后内心是喜悦的，自在的，与佛菩萨无二无别。愿所有众生都闻到佛法，学会放下，释放自己，做个善良真实的自己，敢于面对肮脏的过去和肮脏的心，才能洗干净自己内心的杂质，用佛法的力量去化掉它，洗净它，做个干净光明、喜悦的自己……</p>
+<p>万一有和我一样经历的人也可以试着选择自己的路。不需要去逃避和堕落，还有这一条光明的路可以走。人的经历人性里面存在反人格的思想和行为很容易隐藏，人性最薄弱反出来的那一面很难被发觉，这关特难，是我观察自己和周围的人觉察到的，这个至关重要，很多修行人都障碍在隐藏的薄弱的人性背后反人格里面。</p>
+<p>现在的我并非有我，过去所有的经历犹如《金刚经》里佛说的以为有我，这个以为迷困了不知道多少痛苦经历的人。</p>
+<p><code>2023-08-06 21:00</code></p>
+<hr>
+<p>我觉得人没有真正的生命，除了不断的经历各种磨难，就是来编故事的，如果我像这些人一样在这些逆境中承受不住死了，就没有后面一系列与我有关的人和事了，假如我没有来到这世界，就不会有这些经历和故事了，至少在我这里没有佛法了。修行就不存在了。所以啊，人不要怕经历，不要怕有故事，就是做了一场梦而已，我的经历也许少一个，我生命都不存在，都不会被生下来，来就是做这个的就是经历的，经历也不分好坏、善恶、美丑。如果在经历的时候没有分别心，也不存在苦还是乐，逆还是顺。凡夫存在分别心才有苦乐，人常常都是被分别心给打败，被这一念在经历的时候给框架住了，所以才有这么多思维里面的纠缠，在那一刻如果没有分别心，估计也不会有这些经历，它俩是一连串的。</p>
+<p><code>2023-08-08 11:43:57</code></p>
+]]></content>
+      <categories>
+        <category>自述</category>
       </categories>
   </entry>
   <entry>
@@ -528,45 +567,6 @@
       </categories>
   </entry>
   <entry>
-    <title>因果</title>
-    <url>/2023/07/08/%E5%9B%A0%E6%9E%9C/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>每个人都有因果，信不信佛都有，只是有的人马上因果就显了，有的人积累在一起爆发因果，大部分人都是积累在某一个时候爆发。你以为不修佛就不用承担因果了？只是修行的人知道因果，不修行的人不相信因果，可是<strong>因果是和我们的生命是相连的</strong>。</p>
-<span id="more"></span>
-
-<p>老百姓叫善有善报，恶有恶报，时候到没到而已。<strong>因果从来没有饶过任何一个人</strong>。愚痴的人拼命造恶因求菩萨得到好的果。智慧的人不敢造恶，因为未来不知道啥时候果报现前的时候让人措手不及，最不想失去的东西到时候就失去了。这么多明星精神出问题还不能让人睡醒，以为有钱啥都可以解决，这么多人有钱有名有利解决精神上的问题了吗？</p>
-]]></content>
-      <categories>
-        <category>因果</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>妙喜莲慈自述</title>
-    <url>/2023/08/06/%E5%A6%99%E5%96%9C%E8%8E%B2%E6%85%88%E8%87%AA%E8%BF%B0/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<blockquote>
-<p>独道清贫安乐行，自在无法便是法。</p>
-<p>莫问世间何物，莫探世间何事。</p>
-<p>一剂本丸吞腹乐逍遥，终南野山僧。</p>
-</blockquote>
-<span id="more"></span>
-
-<p>我曾经有九死一生的经历，被强行卖过几次，几次都是对生命不报希望才得以逃脱，在这期间也做过歌女，摆过地摊，开过茶庄。开茶庄是被买卖几次，十年之后的经历了，都不敢想象我能开茶庄，然后才知道有修行佛法的路，闻到了佛法。我以为佛法是嫌弃这种人的，心有点虚，慢慢通过修正自己的心态和对佛经的解读才能正视自己的过去。有十几年时间，我是一直有抑郁症的，一直在想办法，就是没有办法，各种办法都想尽了，最后看到经书，身心才彻底得以安宁，才能瞬间变成一个正常人。我都不敢想象我能有今天，没闻到佛法之前身心已经精疲力尽了，自己只是拼命的伪装活着。感恩佛法，我从被生下来就体弱多病，再到后来的各种经历，现在终于脱离出来了。</p>
-<p>我很感恩曾经把我伤的遍体凌伤的这些人，这种经历只有两种结果：一种是死里逃生，能够在法上成就一番，因为对复杂的人性不抱希望，就无所求之心，死的透彻才能活的才自在；第二个就是这种经历彻底击垮一个人的身心，不复存在，没有机会翻身。</p>
-<p>对人性有一丝的希望就有一丝的障碍，有一念的所求就有一丝的牵绊，搞定自己必须在人性里面下功夫，善的恶的都要搞透，才能持平等心。参破相只是一方面，自我迷自我解，把我搞定了一切皆在此处，万法不过如此。<strong>一切唯心造，无造不作迷，造有造空皆迷途，无作无为真如来。</strong>一部金刚经就可以归一解万藏之圣行，自解自破，边解边行。</p>
-<p>心身被捆绑牢狱了我多少年？如果没有佛法，我将不复存在，透彻完一后内心是喜悦的，自在的，与佛菩萨无二无别。愿所有众生都闻到佛法，学会放下，释放自己，做个善良真实的自己，敢于面对肮脏的过去和肮脏的心，才能洗干净自己内心的杂质，用佛法的力量去化掉它，洗净它，做个干净光明、喜悦的自己……</p>
-<p>万一有和我一样经历的人也可以试着选择自己的路。不需要去逃避和堕落，还有这一条光明的路可以走。人的经历人性里面存在反人格的思想和行为很容易隐藏，人性最薄弱反出来的那一面很难被发觉，这关特难，是我观察自己和周围的人觉察到的，这个至关重要，很多修行人都障碍在隐藏的薄弱的人性背后反人格里面。</p>
-<p>现在的我并非有我，过去所有的经历犹如《金刚经》里佛说的以为有我，这个以为迷困了不知道多少痛苦经历的人。</p>
-<p><code>2023-08-06 21:00</code></p>
-<hr>
-<p>我觉得人没有真正的生命，除了不断的经历各种磨难，就是来编故事的，如果我像这些人一样在这些逆境中承受不住死了，就没有后面一系列与我有关的人和事了，假如我没有来到这世界，就不会有这些经历和故事了，至少在我这里没有佛法了。修行就不存在了。所以啊，人不要怕经历，不要怕有故事，就是做了一场梦而已，我的经历也许少一个，我生命都不存在，都不会被生下来，来就是做这个的就是经历的，经历也不分好坏、善恶、美丑。如果在经历的时候没有分别心，也不存在苦还是乐，逆还是顺。凡夫存在分别心才有苦乐，人常常都是被分别心给打败，被这一念在经历的时候给框架住了，所以才有这么多思维里面的纠缠，在那一刻如果没有分别心，估计也不会有这些经历，它俩是一连串的。</p>
-<p><code>2023-08-08 11:43:57</code></p>
-]]></content>
-      <categories>
-        <category>自述</category>
-      </categories>
-  </entry>
-  <entry>
     <title>宠物式的爱不会长久</title>
     <url>/2023/08/12/%E5%AE%A0%E7%89%A9%E5%BC%8F%E7%9A%84%E7%88%B1%E4%B8%8D%E4%BC%9A%E9%95%BF%E4%B9%85/</url>
     <content><![CDATA[<p><code>妙喜莲慈</code></p>
@@ -582,6 +582,21 @@
 ]]></content>
       <categories>
         <category>孩子教育</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>真正的修行</title>
+    <url>/2022/03/18/%E7%9C%9F%E6%AD%A3%E7%9A%84%E4%BF%AE%E8%A1%8C/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>佛法入门讲的是因果法则，让人多积德行善去除所有一切恶念、恶行和带来的恶果。当一个人的善行到无所得，布施出去的善不是一种交易心态的时候；当行善到不把自己的行善，当成一种掌控对方的方法的时候；当行善除去我执的时候；所有的善都用一颗虔诚的心利益别人的时候；就是真正福报够了。</p>
+<span id="more"></span>
+
+<p>这时候知道什么是无我的精神，只是借用善行来观察自己的内心是否还有对立的思维。没有对立思维，福报就到了，就是要升到解脱法上，超越善恶的时候了。行善或者不行善，内心无有分别，没有善恶的思维。若有，那么思维还在执着善，虽然是善但也是业，不如去掉执着，一心观心，心不被外境对立的思维好坏、善恶、生死所牵绊和挂碍了，生死就自如了。生死超脱了这世间，无一不是净土，内心无所执着，无所挂碍。</p>
+<p>修行无非是了解自己，超脱得失与苦乐思维里面的纠缠。当别人经历过不去的事情，在自己经历同样事情的时候，心里从来没有发生过任何事，平静如水。人的天堂地狱就在这一念之间，被自己不知道卡了多少世。世上千千万万的芸芸众生，卡在自己误认为真实的世界里面出不来，内心长期被压抑，让他们苦不堪言。</p>
+<p>南无阿弥陀佛，南无大慈大悲救苦救难观世音菩萨，愿人人的佛性觉性都能够激活，早日觉醒享受内心的宁静安乐吧。</p>
+]]></content>
+      <categories>
+        <category>修行根本</category>
       </categories>
   </entry>
   <entry>
@@ -618,6 +633,21 @@
       </categories>
   </entry>
   <entry>
+    <title>真正解脱者</title>
+    <url>/2023/08/20/%E7%9C%9F%E6%AD%A3%E8%A7%A3%E8%84%B1%E8%80%85/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>真正解脱者是不被任何人、事 、物所困和束缚，喜悦是生命之本，人人具足，非欲能解此意，离欲能到乐境。</p>
+<span id="more"></span>
+
+<p>佛法就是借<strong>前修行已经成就的圣者</strong>的修行经历和证悟，把自己黑暗的认知和无知，通过自我学习<strong>圣者的言行举止</strong>，转变成<strong>光明和透亮</strong>的内外世界。修行就是不断的认知<strong>被自认为的眼、耳、鼻、舌、身、意、贪、嗔、痴、慢、淫、疑所缠绕和束缚的心</strong>被不断释放的过程，认识一样就解一样，迷一样就缠绕一样。神识本来是自在的，不被束缚和捆绑的，是因为自己的无知与无量无边的贪心加执着、固执，才把自己的心给死死的压着和捆着。</p>
+<p>所谓众生就是心长期被自己无知的认知所缠绕，长期不得释放，所以众生说压力大、身心疲惫。身心本来不被任何人、事、物所束缚，回到本来面目。众生的我太重，对世界这个假我和对世界认识的物质、情感、事情，没有真正得到透视。当一个人完全透视完生命，不被自认为的外在所束缚的时候就是<strong>观自在菩萨</strong>，不为别人眼里的善恶美丑做奴隶，不为六根做奴隶，不为六尘做奴隶，就被彻底释放完了。</p>
+<p>修行就是不断的认知所缠绕的思维，释放过去、现在、未来所发生的一切旧的新的习惯性的模式，释放完了就<strong>真自在者</strong>。这种自在非是狂心，而是静中有乐，乐而非狂，心的黑暗与光明，心的自在与束缚都在此身中。</p>
+]]></content>
+      <categories>
+        <category>解脱</category>
+      </categories>
+  </entry>
+  <entry>
     <title>猜数字游戏</title>
     <url>/2023/08/19/%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F/</url>
     <content><![CDATA[<blockquote>
@@ -646,158 +676,6 @@
       <tags>
         <tag>python</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>真正的修行</title>
-    <url>/2022/03/18/%E7%9C%9F%E6%AD%A3%E7%9A%84%E4%BF%AE%E8%A1%8C/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>佛法入门讲的是因果法则，让人多积德行善去除所有一切恶念、恶行和带来的恶果。当一个人的善行到无所得，布施出去的善不是一种交易心态的时候；当行善到不把自己的行善，当成一种掌控对方的方法的时候；当行善除去我执的时候；所有的善都用一颗虔诚的心利益别人的时候；就是真正福报够了。</p>
-<span id="more"></span>
-
-<p>这时候知道什么是无我的精神，只是借用善行来观察自己的内心是否还有对立的思维。没有对立思维，福报就到了，就是要升到解脱法上，超越善恶的时候了。行善或者不行善，内心无有分别，没有善恶的思维。若有，那么思维还在执着善，虽然是善但也是业，不如去掉执着，一心观心，心不被外境对立的思维好坏、善恶、生死所牵绊和挂碍了，生死就自如了。生死超脱了这世间，无一不是净土，内心无所执着，无所挂碍。</p>
-<p>修行无非是了解自己，超脱得失与苦乐思维里面的纠缠。当别人经历过不去的事情，在自己经历同样事情的时候，心里从来没有发生过任何事，平静如水。人的天堂地狱就在这一念之间，被自己不知道卡了多少世。世上千千万万的芸芸众生，卡在自己误认为真实的世界里面出不来，内心长期被压抑，让他们苦不堪言。</p>
-<p>南无阿弥陀佛，南无大慈大悲救苦救难观世音菩萨，愿人人的佛性觉性都能够激活，早日觉醒享受内心的宁静安乐吧。</p>
-]]></content>
-      <categories>
-        <category>修行根本</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>真正解脱者</title>
-    <url>/2023/08/20/%E7%9C%9F%E6%AD%A3%E8%A7%A3%E8%84%B1%E8%80%85/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>真正解脱者是不被任何人、事 、物所困和束缚，喜悦是生命之本，人人具足，非欲能解此意，离欲能到乐境。</p>
-<span id="more"></span>
-
-<p>佛法就是借<strong>前修行已经成就的圣者</strong>的修行经历和证悟，把自己黑暗的认知和无知，通过自我学习<strong>圣者的言行举止</strong>，转变成<strong>光明和透亮</strong>的内外世界。修行就是不断的认知<strong>被自认为的眼、耳、鼻、舌、身、意、贪、嗔、痴、慢、淫、疑所缠绕和束缚的心</strong>被不断释放的过程，认识一样就解一样，迷一样就缠绕一样。神识本来是自在的，不被束缚和捆绑的，是因为自己的无知与无量无边的贪心加执着、固执，才把自己的心给死死的压着和捆着。</p>
-<p>所谓众生就是心长期被自己无知的认知所缠绕，长期不得释放，所以众生说压力大、身心疲惫。身心本来不被任何人、事、物所束缚，回到本来面目。众生的我太重，对世界这个假我和对世界认识的物质、情感、事情，没有真正得到透视。当一个人完全透视完生命，不被自认为的外在所束缚的时候就是<strong>观自在菩萨</strong>，不为别人眼里的善恶美丑做奴隶，不为六根做奴隶，不为六尘做奴隶，就被彻底释放完了。</p>
-<p>修行就是不断的认知所缠绕的思维，释放过去、现在、未来所发生的一切旧的新的习惯性的模式，释放完了就<strong>真自在者</strong>。这种自在非是狂心，而是静中有乐，乐而非狂，心的黑暗与光明，心的自在与束缚都在此身中。</p>
-]]></content>
-      <categories>
-        <category>解脱</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>短路逻辑和运算符优先级</title>
-    <url>/2023/08/25/%E7%9F%AD%E8%B7%AF%E9%80%BB%E8%BE%91%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7/</url>
-    <content><![CDATA[<h1 id="1-短路逻辑"><a href="#1-短路逻辑" class="headerlink" title="1.短路逻辑"></a>1.短路逻辑</h1><p>and 和 or 这两个运算符都是遵从短路逻辑的。</p>
-<p>短路逻辑的核心思想就是：从左往右，只有当第一个操作数的值无法确定逻辑运算的结果时，才对第二个操作数进行求值。</p>
-<span id="more"></span>
-
-<h1 id="2-运算符优先级"><a href="#2-运算符优先级" class="headerlink" title="2.运算符优先级"></a>2.运算符优先级</h1><p>这个表格从低到高列出了 Python 的运算符优先级：</p>
-<table>
-<thead>
-<tr>
-<th><strong>优先级</strong></th>
-<th><strong>运算符</strong></th>
-<th><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>lambda</td>
-<td>Lambda 表达式</td>
-</tr>
-<tr>
-<td>2</td>
-<td>if - else</td>
-<td>条件表达式</td>
-</tr>
-<tr>
-<td>3</td>
-<td>or</td>
-<td>布尔“或”</td>
-</tr>
-<tr>
-<td>4</td>
-<td>and</td>
-<td>布尔“与”</td>
-</tr>
-<tr>
-<td>5</td>
-<td>not x</td>
-<td>布尔“非”</td>
-</tr>
-<tr>
-<td>6</td>
-<td>in, not in, is, is not, &lt;, &lt;&#x3D;,&gt;, &gt;&#x3D;, !&#x3D;, &#x3D;&#x3D;</td>
-<td>成员测试，同一性测试，比较</td>
-</tr>
-<tr>
-<td>7</td>
-<td>|</td>
-<td>按位或</td>
-</tr>
-<tr>
-<td>8</td>
-<td>^</td>
-<td>按位异或</td>
-</tr>
-<tr>
-<td>9</td>
-<td>&amp;</td>
-<td>按位与</td>
-</tr>
-<tr>
-<td>10</td>
-<td>&lt;&lt;, &gt;&gt;</td>
-<td>移位</td>
-</tr>
-<tr>
-<td>11</td>
-<td>+, -</td>
-<td>加法，减法</td>
-</tr>
-<tr>
-<td>12</td>
-<td>*, @, &#x2F;, &#x2F;&#x2F;, %</td>
-<td>乘法，矩阵乘法，除法，地板除，取余数</td>
-</tr>
-<tr>
-<td>13</td>
-<td>+x，-x, ~x</td>
-<td>正号，负号，按位非（翻转）</td>
-</tr>
-<tr>
-<td>14</td>
-<td>**</td>
-<td>指数</td>
-</tr>
-<tr>
-<td>15</td>
-<td>await x</td>
-<td>Await 表达式</td>
-</tr>
-<tr>
-<td>16</td>
-<td>x[index], x[index:index], x(arguments…), x.attribute</td>
-<td>下标，切片，函数调用，属性引用</td>
-</tr>
-<tr>
-<td>17</td>
-<td>(expressions…), [expressions…], {key: value…}, {expressions…}</td>
-<td>绑定或元组显示，列表显示，字典显示，集合显示</td>
-</tr>
-</tbody></table>
-<h1 id="3-思维导图"><a href="#3-思维导图" class="headerlink" title="3.思维导图"></a>3.思维导图</h1><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E7%9F%AD%E8%B7%AF%E9%80%BB%E8%BE%91%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.jpg" alt="短路逻辑和运算符优先级"></p>
-]]></content>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解脱的力量</title>
-    <url>/2022/08/18/%E8%A7%A3%E8%84%B1%E7%9A%84%E5%8A%9B%E9%87%8F/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>方向和心力决定未来，脱离一切业的束缚。只是在业还存在的时候坦然去面对它、接受它，业完了就是清净自性做主，就是安乐行。</p>
-<span id="more"></span>
-
-<p>脱离了一切业的束缚，在修行路上我没有想过要求用享受世间人享受的心去成就佛果，我是用真诚的心、突破一切困难的心，去得到我该有的成就和果位。到现在来讲我没有过过一个节日，别人在享受节日各种美食和欢乐的时候，我在过超越美食和世间欢乐的清贫与自在。</p>
-<p>修行路上想成就，需要忍别人不能忍的，受别人不能受的。不可能在享受世间欲望的同时法又能够成就的，不可能的。无论是这条路上的成就者，还是世间法的所谓财富的成就者，都是付出普通人无法想象的过程和忍受的过程。所以，不要去羡慕任何人，羡慕不如自己努力去真正的做到，终究自己早晚也是那个成就者。</p>
-]]></content>
-      <categories>
-        <category>解脱</category>
-      </categories>
   </entry>
   <entry>
     <title>运算符</title>
@@ -926,6 +804,128 @@
 </tr>
 </tbody></table>
 <h1 id="三、思维导图"><a href="#三、思维导图" class="headerlink" title="三、思维导图"></a>三、思维导图</h1><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B.jpg" alt="数字类型"></p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解脱的力量</title>
+    <url>/2022/08/18/%E8%A7%A3%E8%84%B1%E7%9A%84%E5%8A%9B%E9%87%8F/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>方向和心力决定未来，脱离一切业的束缚。只是在业还存在的时候坦然去面对它、接受它，业完了就是清净自性做主，就是安乐行。</p>
+<span id="more"></span>
+
+<p>脱离了一切业的束缚，在修行路上我没有想过要求用享受世间人享受的心去成就佛果，我是用真诚的心、突破一切困难的心，去得到我该有的成就和果位。到现在来讲我没有过过一个节日，别人在享受节日各种美食和欢乐的时候，我在过超越美食和世间欢乐的清贫与自在。</p>
+<p>修行路上想成就，需要忍别人不能忍的，受别人不能受的。不可能在享受世间欲望的同时法又能够成就的，不可能的。无论是这条路上的成就者，还是世间法的所谓财富的成就者，都是付出普通人无法想象的过程和忍受的过程。所以，不要去羡慕任何人，羡慕不如自己努力去真正的做到，终究自己早晚也是那个成就者。</p>
+]]></content>
+      <categories>
+        <category>解脱</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>短路逻辑和运算符优先级</title>
+    <url>/2023/08/25/%E7%9F%AD%E8%B7%AF%E9%80%BB%E8%BE%91%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7/</url>
+    <content><![CDATA[<h1 id="1-短路逻辑"><a href="#1-短路逻辑" class="headerlink" title="1.短路逻辑"></a>1.短路逻辑</h1><p>and 和 or 这两个运算符都是遵从短路逻辑的。</p>
+<p>短路逻辑的核心思想就是：从左往右，只有当第一个操作数的值无法确定逻辑运算的结果时，才对第二个操作数进行求值。</p>
+<span id="more"></span>
+
+<h1 id="2-运算符优先级"><a href="#2-运算符优先级" class="headerlink" title="2.运算符优先级"></a>2.运算符优先级</h1><p>这个表格从低到高列出了 Python 的运算符优先级：</p>
+<table>
+<thead>
+<tr>
+<th><strong>优先级</strong></th>
+<th><strong>运算符</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>lambda</td>
+<td>Lambda 表达式</td>
+</tr>
+<tr>
+<td>2</td>
+<td>if - else</td>
+<td>条件表达式</td>
+</tr>
+<tr>
+<td>3</td>
+<td>or</td>
+<td>布尔“或”</td>
+</tr>
+<tr>
+<td>4</td>
+<td>and</td>
+<td>布尔“与”</td>
+</tr>
+<tr>
+<td>5</td>
+<td>not x</td>
+<td>布尔“非”</td>
+</tr>
+<tr>
+<td>6</td>
+<td>in, not in, is, is not, &lt;, &lt;&#x3D;,&gt;, &gt;&#x3D;, !&#x3D;, &#x3D;&#x3D;</td>
+<td>成员测试，同一性测试，比较</td>
+</tr>
+<tr>
+<td>7</td>
+<td>|</td>
+<td>按位或</td>
+</tr>
+<tr>
+<td>8</td>
+<td>^</td>
+<td>按位异或</td>
+</tr>
+<tr>
+<td>9</td>
+<td>&amp;</td>
+<td>按位与</td>
+</tr>
+<tr>
+<td>10</td>
+<td>&lt;&lt;, &gt;&gt;</td>
+<td>移位</td>
+</tr>
+<tr>
+<td>11</td>
+<td>+, -</td>
+<td>加法，减法</td>
+</tr>
+<tr>
+<td>12</td>
+<td>*, @, &#x2F;, &#x2F;&#x2F;, %</td>
+<td>乘法，矩阵乘法，除法，地板除，取余数</td>
+</tr>
+<tr>
+<td>13</td>
+<td>+x，-x, ~x</td>
+<td>正号，负号，按位非（翻转）</td>
+</tr>
+<tr>
+<td>14</td>
+<td>**</td>
+<td>指数</td>
+</tr>
+<tr>
+<td>15</td>
+<td>await x</td>
+<td>Await 表达式</td>
+</tr>
+<tr>
+<td>16</td>
+<td>x[index], x[index:index], x(arguments…), x.attribute</td>
+<td>下标，切片，函数调用，属性引用</td>
+</tr>
+<tr>
+<td>17</td>
+<td>(expressions…), [expressions…], {key: value…}, {expressions…}</td>
+<td>绑定或元组显示，列表显示，字典显示，集合显示</td>
+</tr>
+</tbody></table>
+<h1 id="3-思维导图"><a href="#3-思维导图" class="headerlink" title="3.思维导图"></a>3.思维导图</h1><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E7%9F%AD%E8%B7%AF%E9%80%BB%E8%BE%91%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.jpg" alt="短路逻辑和运算符优先级"></p>
 ]]></content>
       <tags>
         <tag>python</tag>
