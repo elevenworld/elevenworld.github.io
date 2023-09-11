@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Git基本语法</title>
-    <url>/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git init  <span class="comment">#创建仓库</span></span><br><span class="line">ls  <span class="comment">#查看仓库文件</span></span><br><span class="line">ls -a  <span class="comment">#查看仓库所有文件 包括隐藏文件</span></span><br><span class="line">git status  <span class="comment">#查看仓库状态</span></span><br><span class="line">git add .  <span class="comment">#添加所有文件到暂存区</span></span><br><span class="line">git add 文件名  <span class="comment">#添加名称为“文件名”的文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;写一句描述该文件夹的信息&quot;</span>  <span class="comment">#提交暂存区的文件</span></span><br><span class="line">git push origin <span class="keyword">master</span>  <span class="title">#上传本地信息 到 远程仓库</span></span><br><span class="line"><span class="title">git</span> pull origin <span class="keyword">master</span>  <span class="title">#拉取远程仓库信息 合并到本地</span></span><br><span class="line"><span class="title">    pull</span>=fetch+merge</span><br><span class="line">    git fetch origin <span class="keyword">master</span>  <span class="title">#抓取远程仓库信息</span></span><br><span class="line"><span class="title">    git</span> merge origin/<span class="keyword">master</span>  <span class="title">#将抓取的远程仓库信息合并到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">sudo</span> su  <span class="comment"># 管理员身份执行命令</span></span><br><span class="line"></span><br><span class="line">vim <span class="number">0123</span>.txt  <span class="comment">#修改文件0123.txt   按 i 进入修改模式，修改完成后 shift+z+z 退出编辑状态并保存</span></span><br><span class="line">git reflog   <span class="comment">#查看文件的版本信息</span></span><br><span class="line">git log   <span class="comment">#查看详细的版本信息</span></span><br><span class="line">cat <span class="number">0123</span>.rtf   <span class="comment">#查看文件详细内容</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">远程仓库克隆链接   #克隆远程仓库信息到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">touch</span> .gitignore  <span class="comment">#输入git命令 touch .gitignore 回车之后会发现文件中已经成功创建了.gitignore文件(忽略文件命令)  </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="Git-reset-三种模式"><a href="#Git-reset-三种模式" class="headerlink" title="Git reset 三种模式"></a>Git reset 三种模式</h2><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/git-reset-%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F.jpg" alt="git-reset-三种模式" style="zoom: 33%;" />
-
-
-
-<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--soft</span>  <span class="comment">#回到之前版本的同时保留工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--hard</span>  <span class="comment">#回到之前版本的同时删除工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--mixed</span>  <span class="comment">#回到之前版本的同时保留工作区所有内容，删除暂存区的所有内容</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="git-rm-删除文件"><a href="#git-rm-删除文件" class="headerlink" title="git rm 删除文件"></a>git rm 删除文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> 123.md   <span class="comment">#删除工作区和暂存区的文件123.md</span></span><br><span class="line">git <span class="built_in">rm</span> --cached 123.md   <span class="comment">#删除暂存区的文件123.md,不删除本地文件</span></span><br><span class="line">git commit -m <span class="string">&quot;123.md&quot;</span>  <span class="comment">#删除文件后，执行提交命令。否则该删除文件还存在于暂存区</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux命令</title>
     <url>/2023/08/15/Linux%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="常用Linux命令"><a href="#常用Linux命令" class="headerlink" title="常用Linux命令"></a>常用Linux命令</h1><table>
@@ -256,6 +234,28 @@
 ]]></content>
       <tags>
         <tag>gitee</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git基本语法</title>
+    <url>/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git init  <span class="comment">#创建仓库</span></span><br><span class="line">ls  <span class="comment">#查看仓库文件</span></span><br><span class="line">ls -a  <span class="comment">#查看仓库所有文件 包括隐藏文件</span></span><br><span class="line">git status  <span class="comment">#查看仓库状态</span></span><br><span class="line">git add .  <span class="comment">#添加所有文件到暂存区</span></span><br><span class="line">git add 文件名  <span class="comment">#添加名称为“文件名”的文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;写一句描述该文件夹的信息&quot;</span>  <span class="comment">#提交暂存区的文件</span></span><br><span class="line">git push origin <span class="keyword">master</span>  <span class="title">#上传本地信息 到 远程仓库</span></span><br><span class="line"><span class="title">git</span> pull origin <span class="keyword">master</span>  <span class="title">#拉取远程仓库信息 合并到本地</span></span><br><span class="line"><span class="title">    pull</span>=fetch+merge</span><br><span class="line">    git fetch origin <span class="keyword">master</span>  <span class="title">#抓取远程仓库信息</span></span><br><span class="line"><span class="title">    git</span> merge origin/<span class="keyword">master</span>  <span class="title">#将抓取的远程仓库信息合并到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">sudo</span> su  <span class="comment"># 管理员身份执行命令</span></span><br><span class="line"></span><br><span class="line">vim <span class="number">0123</span>.txt  <span class="comment">#修改文件0123.txt   按 i 进入修改模式，修改完成后 shift+z+z 退出编辑状态并保存</span></span><br><span class="line">git reflog   <span class="comment">#查看文件的版本信息</span></span><br><span class="line">git log   <span class="comment">#查看详细的版本信息</span></span><br><span class="line">cat <span class="number">0123</span>.rtf   <span class="comment">#查看文件详细内容</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">远程仓库克隆链接   #克隆远程仓库信息到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">touch</span> .gitignore  <span class="comment">#输入git命令 touch .gitignore 回车之后会发现文件中已经成功创建了.gitignore文件(忽略文件命令)  </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Git-reset-三种模式"><a href="#Git-reset-三种模式" class="headerlink" title="Git reset 三种模式"></a>Git reset 三种模式</h2><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/git-reset-%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F.jpg" alt="git-reset-三种模式" style="zoom: 33%;" />
+
+
+
+<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--soft</span>  <span class="comment">#回到之前版本的同时保留工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--hard</span>  <span class="comment">#回到之前版本的同时删除工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--mixed</span>  <span class="comment">#回到之前版本的同时保留工作区所有内容，删除暂存区的所有内容</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="git-rm-删除文件"><a href="#git-rm-删除文件" class="headerlink" title="git rm 删除文件"></a>git rm 删除文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> 123.md   <span class="comment">#删除工作区和暂存区的文件123.md</span></span><br><span class="line">git <span class="built_in">rm</span> --cached 123.md   <span class="comment">#删除暂存区的文件123.md,不删除本地文件</span></span><br><span class="line">git commit -m <span class="string">&quot;123.md&quot;</span>  <span class="comment">#删除文件后，执行提交命令。否则该删除文件还存在于暂存区</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -604,6 +604,20 @@
       </categories>
   </entry>
   <entry>
+    <title>用佛法解读得失的人生</title>
+    <url>/2023/06/03/%E7%94%A8%E4%BD%9B%E6%B3%95%E8%A7%A3%E8%AF%BB%E5%BE%97%E5%A4%B1%E7%9A%84%E4%BA%BA%E7%94%9F/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>人人都是佛，只是被自己的欲望障碍住了，修行就是为了除去障碍。清净自性的本性就是佛。人人具足，没有根性大小一说。金刚经曰，是法平等，无有高下，是因为障碍的多和少，领悟的多和少而已。</p>
+<span id="more"></span>
+
+<p>对自我内心的挂碍纠结，认识的越彻底就越自在。这种自在并非是物质上能够代替的了的，是从内到外都是喜悦的。佛就是生之前那个空，死后的那个空，一个生命生灭前后那个思想的转化，接受和面对一切不实在的生灭法，就是如来藏性。因为人抗拒它才会痛苦，人只想生不想灭，只想得不想失才会痛苦。不生不灭，就是那个空，生的那一刻后面就是面对的灭，不生就不存在相就不存在灭。思想要懂得这种用法就不会纠结，就是轻松自在的。不迷的那一刻，不纠结失去的那一刻，用这种心态就是自在 。一切都是因缘所生法，灭也是一样，思想不做任何定格，不去造作之意，活的就比较坦荡。</p>
+<p>看到现在很多人活的很痛苦，精神和肉体都苦，大人小孩都苦，是因为人类在做同样一件事，就是把自己的人生定格在自己希望的样子里面，达不到希望的那样就认为自己是世界上最不幸的，所以纠结在自己错误的认知里面和设置的框架意识里面跳不出来，才会痛苦。</p>
+]]></content>
+      <categories>
+        <category>清净自性</category>
+      </categories>
+  </entry>
+  <entry>
     <title>猜数字游戏</title>
     <url>/2023/08/19/%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F/</url>
     <content><![CDATA[<blockquote>
@@ -658,20 +672,6 @@
 <p>佛法就是借<strong>前修行已经成就的圣者</strong>的修行经历和证悟，把自己黑暗的认知和无知，通过自我学习<strong>圣者的言行举止</strong>，转变成<strong>光明和透亮</strong>的内外世界。修行就是不断的认知<strong>被自认为的眼、耳、鼻、舌、身、意、贪、嗔、痴、慢、淫、疑所缠绕和束缚的心</strong>被不断释放的过程，认识一样就解一样，迷一样就缠绕一样。神识本来是自在的，不被束缚和捆绑的，是因为自己的无知与无量无边的贪心加执着、固执，才把自己的心给死死的压着和捆着。</p>
 <p>所谓众生就是心长期被自己无知的认知所缠绕，长期不得释放，所以众生说压力大、身心疲惫。身心本来不被任何人、事、物所束缚，回到本来面目。众生的我太重，对世界这个假我和对世界认识的物质、情感、事情，没有真正得到透视。当一个人完全透视完生命，不被自认为的外在所束缚的时候就是<strong>观自在菩萨</strong>，不为别人眼里的善恶美丑做奴隶，不为六根做奴隶，不为六尘做奴隶，就被彻底释放完了。</p>
 <p>修行就是不断的认知所缠绕的思维，释放过去、现在、未来所发生的一切旧的新的习惯性的模式，释放完了就<strong>真自在者</strong>。这种自在非是狂心，而是静中有乐，乐而非狂，心的黑暗与光明，心的自在与束缚都在此身中。</p>
-]]></content>
-      <categories>
-        <category>解脱</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>解脱的力量</title>
-    <url>/2022/08/18/%E8%A7%A3%E8%84%B1%E7%9A%84%E5%8A%9B%E9%87%8F/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>方向和心力决定未来，脱离一切业的束缚。只是在业还存在的时候坦然去面对它、接受它，业完了就是清净自性做主，就是安乐行。</p>
-<span id="more"></span>
-
-<p>脱离了一切业的束缚，在修行路上我没有想过要求用享受世间人享受的心去成就佛果，我是用真诚的心、突破一切困难的心，去得到我该有的成就和果位。到现在来讲我没有过过一个节日，别人在享受节日各种美食和欢乐的时候，我在过超越美食和世间欢乐的清贫与自在。</p>
-<p>修行路上想成就，需要忍别人不能忍的，受别人不能受的。不可能在享受世间欲望的同时法又能够成就的，不可能的。无论是这条路上的成就者，还是世间法的所谓财富的成就者，都是付出普通人无法想象的过程和忍受的过程。所以，不要去羡慕任何人，羡慕不如自己努力去真正的做到，终究自己早晚也是那个成就者。</p>
 ]]></content>
       <categories>
         <category>解脱</category>
@@ -784,6 +784,20 @@
       <tags>
         <tag>python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>解脱的力量</title>
+    <url>/2022/08/18/%E8%A7%A3%E8%84%B1%E7%9A%84%E5%8A%9B%E9%87%8F/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>方向和心力决定未来，脱离一切业的束缚。只是在业还存在的时候坦然去面对它、接受它，业完了就是清净自性做主，就是安乐行。</p>
+<span id="more"></span>
+
+<p>脱离了一切业的束缚，在修行路上我没有想过要求用享受世间人享受的心去成就佛果，我是用真诚的心、突破一切困难的心，去得到我该有的成就和果位。到现在来讲我没有过过一个节日，别人在享受节日各种美食和欢乐的时候，我在过超越美食和世间欢乐的清贫与自在。</p>
+<p>修行路上想成就，需要忍别人不能忍的，受别人不能受的。不可能在享受世间欲望的同时法又能够成就的，不可能的。无论是这条路上的成就者，还是世间法的所谓财富的成就者，都是付出普通人无法想象的过程和忍受的过程。所以，不要去羡慕任何人，羡慕不如自己努力去真正的做到，终究自己早晚也是那个成就者。</p>
+]]></content>
+      <categories>
+        <category>解脱</category>
+      </categories>
   </entry>
   <entry>
     <title>运算符</title>
