@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-flat-top.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"elevenworld.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","Available values":"disqus | disqusjs | changyan | livere | gitalk | utterances | leancloud | valine","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1.顺序结构程序从上到下按照顺序执行代码，中间没有任何的判断和跳转，直接到程序结束 1234567891011121314151617#把大象放冰箱一共分几步print(&quot;---------程序开始----------&quot;)print(&quot;1.把冰箱门打开&quot;)print(&quot;2.把大象放进去&quot;)print(&quot;3.把冰箱门关上&amp;quo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序的组织结构">
+<meta property="og:url" content="https://elevenworld.github.io/2023/09/30/%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="本真果得">
+<meta property="og:description" content="1.顺序结构程序从上到下按照顺序执行代码，中间没有任何的判断和跳转，直接到程序结束 1234567891011121314151617#把大象放冰箱一共分几步print(&quot;---------程序开始----------&quot;)print(&quot;1.把冰箱门打开&quot;)print(&quot;2.把大象放进去&quot;)print(&quot;3.把冰箱门关上&amp;quo">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84.jpg">
+<meta property="og:image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84.jpg">
+<meta property="og:image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%8D%95%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84.jpg">
+<meta property="og:image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%8F%8C%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84.jpg">
+<meta property="og:image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%A4%9A%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84.jpg">
+<meta property="og:image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%B5%8C%E5%A5%97if.jpg">
+<meta property="article:published_time" content="2023-09-30T01:16:22.000Z">
+<meta property="article:modified_time" content="2023-09-30T01:17:21.373Z">
+<meta property="article:author" content="本真果得">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84.jpg">
+
+
+<link rel="canonical" href="https://elevenworld.github.io/2023/09/30/%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://elevenworld.github.io/2023/09/30/%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84/","path":"2023/09/30/程序的组织结构/","title":"程序的组织结构"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>程序的组织结构 | 本真果得</title>
+  
+
+
+
+
+
+
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">本真果得</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">生命认知 精神洗礼</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-学习"><a href="/tags/" rel="section"><i class="fa fa-graduation-cap fa-fw"></i>学习</a></li><li class="menu-item menu-item-实修"><a href="/categories/" rel="section"><i class="fa fa-heart fa-fw"></i>实修</a></li><li class="menu-item menu-item-梦幻"><a href="/archives/" rel="section"><i class="fa fa-bullseye fa-fw"></i>梦幻</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">1.顺序结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">2.选择结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="nav-number">2.1.</span> <span class="nav-text">单分支结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="nav-number">2.2.</span> <span class="nav-text">双分支结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="nav-number">2.3.</span> <span class="nav-text">多分支结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">条件表达式</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="本真果得"
+      src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/byc0123.png">
+  <p class="site-author-name" itemprop="name">本真果得</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://elevenworld.github.io/2023/09/30/%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/byc0123.png">
+      <meta itemprop="name" content="本真果得">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="本真果得">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="程序的组织结构 | 本真果得">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          程序的组织结构
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-09-30 09:16:22 / 修改时间：09:17:21" itemprop="dateCreated datePublished" datetime="2023-09-30T09:16:22+08:00">2023-09-30</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>779</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84.jpg" alt="程序的组织结构"></p>
+<h2 id="1-顺序结构"><a href="#1-顺序结构" class="headerlink" title="1.顺序结构"></a>1.顺序结构</h2><p>程序从上到下按照顺序执行代码，中间没有任何的判断和跳转，直接到程序结束</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#把大象放冰箱一共分几步</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;---------程序开始----------&quot;</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;1.把冰箱门打开&quot;</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;2.把大象放进去&quot;</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;3.把冰箱门关上&quot;</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;---------程序结束----------&quot;</span>)</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">---------程序开始----------</span><br><span class="line"><span class="number">1</span>.把冰箱门打开</span><br><span class="line"><span class="number">2</span>.把大象放进去</span><br><span class="line"><span class="number">3</span>.把冰箱门关上</span><br><span class="line">---------程序结束----------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-选择结构"><a href="#2-选择结构" class="headerlink" title="2.选择结构"></a>2.选择结构</h2><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84.jpg" alt="选择结构"></p>
+<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%8D%95%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84.jpg" alt="单分支结构"></p>
+<h3 id="单分支结构"><a href="#单分支结构" class="headerlink" title="单分支结构"></a>单分支结构</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">money = 2000                      <span class="comment">#余额</span></span><br><span class="line">a = int(input(<span class="string">&quot;请输入取款金额:&quot;</span>))   <span class="comment">#取款金额</span></span><br><span class="line"><span class="comment">#判断余额是否充足</span></span><br><span class="line">if money &gt;= a:</span><br><span class="line">    money = money - a</span><br><span class="line">    print(<span class="string">&quot;取款成功！余额:&quot;</span>, money)</span><br><span class="line"></span><br><span class="line"><span class="section">请输入取款金额:1900</span></span><br><span class="line"><span class="section">取款成功！余额: 100</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="双分支结构"><a href="#双分支结构" class="headerlink" title="双分支结构"></a>双分支结构</h3><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%8F%8C%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84.jpg" alt="双分支结构"></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 双分支结构<span class="keyword">if</span>……<span class="keyword">else</span>,二选一执行</span><br><span class="line"># 从键盘输入一个整数，编写程序让计算机判断是奇数还是偶数</span><br><span class="line"></span><br><span class="line"><span class="built_in">num</span> = <span class="built_in">int</span>(input(<span class="string">&quot;请输入一个整数:&quot;</span>))</span><br><span class="line"># 条件判断</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">num</span> % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">num</span>, <span class="string">&quot;是偶数&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">num</span>, <span class="string">&quot;是奇数&quot;</span>)</span><br><span class="line"></span><br><span class="line">请输入一个整数:<span class="number">3</span></span><br><span class="line"><span class="number">3</span> 是奇数</span><br><span class="line"></span><br><span class="line">请输入一个整数:<span class="number">4</span></span><br><span class="line"><span class="number">4</span> 是偶数</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="多分支结构"><a href="#多分支结构" class="headerlink" title="多分支结构"></a>多分支结构</h3><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%A4%9A%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84.jpg" alt="多分支结构"></p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 多分支结构，多选一执行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从键盘录入一个整数成绩</span></span><br><span class="line"><span class="comment"># 90-100  A</span></span><br><span class="line"><span class="comment"># 80-89   B</span></span><br><span class="line"><span class="comment"># 70-79   C</span></span><br><span class="line"><span class="comment"># 60-69   D</span></span><br><span class="line"><span class="comment"># 0-59    E</span></span><br><span class="line"><span class="comment"># 小于0大于100为非法数据，不是成绩的有效范围</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">score </span>= int(input(<span class="string">&quot;请输入一个成绩:&quot;</span>))</span><br><span class="line"><span class="comment"># 判断条件</span></span><br><span class="line">if <span class="keyword">score </span>&gt;= <span class="number">90</span> <span class="keyword">and </span><span class="keyword">score </span>&lt;= <span class="number">100</span>:</span><br><span class="line">    print(<span class="string">&quot;成绩为A&quot;</span>)</span><br><span class="line">elif <span class="keyword">score </span>&gt;= <span class="number">80</span> <span class="keyword">and </span><span class="keyword">score </span>&lt;= <span class="number">89</span>:</span><br><span class="line">    print(<span class="string">&quot;成绩为B&quot;</span>)</span><br><span class="line">elif <span class="keyword">score </span>&gt;= <span class="number">70</span> <span class="keyword">and </span><span class="keyword">score </span>&lt;= <span class="number">79</span>:</span><br><span class="line">    print(<span class="string">&quot;成绩为C&quot;</span>)</span><br><span class="line">elif <span class="keyword">score </span>&gt;= <span class="number">60</span> <span class="keyword">and </span><span class="keyword">score </span>&lt;= <span class="number">69</span>:</span><br><span class="line">    print(<span class="string">&quot;成绩为D&quot;</span>)</span><br><span class="line">elif <span class="keyword">score </span>&gt;= <span class="number">0</span> <span class="keyword">and </span><span class="keyword">score </span>&lt;= <span class="number">59</span>:</span><br><span class="line">    print(<span class="string">&quot;成绩为E&quot;</span>)</span><br><span class="line"><span class="symbol">else:</span></span><br><span class="line">    print(<span class="string">&quot;对不起，成绩不在有效范围!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%B5%8C%E5%A5%97if.jpg" alt="嵌套if"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 超市购物通过会员和消费金额判断打折情况</span></span><br><span class="line"><span class="comment"># 会员  &gt;= 200   8折</span></span><br><span class="line"><span class="comment">#     &gt;= 100   9折</span></span><br><span class="line"><span class="comment">#      &lt; 100   不打折</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 非会员 &gt;= 200   9.5折</span></span><br><span class="line"><span class="comment">#     &lt; 200   不打折</span></span><br><span class="line"></span><br><span class="line">answer = <span class="built_in">input</span>(<span class="string">&quot;您是会员吗？Y/N&quot;</span>)</span><br><span class="line">money = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入消费金额:&quot;</span>))</span><br><span class="line"><span class="keyword">if</span> answer == <span class="string">&quot;Y&quot;</span>:</span><br><span class="line">    <span class="keyword">if</span> money &gt;= <span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;打8折,应支付:&quot;</span>, money * <span class="number">0.8</span>)</span><br><span class="line">    <span class="keyword">elif</span> money &gt;= <span class="number">100</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;打9折,应支付:&quot;</span>, money * <span class="number">0.9</span>)</span><br><span class="line">    <span class="keyword">elif</span> money &lt; <span class="number">100</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;不打折,应支付:&quot;</span>, money)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">if</span> money &gt;= <span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;打9.5折,应支付:&quot;</span>, money * <span class="number">0.95</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;不打折,应支付:&quot;</span>, money)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="条件表达式"><a href="#条件表达式" class="headerlink" title="条件表达式"></a>条件表达式</h3><p>&#x3D;&#x3D;条件表达式是if……else的简写&#x3D;&#x3D;</p>
+<ul>
+<li><p>语法结构:  x   if   判断条件  else   y</p>
+</li>
+<li><p>运算规则：如果判断条件的布尔值为True ，条件表达式的返回值为x；否则条件表达式的返回值为False</p>
+</li>
+</ul>
+<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 从键盘输入两个整数，比较两个整数的大小</span></span><br><span class="line"></span><br><span class="line">num1 = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">&quot;请输入第一个整数:&quot;</span>))</span><br><span class="line">num2 = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">&quot;请输入第二个整数:&quot;</span>))</span><br><span class="line"><span class="meta">#比较大小</span></span><br><span class="line"><span class="keyword">if</span> num1 &gt;= num2:</span><br><span class="line">    <span class="keyword">print</span>(num1, <span class="string">&quot;大于等于&quot;</span>, num2)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span>(num1, <span class="string">&quot;小于&quot;</span>, num2)</span><br><span class="line"></span><br><span class="line">请输入第一个整数:<span class="number">5</span></span><br><span class="line">请输入第二个整数:<span class="number">10</span></span><br><span class="line"><span class="number">5</span> 小于 <span class="number">10</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">&quot;使用条件表达式进行比较：&quot;</span>)</span><br><span class="line"><span class="keyword">print</span>(<span class="keyword">str</span>(num1) + <span class="string">&quot;大于等于&quot;</span> + <span class="keyword">str</span>(num2) <span class="keyword">if</span> num1 &gt;= num2 <span class="keyword">else</span> <span class="keyword">str</span>(num1) + <span class="string">&quot;小于&quot;</span> + <span class="keyword">str</span>(num2))</span><br><span class="line"></span><br><span class="line">请输入第一个整数:<span class="number">10</span></span><br><span class="line">请输入第二个整数:<span class="number">20</span></span><br><span class="line">使用条件表达式进行比较：</span><br><span class="line"><span class="number">10</span>小于<span class="number">20</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/08/26/%E6%88%91%E4%BB%AC%E7%9A%84%E7%94%9F%E5%91%BD%E5%8E%86%E7%A8%8B/" rel="prev" title="我们的生命历程">
+                  <i class="fa fa-angle-left"></i> 我们的生命历程
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">本真果得</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">13k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">46 分钟</span>
+  </span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>-->
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+
+</body>
+</html>

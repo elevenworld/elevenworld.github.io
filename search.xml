@@ -154,6 +154,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Git基本语法</title>
+    <url>/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git init  <span class="comment">#创建仓库</span></span><br><span class="line">ls  <span class="comment">#查看仓库文件</span></span><br><span class="line">ls -a  <span class="comment">#查看仓库所有文件 包括隐藏文件</span></span><br><span class="line">git status  <span class="comment">#查看仓库状态</span></span><br><span class="line">git add .  <span class="comment">#添加所有文件到暂存区</span></span><br><span class="line">git add 文件名  <span class="comment">#添加名称为“文件名”的文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;写一句描述该文件夹的信息&quot;</span>  <span class="comment">#提交暂存区的文件</span></span><br><span class="line">git push origin <span class="keyword">master</span>  <span class="title">#上传本地信息 到 远程仓库</span></span><br><span class="line"><span class="title">git</span> pull origin <span class="keyword">master</span>  <span class="title">#拉取远程仓库信息 合并到本地</span></span><br><span class="line"><span class="title">    pull</span>=fetch+merge</span><br><span class="line">    git fetch origin <span class="keyword">master</span>  <span class="title">#抓取远程仓库信息</span></span><br><span class="line"><span class="title">    git</span> merge origin/<span class="keyword">master</span>  <span class="title">#将抓取的远程仓库信息合并到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">sudo</span> su  <span class="comment"># 管理员身份执行命令</span></span><br><span class="line"></span><br><span class="line">vim <span class="number">0123</span>.txt  <span class="comment">#修改文件0123.txt   按 i 进入修改模式，修改完成后 shift+z+z 退出编辑状态并保存</span></span><br><span class="line">git reflog   <span class="comment">#查看文件的版本信息</span></span><br><span class="line">git log   <span class="comment">#查看详细的版本信息</span></span><br><span class="line">cat <span class="number">0123</span>.rtf   <span class="comment">#查看文件详细内容</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">远程仓库克隆链接   #克隆远程仓库信息到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">touch</span> .gitignore  <span class="comment">#输入git命令 touch .gitignore 回车之后会发现文件中已经成功创建了.gitignore文件(忽略文件命令)  </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="Git-reset-三种模式"><a href="#Git-reset-三种模式" class="headerlink" title="Git reset 三种模式"></a>Git reset 三种模式</h2><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/git-reset-%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F.jpg" alt="git-reset-三种模式" style="zoom: 33%;" />
+
+
+
+<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--soft</span>  <span class="comment">#回到之前版本的同时保留工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--hard</span>  <span class="comment">#回到之前版本的同时删除工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--mixed</span>  <span class="comment">#回到之前版本的同时保留工作区所有内容，删除暂存区的所有内容</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="git-rm-删除文件"><a href="#git-rm-删除文件" class="headerlink" title="git rm 删除文件"></a>git rm 删除文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> 123.md   <span class="comment">#删除工作区和暂存区的文件123.md</span></span><br><span class="line">git <span class="built_in">rm</span> --cached 123.md   <span class="comment">#删除暂存区的文件123.md,不删除本地文件</span></span><br><span class="line">git commit -m <span class="string">&quot;123.md&quot;</span>  <span class="comment">#删除文件后，执行提交命令。否则该删除文件还存在于暂存区</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MAC系统安装gitee步骤</title>
     <url>/2023/08/12/MAC%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85gitee%E6%AD%A5%E9%AA%A4/</url>
     <content><![CDATA[<h2 id="一、Git下载安装"><a href="#一、Git下载安装" class="headerlink" title="一、Git下载安装"></a>一、Git下载安装</h2><ol>
@@ -234,47 +256,6 @@
 ]]></content>
       <tags>
         <tag>gitee</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>人性本然流露</title>
-    <url>/2023/08/11/%E4%BA%BA%E6%80%A7%E6%9C%AC%E7%84%B6%E6%B5%81/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>我们居住的世界本来就不完美，人不完美，性格也不完美，有缺陷有优点才能叫做完整的世界。</p>
-<p>我们无法改变世界，只能用思维去不断的认知和转化，接受不完美的一面，我们的内心就是安详的。</p>
-<p>如果您一定要求完美，那您就是世界最苦的人……人无完人，我接受一切异类和与我背道而行的一些人和事。</p>
-<span id="more"></span>
-
-<p>每个人当下的机缘和认知不同，境界也不同，不能用同一个自认为是正确的认知和心境去框架与此时此刻不同遇境的人或者他物，角度不同就会对同一件事有不同的认知。</p>
-<p>我们在有主见的同时又能够尊重他人的角度和认知，才能真正融会贯通，才不会被他人的对错所纠缠自己的内心，才能在平等心上真正做到无分别心。</p>
-<p>路不一样达到的终点都是一样的。</p>
-<p>愿自己常思己过，无怨他人。</p>
-<p>愿我与觉者们早登彼岸，万法融通。</p>
-]]></content>
-      <categories>
-        <category>人性</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Git基本语法</title>
-    <url>/2023/08/12/git%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="语法命令"><a href="#语法命令" class="headerlink" title="语法命令"></a>语法命令</h2><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git init  <span class="comment">#创建仓库</span></span><br><span class="line">ls  <span class="comment">#查看仓库文件</span></span><br><span class="line">ls -a  <span class="comment">#查看仓库所有文件 包括隐藏文件</span></span><br><span class="line">git status  <span class="comment">#查看仓库状态</span></span><br><span class="line">git add .  <span class="comment">#添加所有文件到暂存区</span></span><br><span class="line">git add 文件名  <span class="comment">#添加名称为“文件名”的文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;写一句描述该文件夹的信息&quot;</span>  <span class="comment">#提交暂存区的文件</span></span><br><span class="line">git push origin <span class="keyword">master</span>  <span class="title">#上传本地信息 到 远程仓库</span></span><br><span class="line"><span class="title">git</span> pull origin <span class="keyword">master</span>  <span class="title">#拉取远程仓库信息 合并到本地</span></span><br><span class="line"><span class="title">    pull</span>=fetch+merge</span><br><span class="line">    git fetch origin <span class="keyword">master</span>  <span class="title">#抓取远程仓库信息</span></span><br><span class="line"><span class="title">    git</span> merge origin/<span class="keyword">master</span>  <span class="title">#将抓取的远程仓库信息合并到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">sudo</span> su  <span class="comment"># 管理员身份执行命令</span></span><br><span class="line"></span><br><span class="line">vim <span class="number">0123</span>.txt  <span class="comment">#修改文件0123.txt   按 i 进入修改模式，修改完成后 shift+z+z 退出编辑状态并保存</span></span><br><span class="line">git reflog   <span class="comment">#查看文件的版本信息</span></span><br><span class="line">git log   <span class="comment">#查看详细的版本信息</span></span><br><span class="line">cat <span class="number">0123</span>.rtf   <span class="comment">#查看文件详细内容</span></span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">远程仓库克隆链接   #克隆远程仓库信息到本地</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">touch</span> .gitignore  <span class="comment">#输入git命令 touch .gitignore 回车之后会发现文件中已经成功创建了.gitignore文件(忽略文件命令)  </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h2 id="Git-reset-三种模式"><a href="#Git-reset-三种模式" class="headerlink" title="Git reset 三种模式"></a>Git reset 三种模式</h2><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/git-reset-%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F.jpg" alt="git-reset-三种模式" style="zoom: 33%;" />
-
-
-
-<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--soft</span>  <span class="comment">#回到之前版本的同时保留工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--hard</span>  <span class="comment">#回到之前版本的同时删除工作区和暂存区的所有内容</span></span><br><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="built_in">--mixed</span>  <span class="comment">#回到之前版本的同时保留工作区所有内容，删除暂存区的所有内容</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="git-rm-删除文件"><a href="#git-rm-删除文件" class="headerlink" title="git rm 删除文件"></a>git rm 删除文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> 123.md   <span class="comment">#删除工作区和暂存区的文件123.md</span></span><br><span class="line">git <span class="built_in">rm</span> --cached 123.md   <span class="comment">#删除暂存区的文件123.md,不删除本地文件</span></span><br><span class="line">git commit -m <span class="string">&quot;123.md&quot;</span>  <span class="comment">#删除文件后，执行提交命令。否则该删除文件还存在于暂存区</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -381,21 +362,6 @@
       </tags>
   </entry>
   <entry>
-    <title>什么是修行</title>
-    <url>/2022/01/18/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BF%AE%E8%A1%8C/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>什么叫修行？修行的目的先发菩提心，就是解脱一切痛苦而成佛的心。修行就是把不通的心修通，把心里面对生命错误的认知和执着的东西用最真诚认真的态度正视它，然后从思维里面把错误颠倒的认知改变过来，因为人的痛苦皆来源于错误的思维和对世间的人、事、物产生对立的执着。</p>
-<span id="more"></span>
-
-<p>世间好坏、善恶本无对错，都是因果法则。如果一个人来到这世间不是因为因果也不会来，来者也是假，行者也无真，真假只在心通与不通产生的执着。纠结则让人变成无量无边的痛苦与烦恼，心修通了没有任何执念了，身体的一切障碍也消失。</p>
-<p>身体的病痛来源于心里习惯性的纠结和烦恼，修行就是真正的灵丹妙药，心身自在无比，到心真正彻通的时候就是万法合一，万法又无一法，万法万物是对立，没有万法也不存在万物任何一物。</p>
-<p>身心自在，无所不知，如如不动即正法现前，即是大自在者，大智慧者真也。</p>
-]]></content>
-      <categories>
-        <category>修行根本</category>
-      </categories>
-  </entry>
-  <entry>
     <title>一切相皆是虚妄</title>
     <url>/2022/12/13/%E4%B8%80%E5%88%87%E7%9B%B8%E7%9A%86%E6%98%AF%E8%99%9A%E5%A6%84/</url>
     <content><![CDATA[<p><code>妙喜莲慈</code></p>
@@ -412,6 +378,40 @@
 ]]></content>
       <categories>
         <category>因果</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>人性本然流露</title>
+    <url>/2023/08/11/%E4%BA%BA%E6%80%A7%E6%9C%AC%E7%84%B6%E6%B5%81/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>我们居住的世界本来就不完美，人不完美，性格也不完美，有缺陷有优点才能叫做完整的世界。</p>
+<p>我们无法改变世界，只能用思维去不断的认知和转化，接受不完美的一面，我们的内心就是安详的。</p>
+<p>如果您一定要求完美，那您就是世界最苦的人……人无完人，我接受一切异类和与我背道而行的一些人和事。</p>
+<span id="more"></span>
+
+<p>每个人当下的机缘和认知不同，境界也不同，不能用同一个自认为是正确的认知和心境去框架与此时此刻不同遇境的人或者他物，角度不同就会对同一件事有不同的认知。</p>
+<p>我们在有主见的同时又能够尊重他人的角度和认知，才能真正融会贯通，才不会被他人的对错所纠缠自己的内心，才能在平等心上真正做到无分别心。</p>
+<p>路不一样达到的终点都是一样的。</p>
+<p>愿自己常思己过，无怨他人。</p>
+<p>愿我与觉者们早登彼岸，万法融通。</p>
+]]></content>
+      <categories>
+        <category>人性</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>什么是修行</title>
+    <url>/2022/01/18/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BF%AE%E8%A1%8C/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>什么叫修行？修行的目的先发菩提心，就是解脱一切痛苦而成佛的心。修行就是把不通的心修通，把心里面对生命错误的认知和执着的东西用最真诚认真的态度正视它，然后从思维里面把错误颠倒的认知改变过来，因为人的痛苦皆来源于错误的思维和对世间的人、事、物产生对立的执着。</p>
+<span id="more"></span>
+
+<p>世间好坏、善恶本无对错，都是因果法则。如果一个人来到这世间不是因为因果也不会来，来者也是假，行者也无真，真假只在心通与不通产生的执着。纠结则让人变成无量无边的痛苦与烦恼，心修通了没有任何执念了，身体的一切障碍也消失。</p>
+<p>身体的病痛来源于心里习惯性的纠结和烦恼，修行就是真正的灵丹妙药，心身自在无比，到心真正彻通的时候就是万法合一，万法又无一法，万法万物是对立，没有万法也不存在万物任何一物。</p>
+<p>身心自在，无所不知，如如不动即正法现前，即是大自在者，大智慧者真也。</p>
+]]></content>
+      <categories>
+        <category>修行根本</category>
       </categories>
   </entry>
   <entry>
@@ -600,33 +600,17 @@
       </categories>
   </entry>
   <entry>
-    <title>真正的修行</title>
-    <url>/2022/03/18/%E7%9C%9F%E6%AD%A3%E7%9A%84%E4%BF%AE%E8%A1%8C/</url>
+    <title>用佛法解读得失的人生</title>
+    <url>/2023/06/03/%E7%94%A8%E4%BD%9B%E6%B3%95%E8%A7%A3%E8%AF%BB%E5%BE%97%E5%A4%B1%E7%9A%84%E4%BA%BA%E7%94%9F/</url>
     <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>佛法入门讲的是因果法则，让人多积德行善去除所有一切恶念、恶行和带来的恶果。当一个人的善行到无所得，布施出去的善不是一种交易心态的时候；当行善到不把自己的行善，当成一种掌控对方的方法的时候；当行善除去我执的时候；所有的善都用一颗虔诚的心利益别人的时候；就是真正福报够了。</p>
+<p>人人都是佛，只是被自己的欲望障碍住了，修行就是为了除去障碍。清净自性的本性就是佛。人人具足，没有根性大小一说。金刚经曰，是法平等，无有高下，是因为障碍的多和少，领悟的多和少而已。</p>
 <span id="more"></span>
 
-<p>这时候知道什么是无我的精神，只是借用善行来观察自己的内心是否还有对立的思维。没有对立思维，福报就到了，就是要升到解脱法上，超越善恶的时候了。行善或者不行善，内心无有分别，没有善恶的思维。若有，那么思维还在执着善，虽然是善但也是业，不如去掉执着，一心观心，心不被外境对立的思维好坏、善恶、生死所牵绊和挂碍了，生死就自如了。生死超脱了这世间，无一不是净土，内心无所执着，无所挂碍。</p>
-<p>修行无非是了解自己，超脱得失与苦乐思维里面的纠缠。当别人经历过不去的事情，在自己经历同样事情的时候，心里从来没有发生过任何事，平静如水。人的天堂地狱就在这一念之间，被自己不知道卡了多少世。世上千千万万的芸芸众生，卡在自己误认为真实的世界里面出不来，内心长期被压抑，让他们苦不堪言。</p>
-<p>南无阿弥陀佛，南无大慈大悲救苦救难观世音菩萨，愿人人的佛性觉性都能够激活，早日觉醒享受内心的宁静安乐吧。</p>
+<p>对自我内心的挂碍纠结，认识的越彻底就越自在。这种自在并非是物质上能够代替的了的，是从内到外都是喜悦的。佛就是生之前那个空，死后的那个空，一个生命生灭前后那个思想的转化，接受和面对一切不实在的生灭法，就是如来藏性。因为人抗拒它才会痛苦，人只想生不想灭，只想得不想失才会痛苦。不生不灭，就是那个空，生的那一刻后面就是面对的灭，不生就不存在相就不存在灭。思想要懂得这种用法就不会纠结，就是轻松自在的。不迷的那一刻，不纠结失去的那一刻，用这种心态就是自在 。一切都是因缘所生法，灭也是一样，思想不做任何定格，不去造作之意，活的就比较坦荡。</p>
+<p>看到现在很多人活的很痛苦，精神和肉体都苦，大人小孩都苦，是因为人类在做同样一件事，就是把自己的人生定格在自己希望的样子里面，达不到希望的那样就认为自己是世界上最不幸的，所以纠结在自己错误的认知里面和设置的框架意识里面跳不出来，才会痛苦。</p>
 ]]></content>
       <categories>
-        <category>修行根本</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>真正解脱者</title>
-    <url>/2023/08/20/%E7%9C%9F%E6%AD%A3%E8%A7%A3%E8%84%B1%E8%80%85/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>真正解脱者是不被任何人、事 、物所困和束缚，喜悦是生命之本，人人具足，非欲能解此意，离欲能到乐境。</p>
-<span id="more"></span>
-
-<p>佛法就是借<strong>前修行已经成就的圣者</strong>的修行经历和证悟，把自己黑暗的认知和无知，通过自我学习<strong>圣者的言行举止</strong>，转变成<strong>光明和透亮</strong>的内外世界。修行就是不断的认知<strong>被自认为的眼、耳、鼻、舌、身、意、贪、嗔、痴、慢、淫、疑所缠绕和束缚的心</strong>被不断释放的过程，认识一样就解一样，迷一样就缠绕一样。神识本来是自在的，不被束缚和捆绑的，是因为自己的无知与无量无边的贪心加执着、固执，才把自己的心给死死的压着和捆着。</p>
-<p>所谓众生就是心长期被自己无知的认知所缠绕，长期不得释放，所以众生说压力大、身心疲惫。身心本来不被任何人、事、物所束缚，回到本来面目。众生的我太重，对世界这个假我和对世界认识的物质、情感、事情，没有真正得到透视。当一个人完全透视完生命，不被自认为的外在所束缚的时候就是<strong>观自在菩萨</strong>，不为别人眼里的善恶美丑做奴隶，不为六根做奴隶，不为六尘做奴隶，就被彻底释放完了。</p>
-<p>修行就是不断的认知所缠绕的思维，释放过去、现在、未来所发生的一切旧的新的习惯性的模式，释放完了就<strong>真自在者</strong>。这种自在非是狂心，而是静中有乐，乐而非狂，心的黑暗与光明，心的自在与束缚都在此身中。</p>
-]]></content>
-      <categories>
-        <category>解脱</category>
+        <category>清净自性</category>
       </categories>
   </entry>
   <entry>
@@ -677,6 +661,36 @@
       <tags>
         <tag>python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>真正的修行</title>
+    <url>/2022/03/18/%E7%9C%9F%E6%AD%A3%E7%9A%84%E4%BF%AE%E8%A1%8C/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>佛法入门讲的是因果法则，让人多积德行善去除所有一切恶念、恶行和带来的恶果。当一个人的善行到无所得，布施出去的善不是一种交易心态的时候；当行善到不把自己的行善，当成一种掌控对方的方法的时候；当行善除去我执的时候；所有的善都用一颗虔诚的心利益别人的时候；就是真正福报够了。</p>
+<span id="more"></span>
+
+<p>这时候知道什么是无我的精神，只是借用善行来观察自己的内心是否还有对立的思维。没有对立思维，福报就到了，就是要升到解脱法上，超越善恶的时候了。行善或者不行善，内心无有分别，没有善恶的思维。若有，那么思维还在执着善，虽然是善但也是业，不如去掉执着，一心观心，心不被外境对立的思维好坏、善恶、生死所牵绊和挂碍了，生死就自如了。生死超脱了这世间，无一不是净土，内心无所执着，无所挂碍。</p>
+<p>修行无非是了解自己，超脱得失与苦乐思维里面的纠缠。当别人经历过不去的事情，在自己经历同样事情的时候，心里从来没有发生过任何事，平静如水。人的天堂地狱就在这一念之间，被自己不知道卡了多少世。世上千千万万的芸芸众生，卡在自己误认为真实的世界里面出不来，内心长期被压抑，让他们苦不堪言。</p>
+<p>南无阿弥陀佛，南无大慈大悲救苦救难观世音菩萨，愿人人的佛性觉性都能够激活，早日觉醒享受内心的宁静安乐吧。</p>
+]]></content>
+      <categories>
+        <category>修行根本</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>真正解脱者</title>
+    <url>/2023/08/20/%E7%9C%9F%E6%AD%A3%E8%A7%A3%E8%84%B1%E8%80%85/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>真正解脱者是不被任何人、事 、物所困和束缚，喜悦是生命之本，人人具足，非欲能解此意，离欲能到乐境。</p>
+<span id="more"></span>
+
+<p>佛法就是借<strong>前修行已经成就的圣者</strong>的修行经历和证悟，把自己黑暗的认知和无知，通过自我学习<strong>圣者的言行举止</strong>，转变成<strong>光明和透亮</strong>的内外世界。修行就是不断的认知<strong>被自认为的眼、耳、鼻、舌、身、意、贪、嗔、痴、慢、淫、疑所缠绕和束缚的心</strong>被不断释放的过程，认识一样就解一样，迷一样就缠绕一样。神识本来是自在的，不被束缚和捆绑的，是因为自己的无知与无量无边的贪心加执着、固执，才把自己的心给死死的压着和捆着。</p>
+<p>所谓众生就是心长期被自己无知的认知所缠绕，长期不得释放，所以众生说压力大、身心疲惫。身心本来不被任何人、事、物所束缚，回到本来面目。众生的我太重，对世界这个假我和对世界认识的物质、情感、事情，没有真正得到透视。当一个人完全透视完生命，不被自认为的外在所束缚的时候就是<strong>观自在菩萨</strong>，不为别人眼里的善恶美丑做奴隶，不为六根做奴隶，不为六尘做奴隶，就被彻底释放完了。</p>
+<p>修行就是不断的认知所缠绕的思维，释放过去、现在、未来所发生的一切旧的新的习惯性的模式，释放完了就<strong>真自在者</strong>。这种自在非是狂心，而是静中有乐，乐而非狂，心的黑暗与光明，心的自在与束缚都在此身中。</p>
+]]></content>
+      <categories>
+        <category>解脱</category>
+      </categories>
   </entry>
   <entry>
     <title>短路逻辑和运算符优先级</title>
@@ -787,32 +801,45 @@
       </tags>
   </entry>
   <entry>
-    <title>解脱的力量</title>
-    <url>/2022/08/18/%E8%A7%A3%E8%84%B1%E7%9A%84%E5%8A%9B%E9%87%8F/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>方向和心力决定未来，脱离一切业的束缚。只是在业还存在的时候坦然去面对它、接受它，业完了就是清净自性做主，就是安乐行。</p>
-<span id="more"></span>
+    <title>程序的组织结构</title>
+    <url>/2023/09/30/%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84.jpg" alt="程序的组织结构"></p>
+<h2 id="1-顺序结构"><a href="#1-顺序结构" class="headerlink" title="1.顺序结构"></a>1.顺序结构</h2><p>程序从上到下按照顺序执行代码，中间没有任何的判断和跳转，直接到程序结束</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">#把大象放冰箱一共分几步</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;---------程序开始----------&quot;</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;1.把冰箱门打开&quot;</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;2.把大象放进去&quot;</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;3.把冰箱门关上&quot;</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">&quot;---------程序结束----------&quot;</span>)</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">---------程序开始----------</span><br><span class="line"><span class="number">1</span>.把冰箱门打开</span><br><span class="line"><span class="number">2</span>.把大象放进去</span><br><span class="line"><span class="number">3</span>.把冰箱门关上</span><br><span class="line">---------程序结束----------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>脱离了一切业的束缚，在修行路上我没有想过要求用享受世间人享受的心去成就佛果，我是用真诚的心、突破一切困难的心，去得到我该有的成就和果位。到现在来讲我没有过过一个节日，别人在享受节日各种美食和欢乐的时候，我在过超越美食和世间欢乐的清贫与自在。</p>
-<p>修行路上想成就，需要忍别人不能忍的，受别人不能受的。不可能在享受世间欲望的同时法又能够成就的，不可能的。无论是这条路上的成就者，还是世间法的所谓财富的成就者，都是付出普通人无法想象的过程和忍受的过程。所以，不要去羡慕任何人，羡慕不如自己努力去真正的做到，终究自己早晚也是那个成就者。</p>
-]]></content>
-      <categories>
-        <category>解脱</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>用佛法解读得失的人生</title>
-    <url>/2023/06/03/%E7%94%A8%E4%BD%9B%E6%B3%95%E8%A7%A3%E8%AF%BB%E5%BE%97%E5%A4%B1%E7%9A%84%E4%BA%BA%E7%94%9F/</url>
-    <content><![CDATA[<p><code>妙喜莲慈</code></p>
-<p>人人都是佛，只是被自己的欲望障碍住了，修行就是为了除去障碍。清净自性的本性就是佛。人人具足，没有根性大小一说。金刚经曰，是法平等，无有高下，是因为障碍的多和少，领悟的多和少而已。</p>
-<span id="more"></span>
 
-<p>对自我内心的挂碍纠结，认识的越彻底就越自在。这种自在并非是物质上能够代替的了的，是从内到外都是喜悦的。佛就是生之前那个空，死后的那个空，一个生命生灭前后那个思想的转化，接受和面对一切不实在的生灭法，就是如来藏性。因为人抗拒它才会痛苦，人只想生不想灭，只想得不想失才会痛苦。不生不灭，就是那个空，生的那一刻后面就是面对的灭，不生就不存在相就不存在灭。思想要懂得这种用法就不会纠结，就是轻松自在的。不迷的那一刻，不纠结失去的那一刻，用这种心态就是自在 。一切都是因缘所生法，灭也是一样，思想不做任何定格，不去造作之意，活的就比较坦荡。</p>
-<p>看到现在很多人活的很痛苦，精神和肉体都苦，大人小孩都苦，是因为人类在做同样一件事，就是把自己的人生定格在自己希望的样子里面，达不到希望的那样就认为自己是世界上最不幸的，所以纠结在自己错误的认知里面和设置的框架意识里面跳不出来，才会痛苦。</p>
+
+<h2 id="2-选择结构"><a href="#2-选择结构" class="headerlink" title="2.选择结构"></a>2.选择结构</h2><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84.jpg" alt="选择结构"></p>
+<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%8D%95%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84.jpg" alt="单分支结构"></p>
+<h3 id="单分支结构"><a href="#单分支结构" class="headerlink" title="单分支结构"></a>单分支结构</h3><figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">money = 2000                      <span class="comment">#余额</span></span><br><span class="line">a = int(input(<span class="string">&quot;请输入取款金额:&quot;</span>))   <span class="comment">#取款金额</span></span><br><span class="line"><span class="comment">#判断余额是否充足</span></span><br><span class="line">if money &gt;= a:</span><br><span class="line">    money = money - a</span><br><span class="line">    print(<span class="string">&quot;取款成功！余额:&quot;</span>, money)</span><br><span class="line"></span><br><span class="line"><span class="section">请输入取款金额:1900</span></span><br><span class="line"><span class="section">取款成功！余额: 100</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="双分支结构"><a href="#双分支结构" class="headerlink" title="双分支结构"></a>双分支结构</h3><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%8F%8C%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84.jpg" alt="双分支结构"></p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"># 双分支结构<span class="keyword">if</span>……<span class="keyword">else</span>,二选一执行</span><br><span class="line"># 从键盘输入一个整数，编写程序让计算机判断是奇数还是偶数</span><br><span class="line"></span><br><span class="line"><span class="built_in">num</span> = <span class="built_in">int</span>(input(<span class="string">&quot;请输入一个整数:&quot;</span>))</span><br><span class="line"># 条件判断</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">num</span> % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">num</span>, <span class="string">&quot;是偶数&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">num</span>, <span class="string">&quot;是奇数&quot;</span>)</span><br><span class="line"></span><br><span class="line">请输入一个整数:<span class="number">3</span></span><br><span class="line"><span class="number">3</span> 是奇数</span><br><span class="line"></span><br><span class="line">请输入一个整数:<span class="number">4</span></span><br><span class="line"><span class="number">4</span> 是偶数</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="多分支结构"><a href="#多分支结构" class="headerlink" title="多分支结构"></a>多分支结构</h3><p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%A4%9A%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84.jpg" alt="多分支结构"></p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 多分支结构，多选一执行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从键盘录入一个整数成绩</span></span><br><span class="line"><span class="comment"># 90-100  A</span></span><br><span class="line"><span class="comment"># 80-89   B</span></span><br><span class="line"><span class="comment"># 70-79   C</span></span><br><span class="line"><span class="comment"># 60-69   D</span></span><br><span class="line"><span class="comment"># 0-59    E</span></span><br><span class="line"><span class="comment"># 小于0大于100为非法数据，不是成绩的有效范围</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">score </span>= int(input(<span class="string">&quot;请输入一个成绩:&quot;</span>))</span><br><span class="line"><span class="comment"># 判断条件</span></span><br><span class="line">if <span class="keyword">score </span>&gt;= <span class="number">90</span> <span class="keyword">and </span><span class="keyword">score </span>&lt;= <span class="number">100</span>:</span><br><span class="line">    print(<span class="string">&quot;成绩为A&quot;</span>)</span><br><span class="line">elif <span class="keyword">score </span>&gt;= <span class="number">80</span> <span class="keyword">and </span><span class="keyword">score </span>&lt;= <span class="number">89</span>:</span><br><span class="line">    print(<span class="string">&quot;成绩为B&quot;</span>)</span><br><span class="line">elif <span class="keyword">score </span>&gt;= <span class="number">70</span> <span class="keyword">and </span><span class="keyword">score </span>&lt;= <span class="number">79</span>:</span><br><span class="line">    print(<span class="string">&quot;成绩为C&quot;</span>)</span><br><span class="line">elif <span class="keyword">score </span>&gt;= <span class="number">60</span> <span class="keyword">and </span><span class="keyword">score </span>&lt;= <span class="number">69</span>:</span><br><span class="line">    print(<span class="string">&quot;成绩为D&quot;</span>)</span><br><span class="line">elif <span class="keyword">score </span>&gt;= <span class="number">0</span> <span class="keyword">and </span><span class="keyword">score </span>&lt;= <span class="number">59</span>:</span><br><span class="line">    print(<span class="string">&quot;成绩为E&quot;</span>)</span><br><span class="line"><span class="symbol">else:</span></span><br><span class="line">    print(<span class="string">&quot;对不起，成绩不在有效范围!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://pythonblender.oss-cn-beijing.aliyuncs.com/img/%E5%B5%8C%E5%A5%97if.jpg" alt="嵌套if"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 超市购物通过会员和消费金额判断打折情况</span></span><br><span class="line"><span class="comment"># 会员  &gt;= 200   8折</span></span><br><span class="line"><span class="comment">#     &gt;= 100   9折</span></span><br><span class="line"><span class="comment">#      &lt; 100   不打折</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 非会员 &gt;= 200   9.5折</span></span><br><span class="line"><span class="comment">#     &lt; 200   不打折</span></span><br><span class="line"></span><br><span class="line">answer = <span class="built_in">input</span>(<span class="string">&quot;您是会员吗？Y/N&quot;</span>)</span><br><span class="line">money = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入消费金额:&quot;</span>))</span><br><span class="line"><span class="keyword">if</span> answer == <span class="string">&quot;Y&quot;</span>:</span><br><span class="line">    <span class="keyword">if</span> money &gt;= <span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;打8折,应支付:&quot;</span>, money * <span class="number">0.8</span>)</span><br><span class="line">    <span class="keyword">elif</span> money &gt;= <span class="number">100</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;打9折,应支付:&quot;</span>, money * <span class="number">0.9</span>)</span><br><span class="line">    <span class="keyword">elif</span> money &lt; <span class="number">100</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;不打折,应支付:&quot;</span>, money)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">if</span> money &gt;= <span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;打9.5折,应支付:&quot;</span>, money * <span class="number">0.95</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;不打折,应支付:&quot;</span>, money)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="条件表达式"><a href="#条件表达式" class="headerlink" title="条件表达式"></a>条件表达式</h3><p>&#x3D;&#x3D;条件表达式是if……else的简写&#x3D;&#x3D;</p>
+<ul>
+<li><p>语法结构:  x   if   判断条件  else   y</p>
+</li>
+<li><p>运算规则：如果判断条件的布尔值为True ，条件表达式的返回值为x；否则条件表达式的返回值为False</p>
+</li>
+</ul>
+<figure class="highlight hsp"><table><tr><td class="code"><pre><span class="line"><span class="meta"># 从键盘输入两个整数，比较两个整数的大小</span></span><br><span class="line"></span><br><span class="line">num1 = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">&quot;请输入第一个整数:&quot;</span>))</span><br><span class="line">num2 = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">&quot;请输入第二个整数:&quot;</span>))</span><br><span class="line"><span class="meta">#比较大小</span></span><br><span class="line"><span class="keyword">if</span> num1 &gt;= num2:</span><br><span class="line">    <span class="keyword">print</span>(num1, <span class="string">&quot;大于等于&quot;</span>, num2)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span>(num1, <span class="string">&quot;小于&quot;</span>, num2)</span><br><span class="line"></span><br><span class="line">请输入第一个整数:<span class="number">5</span></span><br><span class="line">请输入第二个整数:<span class="number">10</span></span><br><span class="line"><span class="number">5</span> 小于 <span class="number">10</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">&quot;使用条件表达式进行比较：&quot;</span>)</span><br><span class="line"><span class="keyword">print</span>(<span class="keyword">str</span>(num1) + <span class="string">&quot;大于等于&quot;</span> + <span class="keyword">str</span>(num2) <span class="keyword">if</span> num1 &gt;= num2 <span class="keyword">else</span> <span class="keyword">str</span>(num1) + <span class="string">&quot;小于&quot;</span> + <span class="keyword">str</span>(num2))</span><br><span class="line"></span><br><span class="line">请输入第一个整数:<span class="number">10</span></span><br><span class="line">请输入第二个整数:<span class="number">20</span></span><br><span class="line">使用条件表达式进行比较：</span><br><span class="line"><span class="number">10</span>小于<span class="number">20</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>清净自性</category>
-      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
   </entry>
   <entry>
     <title>运算符</title>
@@ -945,5 +972,19 @@
       <tags>
         <tag>python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>解脱的力量</title>
+    <url>/2022/08/18/%E8%A7%A3%E8%84%B1%E7%9A%84%E5%8A%9B%E9%87%8F/</url>
+    <content><![CDATA[<p><code>妙喜莲慈</code></p>
+<p>方向和心力决定未来，脱离一切业的束缚。只是在业还存在的时候坦然去面对它、接受它，业完了就是清净自性做主，就是安乐行。</p>
+<span id="more"></span>
+
+<p>脱离了一切业的束缚，在修行路上我没有想过要求用享受世间人享受的心去成就佛果，我是用真诚的心、突破一切困难的心，去得到我该有的成就和果位。到现在来讲我没有过过一个节日，别人在享受节日各种美食和欢乐的时候，我在过超越美食和世间欢乐的清贫与自在。</p>
+<p>修行路上想成就，需要忍别人不能忍的，受别人不能受的。不可能在享受世间欲望的同时法又能够成就的，不可能的。无论是这条路上的成就者，还是世间法的所谓财富的成就者，都是付出普通人无法想象的过程和忍受的过程。所以，不要去羡慕任何人，羡慕不如自己努力去真正的做到，终究自己早晚也是那个成就者。</p>
+]]></content>
+      <categories>
+        <category>解脱</category>
+      </categories>
   </entry>
 </search>
